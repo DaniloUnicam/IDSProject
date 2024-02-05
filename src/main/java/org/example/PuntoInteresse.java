@@ -3,6 +3,8 @@ package org.example;
 public class PuntoInteresse {
 
     private String nome;
+
+    private String nome;
     private String descrizione;
     private String indirizzo;
     private String orarioApertura;
