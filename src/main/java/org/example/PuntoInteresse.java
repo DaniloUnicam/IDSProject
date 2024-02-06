@@ -1,9 +1,15 @@
 package org.example;
 public class PuntoInteresse {
+
+    private String nome;
     private String ID;
     private String descrizione;
     private Orario orarioApertura;
     private Orario orarioChiusura;
+    private String tipo;
+    private float valutazione;
+    private PosizioneSatellitare posizione;
+
 
     private enum tipoStruttura {
         MUSEO, RISTORANTE, PIZZERIA, ALBERGO, MONUMENTO, STATUA, NEGOZIO, SCUOLA, CHIESA, PARCO, PARCHEGGIO,
@@ -13,11 +19,12 @@ public class PuntoInteresse {
     private float valutazione;
     private PosizioneSatellitare posizione;
 
-    public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, float valutazione, PosizioneSatellitare posizione) {
+    public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, String tipo, float valutazione, PosizioneSatellitare posizione) {
         this.ID = ID;
         this.descrizione = descrizione;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
+        this.tipo = tipo;
         this.valutazione = valutazione;
         this.posizione = posizione;
     }
@@ -45,5 +52,14 @@ public class PuntoInteresse {
 
     public PosizioneSatellitare getPosizione () {
         return posizione;
+    }
+
+
+
+    public Contenuto caricaContenuto(Contenuto File, String Commento) {
+        return null;
+    }
+    public PuntoInteresse visualizzareContenuti(String id) {
+        return null;
     }
 }
