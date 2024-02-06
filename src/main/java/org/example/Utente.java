@@ -1,18 +1,24 @@
 package org.example;
 
 public class Utente implements Ruolo {
+
+    private String id; // id univoco
     private String nome;
     private String cognome;
     private String email;
     private String password;
 
-    public Utente(String nome, String cognome, String email, String password) {
+    public Utente(String id, String nome, String cognome, String email, String password) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.password = password;
     }
 
+    public String getId() {
+        return id;
+    }
     public String getNome() {
         return nome;
     }
@@ -27,6 +33,10 @@ public class Utente implements Ruolo {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setNome(String nome) {
@@ -44,5 +54,6 @@ public class Utente implements Ruolo {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
 }
