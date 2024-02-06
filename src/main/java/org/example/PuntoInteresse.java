@@ -4,16 +4,20 @@ public class PuntoInteresse {
     private String descrizione;
     private Orario orarioApertura;
     private Orario orarioChiusura;
-    private String tipo;
+
+    private enum tipoStruttura {
+        MUSEO, RISTORANTE, PIZZERIA, ALBERGO, MONUMENTO, STATUA, NEGOZIO, SCUOLA, CHIESA, PARCO, PARCHEGGIO,
+        CENTRO_COMMERCIALE, AUTOVELOX, ATTRAZIONE_TURISTICA, ALTRO
+    };
+
     private float valutazione;
     private PosizioneSatellitare posizione;
 
-    public PuntoInteresse(String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura, String tipo, float valutazione, PosizioneSatellitare posizione) {
+    public PuntoInteresse (String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura, float valutazione, PosizioneSatellitare posizione) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
-        this.tipo = tipo;
         this.valutazione = valutazione;
         this.posizione = posizione;
     }
@@ -34,9 +38,6 @@ public class PuntoInteresse {
         return orarioChiusura;
     }
 
-    public String getTipo () {
-        return tipo;
-    }
 
     public float getValutazione () {
         return valutazione;
