@@ -1,6 +1,6 @@
 package org.example;
 public class PuntoInteresse {
-    private String nome;
+    private String ID;
     private String descrizione;
     private Orario orarioApertura;
     private Orario orarioChiusura;
@@ -13,8 +13,8 @@ public class PuntoInteresse {
     private float valutazione;
     private PosizioneSatellitare posizione;
 
-    public PuntoInteresse (String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura, float valutazione, PosizioneSatellitare posizione) {
-        this.nome = nome;
+    public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, float valutazione, PosizioneSatellitare posizione) {
+        this.ID = ID;
         this.descrizione = descrizione;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
@@ -22,8 +22,8 @@ public class PuntoInteresse {
         this.posizione = posizione;
     }
 
-    public String getNome () {
-        return nome;
+    public String getID () {
+        return ID;
     }
 
     public String getDescrizione () {
