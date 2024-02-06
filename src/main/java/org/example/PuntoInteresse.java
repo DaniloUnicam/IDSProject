@@ -1,8 +1,9 @@
+package org.example;
 public class PuntoInteresse {
     private String nome;
     private String descrizione;
     private String categoria;
-    private String indirizzo;
+    private String indirizzo;   
     private String sitoWeb;
     private String telefono;
     private String email;
