@@ -1,6 +1,6 @@
 package org.example;
 
-public class GestoreInformazionidiricerca {
+public class GestoreInformazioniDiRicerca {
 
         public PuntoInteresse contenutoPuntoInteresse(String testo ){
             return null;
