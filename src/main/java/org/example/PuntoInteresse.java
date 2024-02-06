@@ -2,77 +2,47 @@ package org.example;
 public class PuntoInteresse {
     private String nome;
     private String descrizione;
-    private String categoria;
-    private String indirizzo;   
-    private String sitoWeb;
-    private String telefono;
-    private String email;
-    private String orari;
-    private String costo;
-    private String foto;
-    private String latitudine;
-    private String longitudine;
+    private Orario orarioApertura;
+    private Orario orarioChiusura;
+    private String tipo;
+    private float valutazione;
+    private PosizioneSatellitare posizione;
 
-    public PuntoInteresse(String nome, String descrizione, String categoria, String indirizzo, String sitoWeb, String telefono, String email, String orari, String costo, String foto, String latitudine, String longitudine) {
+    public PuntoInteresse(String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura, String tipo, float valutazione, PosizioneSatellitare posizione) {
         this.nome = nome;
         this.descrizione = descrizione;
-        this.categoria = categoria;
-        this.indirizzo = indirizzo;
-        this.sitoWeb = sitoWeb;
-        this.telefono = telefono;
-        this.email = email;
-        this.orari = orari;
-        this.costo = costo;
-        this.foto = foto;
-        this.latitudine = latitudine;
-        this.longitudine = longitudine;
+        this.orarioApertura = orarioApertura;
+        this.orarioChiusura = orarioChiusura;
+        this.tipo = tipo;
+        this.valutazione = valutazione;
+        this.posizione = posizione;
     }
 
-    public String getNome() {
+    public String getNome () {
         return nome;
     }
 
-    public String getDescrizione() {
+    public String getDescrizione () {
         return descrizione;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Orario getOrarioApertura () {
+        return orarioApertura;
     }
 
-    public String getIndirizzo() {
-        return indirizzo;
+    public Orario getOrarioChiusura () {
+        return orarioChiusura;
     }
 
-    public String getSitoWeb() {
-        return sitoWeb;
+    public String getTipo () {
+        return tipo;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public float getValutazione () {
+        return valutazione;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getOrari() {
-        return orari;
-    }
-
-    public String getCosto() {
-        return costo;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public String getLatitudine() {
-        return latitudine;
-    }
-
-    public String getLongitudine() {
-        return longitudine;
+    public PosizioneSatellitare getPosizione () {
+        return posizione;
     }
 }
