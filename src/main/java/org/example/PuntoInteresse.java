@@ -1,4 +1,7 @@
 package org.example;
+
+import java.io.File;
+
 public class PuntoInteresse {
 
     private String nome;
@@ -62,9 +65,8 @@ public class PuntoInteresse {
         return posizione;
     }
 
-    public Contenuto caricaContenuto(Contenuto File, String Commento) {
-        return null;
-    }
+    public void caricaContenuto(File file, String Commento) {}
+
     public PuntoInteresse visualizzareContenuti(String id) {
         return null;
     }
