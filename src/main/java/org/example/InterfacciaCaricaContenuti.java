@@ -2,7 +2,6 @@ package org.example;
 
 public class InterfacciaCaricaContenuti {
 
-
     public void visualizzaMappa() {
     }
 
