@@ -1,8 +1,8 @@
 package org.example;
 
-public class Utente implements Ruolo {
+public class Utente {
 
-    private String id; // id univoco
+    private final String id; // id univoco
     private String nome;
     private String cognome;
     private String email;
@@ -35,9 +35,6 @@ public class Utente implements Ruolo {
         return password;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
