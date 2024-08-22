@@ -1,6 +1,4 @@
-package org.example;
-
-import java.io.File;
+package Classes;
 
 public class PuntoInteresse {
 

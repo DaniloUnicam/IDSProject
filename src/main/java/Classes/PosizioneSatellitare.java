@@ -1,4 +1,4 @@
-package org.example;
+package Classes;
 
 public class PosizioneSatellitare {
     private final float latitudine;

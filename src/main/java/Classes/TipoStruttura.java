@@ -1,4 +1,4 @@
-package org.example;
+package Classes;
 
 public enum TipoStruttura {
     AEROPORTO, ALBERGO, ALTRO, ATTRAZIONE_TURISTICA, AUTOVELOX, CAMPO_BASEBALL,
