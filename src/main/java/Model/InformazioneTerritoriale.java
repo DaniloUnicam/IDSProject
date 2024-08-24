@@ -1,4 +1,6 @@
 package Model;
 
-public class InformazioneTerritoriale {
+import Interfacce.Identificabile;
+
+public class InformazioneTerritoriale implements Identificabile {
 }
