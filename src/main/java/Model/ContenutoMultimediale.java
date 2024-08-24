@@ -2,12 +2,15 @@ package Model;
 
 import Interfacce.Identificabile;
 
+import java.io.File;
+
 public class ContenutoMultimediale implements Identificabile {
 
     private String id;
     private String titolo;
     private String descrizione;
     private String url;
+    private File file;
 
     public ContenutoMultimediale(String id, String titolo, String descrizione, String url) {
         this.id = id;

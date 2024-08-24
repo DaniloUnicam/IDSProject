@@ -17,7 +17,6 @@ public class PuntoInteresse implements Identificabile {
     private float valutazione;
     private PosizioneSatellitare posizione;
     private List <Contenuto> contenuti= new ArrayList<>();
-    private List<PuntoInteresse> puntoInteresse = new ArrayList<>();
 
     public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
         this.ID = ID;
@@ -58,8 +57,17 @@ public class PuntoInteresse implements Identificabile {
     }
 
 
-    public void caricaContenuto(File file, String Commento) {
-        puntoInteresse.add(contenuti);
+    public void caricaContenuto(ContenutoMultimediale file, String commento) {
+        Contenuto contenuto = new Contenuto (file, commento);
+        contenuti.add(contenuto);
+    }
+    public void caricaContenuto(ContenutoMultimediale file) {
+        Contenuto contenuto = new Contenuto (file);
+        contenuti.add(contenuto);
+    }
+    public void caricaContenuto(String commento) {
+        Contenuto contenuto = new Contenuto (commento);
+        contenuti.add(contenuto);
     }
 
     public PuntoInteresse visualizzareContenuti(String id) {
