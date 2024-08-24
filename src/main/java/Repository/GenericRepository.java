@@ -4,12 +4,22 @@ import Interfacce.Identificabile;
 
 import java.util.HashMap;
 
+//Questa classe è considerata un Singleton.
 public class GenericRepository <T extends Identificabile> {
 
-    private HashMap<String,T> entities;
+    private static GenericRepository instance;
 
-    public GenericRepository(HashMap<String,T> entities) {
+    private HashMap <String,T> entities;
+
+    protected GenericRepository(HashMap<String,T> entities) {
         this.entities = entities;
+    }
+
+    public static GenericRepository getInstance() {
+        if (instance == null) {
+            instance = new GenericRepository(new HashMap<String,Identificabile>());
+        }
+        return instance;
     }
 
     public void add(T entity) {

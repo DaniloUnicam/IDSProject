@@ -1,6 +1,8 @@
-package Classes;
+package Model;
 
-public class PuntoInteresse {
+import Interfacce.Identificabile;
+
+public class PuntoInteresse implements Identificabile {
 
     private String nome;
     private final String ID;
@@ -40,6 +42,7 @@ public class PuntoInteresse {
     public TipoStruttura getTipo () {
         return tipo;
     }
+
     public float getValutazione () {
         return valutazione;
     }

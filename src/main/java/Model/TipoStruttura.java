@@ -1,4 +1,4 @@
-package Classes;
+package Model;
 
 public enum TipoStruttura {
     AEROPORTO, ALBERGO, ALTRO, ATTRAZIONE_TURISTICA, AUTOVELOX, CAMPO_BASEBALL,
