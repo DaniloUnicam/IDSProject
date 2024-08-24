@@ -2,6 +2,10 @@ package Model;
 
 import Interfacce.Identificabile;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PuntoInteresse implements Identificabile {
 
     private String nome;
@@ -12,6 +16,8 @@ public class PuntoInteresse implements Identificabile {
     private TipoStruttura tipo;
     private float valutazione;
     private PosizioneSatellitare posizione;
+    private List <Contenuto> contenuti= new ArrayList<>();
+    private List<PuntoInteresse> puntoInteresse = new ArrayList<>();
 
     public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
         this.ID = ID;
@@ -51,9 +57,9 @@ public class PuntoInteresse implements Identificabile {
         return posizione;
     }
 
-    /* TODO implementare
-    public void caricaContenuto(File file, String Commento) {
 
+    public void caricaContenuto(File file, String Commento) {
+        puntoInteresse.add(contenuti);
     }
 
     public PuntoInteresse visualizzareContenuti(String id) {
@@ -64,5 +70,4 @@ public class PuntoInteresse implements Identificabile {
 
     }
 
-    */
 }
