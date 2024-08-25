@@ -1,12 +1,15 @@
 package Model;
 
-public class Evento {
+import Interfacce.Identificabile;
+
+public class Evento extends Identificabile {
     private String nome;
     private String luogo;
     private String descrizione;
     private PosizioneSatellitare posizione;
     private Orario orarioInizio;
     private Orario orarioFine;
+    private final String id =getIdIncrementazione();
 
     public Evento(String nome, String luogo, String descrizione, PosizioneSatellitare posizione, Orario orarioInizio, Orario orarioFine) {
         this.nome = nome;
@@ -15,5 +18,10 @@ public class Evento {
         this.posizione = posizione;
         this.orarioInizio = orarioInizio;
         this.orarioFine = orarioFine;
+    }
+
+    @Override
+    public String getID() {
+        return id;
     }
 }

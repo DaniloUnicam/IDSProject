@@ -6,10 +6,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PuntoInteresse implements Identificabile {
+public class PuntoInteresse extends Identificabile {
 
     private String nome;
-    private final String ID;
+    private final String id =getIdIncrementazione();
     private String descrizione;
     private Orario orarioApertura;
     private Orario orarioChiusura;
@@ -18,8 +18,7 @@ public class PuntoInteresse implements Identificabile {
     private PosizioneSatellitare posizione;
     private List <Contenuto> contenuti= new ArrayList<>();
 
-    public PuntoInteresse (String ID, String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
-        this.ID = ID;
+    public PuntoInteresse (String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
         this.descrizione = descrizione;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
@@ -29,7 +28,7 @@ public class PuntoInteresse implements Identificabile {
     }
 
     public String getID () {
-        return ID;
+        return id;
     }
 
     public String getDescrizione () {
@@ -56,7 +55,6 @@ public class PuntoInteresse implements Identificabile {
         return posizione;
     }
 
-
     public void caricaContenuto(ContenutoMultimediale file, String commento) {
         Contenuto contenuto = new Contenuto (file, commento);
         contenuti.add(contenuto);
@@ -70,12 +68,12 @@ public class PuntoInteresse implements Identificabile {
         contenuti.add(contenuto);
     }
 
-    public PuntoInteresse visualizzareContenuti(String id) {
-        return null;
+    public PuntoInteresse visualizzareContenuto(String id) {
+        return null;//TODO
     }
 
     public Recensione commentaRecensione(Recensione recensione){
-
+        return null; //TODO
     }
 
 }

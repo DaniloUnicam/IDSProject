@@ -1,8 +1,12 @@
 package Interfacce;
 
-public interface Identificabile {
+public abstract class Identificabile {
 
-    //Ritorna l'id dell'oggetto
-    String getID ();
+    private static long idIncrementazione= 0;
+    public abstract String getID ();
+
+    public static String getIdIncrementazione() {
+        return String.valueOf(idIncrementazione++);
+    }
 
 }

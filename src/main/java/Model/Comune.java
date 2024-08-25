@@ -32,6 +32,4 @@ public class Comune {
     public PuntoInteresse visualizzareContenuto(String id) {
         return null;
     }
-
-
 }

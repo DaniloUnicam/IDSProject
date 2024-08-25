@@ -2,16 +2,15 @@ package Model;
 
 import Interfacce.Identificabile;
 
-public class Utente implements Identificabile {
+public class Utente extends Identificabile {
 
-        private String id;
+        private final String id =getIdIncrementazione();
         private String nome;
         private String cognome;
         private String email;
         private String password;
 
-        public Utente(String id, String nome, String cognome, String email, String password) {
-            this.id = id;
+        public Utente(String nome, String cognome, String email, String password) {
             this.nome = nome;
             this.cognome = cognome;
             this.email = email;

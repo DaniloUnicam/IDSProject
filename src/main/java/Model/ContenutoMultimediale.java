@@ -4,16 +4,16 @@ import Interfacce.Identificabile;
 
 import java.io.File;
 
-public class ContenutoMultimediale implements Identificabile {
+public class ContenutoMultimediale extends Identificabile {
 
-    private String id;
     private String titolo;
     private String descrizione;
     private String url;
     private File file;
 
-    public ContenutoMultimediale(String id, String titolo, String descrizione, String url) {
-        this.id = id;
+    private final String id =getIdIncrementazione();
+
+    public ContenutoMultimediale(String titolo, String descrizione, String url) {
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.url = url;
@@ -34,4 +34,5 @@ public class ContenutoMultimediale implements Identificabile {
     public String getID() {
         return id;
     }
+
 }

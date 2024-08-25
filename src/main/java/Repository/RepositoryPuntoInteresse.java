@@ -1,7 +1,6 @@
 package Repository;
 
 import Model.PuntoInteresse;
-
 import java.util.HashMap;
 
 public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> {
