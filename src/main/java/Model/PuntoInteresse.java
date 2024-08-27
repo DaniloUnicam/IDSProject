@@ -68,12 +68,17 @@ public class PuntoInteresse extends Identificabile {
         contenuti.add(contenuto);
     }
 
-    public PuntoInteresse visualizzareContenuto(String id) {
-        return null;//TODO
+    public PuntoInteresse visualizzareContenuto(String id) { //DA CONTROLLARE
+        for (Contenuto contenuto : contenuti) {
+            if (contenuto.getID().equals(id)) {
+                return this;
+            }
+        }
+        return null;
     }
 
-    public Recensione commentaRecensione(Recensione recensione){
-        return null; //TODO
-    }
+    /*public Recensione commentaRecensione(Recensione recensione){
+
+    }*/
 
 }
