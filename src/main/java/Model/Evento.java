@@ -2,22 +2,32 @@ package Model;
 
 import Interfacce.Identificabile;
 
-public class Evento {
+public class Evento extends Identificabile {
     private String nome;
     private String luogo;
     private String descrizione;
-    private PosizioneSatellitare posizione;
-    private Orario orarioInizio;
-    private Orario orarioFine;
+    private String id;
 
-
-    public Evento(String nome, String luogo, String descrizione, PosizioneSatellitare posizione, Orario orarioInizio, Orario orarioFine) {
+    public Evento(String nome, String luogo, String descrizione) {
         this.nome = nome;
         this.luogo = luogo;
         this.descrizione = descrizione;
-        this.posizione = posizione;
-        this.orarioInizio = orarioInizio;
-        this.orarioFine = orarioFine;
+        this.id = getIdIncrementazione();
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getLuogo() {
+        return luogo;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public String getID() {
+        return id;
+    }
 }
