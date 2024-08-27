@@ -2,7 +2,6 @@ package Model;
 
 import Interfacce.Identificabile;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
