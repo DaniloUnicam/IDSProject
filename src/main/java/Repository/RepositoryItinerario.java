@@ -18,4 +18,8 @@ public class RepositoryItinerario extends GenericRepository<Itinerario> {
         }
         return instance;
     }
+
+    public void aggiungi(Itinerario itinerariocreato ) {
+
+    }
 }

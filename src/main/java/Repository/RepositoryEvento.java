@@ -18,4 +18,9 @@ public class RepositoryEvento extends GenericRepository<Evento> {
         }
         return instance;
     }
+
+    public Evento[] richiesta(){
+        return null;
+        //TODO
+    }
 }
