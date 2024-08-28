@@ -1,32 +1,36 @@
 package Model;
 
-import Interfacce.Identificabile;
+import Abstract.Identificabile;
 
 public class Evento extends Identificabile {
     private String nome;
-    private String luogo;
+    //invece di queso mettiamo POSIZIONE
+    // private String luogo;
     private String descrizione;
-    private String id;
+    private TipoEvento tipo;
+    private PosizioneSatellitare posizione;
+    private String id=getIdIncrementazione();
 
-    public Evento(String nome, String luogo, String descrizione) {
+    public Evento(String nome, String descrizione, TipoEvento tipo, PosizioneSatellitare posizione) {
         this.nome = nome;
-        this.luogo = luogo;
         this.descrizione = descrizione;
-        this.id = getIdIncrementazione();
+        this.tipo = tipo;
+        this.posizione = posizione;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String getLuogo() {
-        return luogo;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
-
+    public TipoEvento getTipo() {
+        return tipo;
+    }
+    public PosizioneSatellitare getPosizione() {
+        return posizione;
+    }
     public String getID() {
         return id;
     }

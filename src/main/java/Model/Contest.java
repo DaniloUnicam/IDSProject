@@ -1,6 +1,6 @@
 package Model;
 
-import Interfacce.Identificabile;
+import Abstract.Identificabile;
 
 public class Contest extends Identificabile {
 

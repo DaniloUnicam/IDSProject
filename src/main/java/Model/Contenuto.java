@@ -1,6 +1,6 @@
 package Model;
 
-import Interfacce.Identificabile;
+import Abstract.Identificabile;
 
 public class Contenuto extends Identificabile {
     private ContenutoMultimediale file;
@@ -21,6 +21,10 @@ public class Contenuto extends Identificabile {
     @Override
     public String getID() {
         return id;
+    }
+
+    public String getUrl(){
+        return file.getUrl();
     }
 
 

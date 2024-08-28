@@ -1,6 +1,6 @@
 package Repository;
 
-import Interfacce.Identificabile;
+import Abstract.Identificabile;
 
 import java.util.HashMap;
 

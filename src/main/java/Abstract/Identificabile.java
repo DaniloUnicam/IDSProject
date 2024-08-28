@@ -1,4 +1,4 @@
-package Interfacce;
+package Abstract;
 
 public abstract class Identificabile {
 

@@ -1,20 +1,20 @@
 package Model;
 
-import Interfacce.Identificabile;
+import Abstract.Identificabile;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PuntoInteresse extends Identificabile {
+public class PuntoInteresse extends Identificabile  {
 
-    private String nome;
-    private final String id =getIdIncrementazione();
-    private String descrizione;
+    private String nome;//
+    private final String id =getIdIncrementazione();//
+    private String descrizione;//
     private Orario orarioApertura;
     private Orario orarioChiusura;
-    private TipoStruttura tipo;
+    private TipoStruttura tipo;//
     private float valutazione;
-    private PosizioneSatellitare posizione;
+    private PosizioneSatellitare posizione;//
     private List <Contenuto> contenuti= new ArrayList<>();
 
     public PuntoInteresse (String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
@@ -25,7 +25,6 @@ public class PuntoInteresse extends Identificabile {
         this.valutazione = valutazione;
         this.posizione = posizione;
     }
-
     public String getID () {
         return id;
     }
@@ -79,5 +78,8 @@ public class PuntoInteresse extends Identificabile {
     /*public Recensione commentaRecensione(Recensione recensione){
 
     }*/
+
+
+
 
 }
