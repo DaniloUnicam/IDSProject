@@ -8,4 +8,5 @@ public enum TipoEvento {
     RELIGIOSO,
     DIVERTIMENTO,
     DIDATTICO,
+    ALTRO
 }

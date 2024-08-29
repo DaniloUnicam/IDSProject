@@ -5,20 +5,18 @@ import Abstract.Identificabile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PuntoInteresse extends Identificabile  {
+public class PuntoInteresse extends InformazioneTerritoriale  {
 
-    private String nome;//
-    private final String id =getIdIncrementazione();//
-    private String descrizione;//
+    private final String id =getIdIncrementazione();
     private Orario orarioApertura;
     private Orario orarioChiusura;
-    private TipoStruttura tipo;//
+    private TipoStruttura tipo;
     private float valutazione;
-    private PosizioneSatellitare posizione;//
+    private PosizioneSatellitare posizione;
     private List <Contenuto> contenuti= new ArrayList<>();
 
-    public PuntoInteresse (String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
-        this.descrizione = descrizione;
+    public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
+        super(nome,descrizione);
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
         this.tipo = tipo;
@@ -27,10 +25,6 @@ public class PuntoInteresse extends Identificabile  {
     }
     public String getID () {
         return id;
-    }
-
-    public String getDescrizione () {
-        return descrizione;
     }
 
     public Orario getOrarioApertura () {
