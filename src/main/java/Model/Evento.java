@@ -4,23 +4,37 @@ import Abstract.Identificabile;
 
 public class Evento extends InformazioneTerritoriale {
 
+    private String nome;
+    private PosizioneSatellitare luogo;
+    private String descrizione;
+    private String id = getIdIncrementazione();
     private TipoEvento tipo;
-    private PosizioneSatellitare posizione;
-    private String id=getIdIncrementazione();
 
-    public Evento(String nome, String descrizione,TipoEvento tipo, PosizioneSatellitare posizione) {
+    public Evento(String nome, PosizioneSatellitare luogo, String descrizione, TipoEvento tipo) {
         super(nome, descrizione);
+        this.nome = nome;
+        this.luogo = luogo;
+        this.descrizione = descrizione;
         this.tipo = tipo;
-        this.posizione = posizione;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public PosizioneSatellitare getLuogo() {
+        return luogo;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public String getID() {
+        return id;
     }
 
     public TipoEvento getTipo() {
         return tipo;
-    }
-    public PosizioneSatellitare getPosizione() {
-        return posizione;
-    }
-    public String getID() {
-        return id;
     }
 }
