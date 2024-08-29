@@ -1,7 +1,5 @@
 package Model;
 
-import Abstract.Identificabile;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +58,7 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
         contenuti.add(contenuto);
     }
 
-    public PuntoInteresse visualizzareContenuto(String id) { //DA CONTROLLARE
+    public PuntoInteresse visualizzareContenuto(String id) {
         for (Contenuto contenuto : contenuti) {
             if (contenuto.getID().equals(id)) {
                 return this;
@@ -69,11 +67,9 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
         return null;
     }
 
-    /*public Recensione commentaRecensione(Recensione recensione){
 
-    }*/
-
-
-
+    public List<Contenuto> getContenuti() {
+        return contenuti;
+    }
 
 }

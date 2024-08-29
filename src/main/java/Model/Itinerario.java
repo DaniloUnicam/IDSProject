@@ -1,29 +1,18 @@
 package Model;
 
-import Abstract.Identificabile;
+import java.util.List;
 
-public class Itinerario extends Identificabile {
+public class Itinerario extends InformazioneTerritoriale {
 
-    private String nome;
-    private String descrizione;
-    private String id;
+    private List<PuntoInteresse> listaPuntiInteresse;
 
-    public Itinerario(String nome, String descrizione) {
-        this.nome = nome;
-        this.descrizione = descrizione;
-        this.id = getIdIncrementazione();
+    public Itinerario(String nome, String descrizione, List<PuntoInteresse> listaPuntiInteresse) {
+        super(nome, descrizione);
+        this.listaPuntiInteresse = listaPuntiInteresse;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getDescrizione() {
-        return descrizione;
-    }
-
-    public String getID() {
-        return id;
+    public List<PuntoInteresse> getListaPuntiInteresse() {
+        return listaPuntiInteresse;
     }
 
 }
