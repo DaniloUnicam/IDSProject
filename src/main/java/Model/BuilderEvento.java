@@ -2,8 +2,8 @@ package Model;
 
 public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
-    private PosizioneSatellitare luogo;
-    private TipoEvento tipo;
+
+    private TipoEvento tipoEvento;
 
 
     public BuilderEvento() {
@@ -22,13 +22,13 @@ public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
     @Override
     public Evento getResult() {
-        Evento evento = new Evento(nome, luogo, descrizione, tipo);
+        Evento evento = new Evento(nome, posizione, descrizione, tipoEvento);
         this.reset();
         return evento;
     }
 
-    public void buildTipoEvento(TipoEvento tipo) {
-        this.tipo = tipo;
+    public void buildTipoEvento(TipoEvento tipoEvento) {
+        this.tipoEvento = tipoEvento;
     }
 
 }
