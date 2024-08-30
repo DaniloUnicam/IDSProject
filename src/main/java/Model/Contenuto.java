@@ -5,7 +5,7 @@ import Abstract.Identificabile;
 public class Contenuto extends Identificabile {
     private ContenutoMultimediale file;
     private String Commento;
-    private final String id =getIdIncrementazione();
+    private final String idContenuto =getIdIncrementazione();
 
     Contenuto (ContenutoMultimediale file, String commento) {
         this.file = file;
@@ -20,7 +20,7 @@ public class Contenuto extends Identificabile {
 
     @Override
     public String getID() {
-        return id;
+        return idContenuto;
     }
 
     public String getUrl(){

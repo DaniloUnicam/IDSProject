@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PuntoInteresse extends InformazioneTerritoriale  {
 
-    private final String id =getIdIncrementazione();
+    private final String idPuntoInteresse =getIdIncrementazione();
     private Orario orarioApertura;
     private Orario orarioChiusura;
     private TipoStruttura tipo;
@@ -48,7 +48,7 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
     }
 
     public String getID () {
-        return id;
+        return idPuntoInteresse;
     }
 
     public Orario getOrarioApertura () {

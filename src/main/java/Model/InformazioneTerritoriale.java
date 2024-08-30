@@ -7,7 +7,7 @@ public abstract class InformazioneTerritoriale extends Identificabile {
 
         private String nome;
         private String descrizione;
-        private final String id= getIdIncrementazione();
+        private final String idInformazioneTerritoriale = getIdIncrementazione();
 
         public InformazioneTerritoriale(String nome, String descrizione) {
             this.nome = nome;
@@ -23,7 +23,7 @@ public abstract class InformazioneTerritoriale extends Identificabile {
         }
 
         public String getID() {
-            return id;
+            return idInformazioneTerritoriale;
         }
 
         public void setNome(String nome) {

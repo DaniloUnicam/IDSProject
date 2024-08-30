@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.Notifica;
+import FactoryNotifiche.Notifica;
 
 public class ControllerNotifiche {
     //TODO

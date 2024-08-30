@@ -1,13 +1,11 @@
 package Model;
 
-import Abstract.Identificabile;
-
 public class Evento extends InformazioneTerritoriale {
 
     private String nome;
     private PosizioneSatellitare luogo;
     private String descrizione;
-    private String id = getIdIncrementazione();
+    private String idEvento = getIdIncrementazione();
     private TipoEvento tipo;
 
     public Evento(String nome, PosizioneSatellitare luogo, String descrizione, TipoEvento tipo) {
@@ -31,7 +29,7 @@ public class Evento extends InformazioneTerritoriale {
     }
 
     public String getID() {
-        return id;
+        return idEvento;
     }
 
     public TipoEvento getTipo() {

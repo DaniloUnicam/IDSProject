@@ -1,6 +1,6 @@
 package Repository;
 
-import Model.Notifica;
+import FactoryNotifiche.Notifica;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +10,7 @@ public class RepositoryNotifiche extends GenericRepository<Notifica> {
     private static RepositoryNotifiche repositoryNotifiche;
     private List<Notifica> notifiche;
 
-    private RepositoryNotifiche() {
+    protected RepositoryNotifiche() {
         super(new HashMap<String, Notifica>());
     }
 
@@ -26,5 +26,6 @@ public class RepositoryNotifiche extends GenericRepository<Notifica> {
             this.add(notifica);
         }
     }
+
 
 }

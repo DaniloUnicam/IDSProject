@@ -4,7 +4,7 @@ import Abstract.Identificabile;
 
 public class Contest extends Identificabile {
 
-        private final String id =getIdIncrementazione();
+        private final String idContest =getIdIncrementazione();
         private String titolo;
         private String descrizione;
         private String url;
@@ -32,7 +32,7 @@ public class Contest extends Identificabile {
         }
 
         public String getID() {
-            return id;
+            return idContest;
         }
 
         public String getIdCreatore() {

@@ -4,7 +4,7 @@ import Abstract.Identificabile;
 
 public class Utente extends Identificabile {
 
-        private final String id =getIdIncrementazione();
+        private final String idUtente =getIdIncrementazione();
         private String nome;
         private String cognome;
         private String email;
@@ -34,6 +34,6 @@ public class Utente extends Identificabile {
         }
 
         public String getID() {
-            return id;
+            return idUtente;
         }
 }
