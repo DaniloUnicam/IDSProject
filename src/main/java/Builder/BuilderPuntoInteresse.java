@@ -1,4 +1,9 @@
-package Model;
+package Builder;
+
+import Model.Orario;
+import Model.PosizioneSatellitare;
+import Model.PuntoInteresse;
+import Model.TipoStruttura;
 
 import static Model.TipoStruttura.ALTRO;
 

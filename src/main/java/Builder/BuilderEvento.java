@@ -1,4 +1,8 @@
-package Model;
+package Builder;
+
+import Model.Evento;
+import Model.PosizioneSatellitare;
+import Model.TipoEvento;
 
 public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
