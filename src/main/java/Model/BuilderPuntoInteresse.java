@@ -8,6 +8,8 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     private Orario orarioChiusura;
     private float valutazione;
 
+    private TipoStruttura tipoStruttura;
+
     public BuilderPuntoInteresse() {
         super();
     }
@@ -41,6 +43,10 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
     public void buildValutazione(float valutazione) {
         this.valutazione = valutazione;
+    }
+
+    public void buildTipoStruttura(TipoStruttura tipoStruttura) {
+        this.tipoStruttura = tipoStruttura;
     }
 
 }
