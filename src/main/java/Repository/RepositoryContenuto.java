@@ -6,17 +6,17 @@ import java.util.HashMap;
 
 public class RepositoryContenuto extends GenericRepository<Contenuto> {
 
-    private static RepositoryContenuto instance;
+    private static RepositoryContenuto repositoryContenuto;
 
     private RepositoryContenuto() {
         super(new HashMap<String, Contenuto>());
     }
 
     public static RepositoryContenuto getInstance() {
-        if (instance == null) {
-            instance = new RepositoryContenuto();
+        if (repositoryContenuto == null) {
+            repositoryContenuto = new RepositoryContenuto();
         }
-        return instance;
+        return repositoryContenuto;
     }
 
 }

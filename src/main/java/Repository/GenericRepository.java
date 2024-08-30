@@ -7,19 +7,19 @@ import java.util.HashMap;
 //Questa classe è considerata un Singleton.
 public class GenericRepository <T extends Identificabile> {
 
-    private static GenericRepository instance;
+    private static GenericRepository genericRepository;
 
-    private HashMap <String,T> entities;
+    private HashMap<String,T> entities;
 
     protected GenericRepository(HashMap<String,T> entities) {
         this.entities = entities;
     }
 
     public static GenericRepository getInstance() {
-        if (instance == null) {
-            instance = new GenericRepository(new HashMap<String,Identificabile>());
+        if (genericRepository == null) {
+            genericRepository = new GenericRepository(new HashMap<String,Identificabile>());
         }
-        return instance;
+        return genericRepository;
     }
 
     public void add(T entity) {
@@ -44,7 +44,7 @@ public class GenericRepository <T extends Identificabile> {
     }
 
     public boolean isEmpty() {
-        return this.entities.isEmpty();
+        return this.entities.size() == 0;
     }
 
     public boolean equals(Object o) {

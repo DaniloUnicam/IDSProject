@@ -21,28 +21,8 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
         this.valutazione = valutazione;
         this.posizione = posizione;
     }
-    public String getID () {
-        return id;
-    }
-
-    public Orario getOrarioApertura () {
-        return orarioApertura;
-    }
-
-    public Orario getOrarioChiusura () {
-        return orarioChiusura;
-    }
-
-    public TipoStruttura getTipo () {
-        return tipo;
-    }
-
-    public float getValutazione () {
-        return valutazione;
-    }
-
-    public PosizioneSatellitare getPosizione () {
-        return posizione;
+    public void aggiungiValutazione(float valutazione) {
+        this.valutazione = (this.valutazione + valutazione) / 2;
     }
 
     public void caricaContenuto(ContenutoMultimediale file, String commento) {
@@ -65,6 +45,30 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
             }
         }
         return null;
+    }
+
+    public String getID () {
+        return id;
+    }
+
+    public Orario getOrarioApertura () {
+        return orarioApertura;
+    }
+
+    public Orario getOrarioChiusura () {
+        return orarioChiusura;
+    }
+
+    public TipoStruttura getTipo () {
+        return tipo;
+    }
+
+    public float getValutazione () {
+        return valutazione;
+    }
+
+    public PosizioneSatellitare getPosizione () {
+        return posizione;
     }
 
 

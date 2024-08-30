@@ -6,17 +6,17 @@ import java.util.HashMap;
 
 public class RepositoryItinerario extends GenericRepository<Itinerario> {
 
-    private static RepositoryItinerario instance;
+    private static RepositoryItinerario repositoryItinerario;
 
     private RepositoryItinerario() {
         super(new HashMap<String, Itinerario>());
     }
 
     public static RepositoryItinerario getInstance() {
-        if (instance == null) {
-            instance = new RepositoryItinerario();
+        if (repositoryItinerario == null) {
+            repositoryItinerario = new RepositoryItinerario();
         }
-        return instance;
+        return repositoryItinerario;
     }
 
     public void aggiungi(Itinerario itinerariocreato ) {

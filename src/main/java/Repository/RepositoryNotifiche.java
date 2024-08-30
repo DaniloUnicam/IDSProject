@@ -7,22 +7,24 @@ import java.util.List;
 
 public class RepositoryNotifiche extends GenericRepository<Notifica> {
 
-    private static RepositoryNotifiche instance;
-    private List Notifiche;
+    private static RepositoryNotifiche repositoryNotifiche;
+    private List<Notifica> notifiche;
 
     private RepositoryNotifiche() {
         super(new HashMap<String, Notifica>());
     }
 
     public static RepositoryNotifiche getInstance() {
-        if (instance == null) {
-            instance = new RepositoryNotifiche();
+        if (repositoryNotifiche == null) {
+            repositoryNotifiche = new RepositoryNotifiche();
         }
-        return instance;
+        return repositoryNotifiche;
     }
 
-    public boolean salvaCopiaNotifica(Notifica notifica){
-        return false;
+    public void salvaCopiaNotifica(Notifica notifica){
+        if(notifica != null){
+            this.add(notifica);
+        }
     }
 
 }

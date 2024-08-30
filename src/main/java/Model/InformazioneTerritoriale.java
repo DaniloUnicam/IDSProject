@@ -14,7 +14,7 @@ public abstract class InformazioneTerritoriale extends Identificabile {
             this.descrizione = descrizione;
         }
 
-    public String getNome() {
+        public String getNome() {
             return nome;
         }
 

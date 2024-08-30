@@ -6,16 +6,18 @@ import java.util.HashMap;
 
 public class RepositoryInformazioni extends GenericRepository<InformazioneTerritoriale> {
 
-    private static RepositoryInformazioni instance;
+    private static RepositoryInformazioni repositoryInformazioni;
 
     private RepositoryInformazioni() {
         super(new HashMap<String, InformazioneTerritoriale>());
     }
 
     public static RepositoryInformazioni getInstance() {
-        if (instance == null) {
-            instance = new RepositoryInformazioni();
+        if (repositoryInformazioni == null) {
+            repositoryInformazioni = new RepositoryInformazioni();
         }
-        return instance;
+        return repositoryInformazioni;
     }
+
+
 }
