@@ -1,4 +1,8 @@
-package Model;
+package Builder;
+
+import Model.Evento;
+import Model.PosizioneSatellitare;
+import Model.TipoEvento;
 
 import InformazioneTerritoriale.Evento;
 import InformazioneTerritoriale.TipoEvento;
