@@ -14,6 +14,8 @@ public class Notifica extends Identificabile {
 
     private final String idNotifica = getIdIncrementazione();
 
+    private TipoNotifica tipoNotifica;
+
     public Notifica() {
         super();
     }
@@ -25,6 +27,13 @@ public class Notifica extends Identificabile {
     }
 
     public Notifica(String testo, float priorita, TipoNotifica tipoNotifica, boolean letta) {
+        this.testo = testo;
+        this.priorita = priorita;
+        this.tipoNotifica = tipoNotifica;
+        this.letta = letta;
+    }
+
+    public Notifica(String testo, float priorita, boolean letta) {
         this.testo = testo;
         this.priorita = priorita;
         this.letta = letta;
@@ -53,6 +62,10 @@ public class Notifica extends Identificabile {
 
     public float getPriorita() {
         return priorita;
+    }
+
+    public TipoNotifica getTipoNotifica() {
+        return tipoNotifica;
     }
 
     public void setPriorita(float priorita) {
