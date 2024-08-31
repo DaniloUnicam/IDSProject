@@ -1,4 +1,9 @@
-package Model;
+package InformazioneTerritoriale;
+
+import Model.Contenuto;
+import Model.ContenutoMultimediale;
+import Model.Orario;
+import Model.PosizioneSatellitare;
 
 import java.util.ArrayList;
 import java.util.List;

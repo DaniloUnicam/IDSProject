@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.InformazioneTerritoriale;
+import InformazioneTerritoriale.InformazioneTerritoriale;
 
 public class ControllerGalleria {
     //TODO

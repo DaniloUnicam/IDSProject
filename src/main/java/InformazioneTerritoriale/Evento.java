@@ -1,4 +1,6 @@
-package Model;
+package InformazioneTerritoriale;
+
+import Model.PosizioneSatellitare;
 
 public class Evento extends InformazioneTerritoriale {
 

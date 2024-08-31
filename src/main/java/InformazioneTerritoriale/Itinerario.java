@@ -1,4 +1,4 @@
-package Model;
+package InformazioneTerritoriale;
 
 import java.util.List;
 

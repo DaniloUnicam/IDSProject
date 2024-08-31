@@ -1,6 +1,6 @@
 package Repository;
 
-import Model.Evento;
+import InformazioneTerritoriale.Evento;
 
 import java.util.HashMap;
 

@@ -9,6 +9,7 @@ public class Notifica extends Identificabile {
 
     private boolean letta = false;
 
+    //Le notifiche saranno ordinate in base alla priorità (da 1 a 5, dove 1 è la priorità più alta)
     private float priorita;
 
     private final String idNotifica = getIdIncrementazione();

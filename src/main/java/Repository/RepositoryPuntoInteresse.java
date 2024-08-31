@@ -1,6 +1,6 @@
 package Repository;
 
-import Model.PuntoInteresse;
+import InformazioneTerritoriale.PuntoInteresse;
 import java.util.HashMap;
 
 public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> {

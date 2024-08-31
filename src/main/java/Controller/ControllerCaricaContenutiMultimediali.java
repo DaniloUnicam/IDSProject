@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.PuntoInteresse;
+import InformazioneTerritoriale.PuntoInteresse;
 
 import java.io.File;
 

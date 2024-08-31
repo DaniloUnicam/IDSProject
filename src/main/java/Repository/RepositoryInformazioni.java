@@ -1,6 +1,6 @@
 package Repository;
 
-import Model.InformazioneTerritoriale;
+import InformazioneTerritoriale.InformazioneTerritoriale;
 
 import java.util.HashMap;
 

@@ -1,6 +1,9 @@
 package Model;
 
-import static Model.TipoStruttura.ALTRO;
+import InformazioneTerritoriale.PuntoInteresse;
+import InformazioneTerritoriale.TipoStruttura;
+
+import static InformazioneTerritoriale.TipoStruttura.ALTRO;
 
 public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 

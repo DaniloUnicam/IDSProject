@@ -1,4 +1,4 @@
-package Model;
+package InformazioneTerritoriale;
 
 public enum TipoStruttura {
     AEROPORTO, ALBERGO, ALTRO, ATTRAZIONE_TURISTICA, AUTOVELOX, CAMPO_BASEBALL,

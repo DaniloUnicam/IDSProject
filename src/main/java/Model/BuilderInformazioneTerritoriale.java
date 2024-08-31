@@ -1,5 +1,7 @@
 package Model;
 
+import InformazioneTerritoriale.InformazioneTerritoriale;
+
 public abstract class BuilderInformazioneTerritoriale {
 
     protected String nome;

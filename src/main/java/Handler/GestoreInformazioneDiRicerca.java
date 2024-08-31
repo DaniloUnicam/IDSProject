@@ -1,7 +1,7 @@
 package Handler;
 
-import Model.Evento;
-import Model.PuntoInteresse;
+import InformazioneTerritoriale.Evento;
+import InformazioneTerritoriale.PuntoInteresse;
 
 public class GestoreInformazioneDiRicerca {
 

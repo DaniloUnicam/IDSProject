@@ -1,6 +1,6 @@
 package Handler;
 
-import Model.PuntoInteresse;
+import InformazioneTerritoriale.PuntoInteresse;
 //TODO
 public class HandlerPOI {
 

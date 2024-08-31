@@ -1,6 +1,6 @@
 package Repository;
 
-import Model.Itinerario;
+import InformazioneTerritoriale.Itinerario;
 
 import java.util.HashMap;
 

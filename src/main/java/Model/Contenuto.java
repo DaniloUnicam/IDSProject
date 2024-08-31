@@ -4,18 +4,18 @@ import Abstract.Identificabile;
 
 public class Contenuto extends Identificabile {
     private ContenutoMultimediale file;
-    private String Commento;
+    private String commento;
     private final String idContenuto =getIdIncrementazione();
 
-    Contenuto (ContenutoMultimediale file, String commento) {
+    public Contenuto (ContenutoMultimediale file, String commento) {
         this.file = file;
-        this.Commento = Commento;
+        this.commento = commento;
     }
-    Contenuto (ContenutoMultimediale file) {
+    public Contenuto (ContenutoMultimediale file) {
         this.file = file;
     }
-    Contenuto (String commento) {
-        this.Commento = Commento;
+    public Contenuto (String commento) {
+        this.commento = commento;
     }
 
     @Override
@@ -25,6 +25,10 @@ public class Contenuto extends Identificabile {
 
     public String getUrl(){
         return file.getUrl();
+    }
+
+    public String getCommento(){
+        return commento;
     }
 
 

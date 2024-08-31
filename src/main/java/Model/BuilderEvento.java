@@ -1,5 +1,8 @@
 package Model;
 
+import InformazioneTerritoriale.Evento;
+import InformazioneTerritoriale.TipoEvento;
+
 public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
 
