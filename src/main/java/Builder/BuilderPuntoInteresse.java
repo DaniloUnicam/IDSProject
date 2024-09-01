@@ -2,8 +2,6 @@ package Builder;
 
 import Model.Orario;
 import Model.PosizioneSatellitare;
-import Model.PuntoInteresse;
-import Model.TipoStruttura;
 
 import InformazioneTerritoriale.PuntoInteresse;
 import InformazioneTerritoriale.TipoStruttura;

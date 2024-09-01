@@ -4,7 +4,7 @@ public class NotificaPuntoInteresse extends Notifica {
 
     public NotificaPuntoInteresse() {
         super();
-        setPriorita(2);
+        setPriorita(3);
     }
 
 }

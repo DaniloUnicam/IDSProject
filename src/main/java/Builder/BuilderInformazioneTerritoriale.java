@@ -1,6 +1,5 @@
 package Builder;
 
-import Model.InformazioneTerritoriale;
 import Model.PosizioneSatellitare;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
