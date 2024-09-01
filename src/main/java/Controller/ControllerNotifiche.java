@@ -5,7 +5,6 @@ import FactoryNotifiche.Notifica;
 import FactoryNotifiche.TipoNotifica;
 
 public class ControllerNotifiche {
-    //TODO: Implementare il controller delle notifiche
 
     private FactoryTipologieNotifiche factoryTipologieNotifiche;
 
