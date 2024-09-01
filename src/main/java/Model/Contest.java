@@ -43,5 +43,7 @@ public class Contest extends Identificabile {
             return idContenutoMultimediale;
         }
 
-
+        public Boolean aggiuntaIscrizione(Utente utente){
+            return true;
+        }
 }
