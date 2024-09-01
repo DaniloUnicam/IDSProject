@@ -1,5 +1,6 @@
 package InformazioneTerritoriale;
 
+import Model.Posizionabile;
 import Model.PosizioneSatellitare;
 
 public class Evento extends InformazioneTerritoriale {
@@ -37,4 +38,5 @@ public class Evento extends InformazioneTerritoriale {
     public TipoEvento getTipo() {
         return tipo;
     }
+
 }

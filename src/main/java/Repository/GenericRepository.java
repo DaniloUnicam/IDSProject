@@ -2,7 +2,9 @@ package Repository;
 
 import Abstract.Identificabile;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 //Questa classe è considerata un Singleton.
 public class GenericRepository <T extends Identificabile> {
@@ -49,6 +51,15 @@ public class GenericRepository <T extends Identificabile> {
 
     public boolean equals(Object o) {
         return this.entities.containsKey(o);
+    }
+
+    public T get(String id) {
+        return this.entities.get(id);
+    }
+
+
+    public List<T> getAll() {
+        return new ArrayList<>(this.entities.values());
     }
 
 }

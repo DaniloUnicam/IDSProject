@@ -18,7 +18,4 @@ public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> 
         return repositoryPuntoInteresse;
     }
 
-
-
-
 }

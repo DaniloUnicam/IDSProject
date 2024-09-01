@@ -1,33 +1,31 @@
 package InformazioneTerritoriale;
 
-import Model.Contenuto;
-import Model.ContenutoMultimediale;
-import Model.Orario;
-import Model.PosizioneSatellitare;
+import Model.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PuntoInteresse extends InformazioneTerritoriale  {
+public class PuntoInteresse extends InformazioneTerritoriale {
 
     private final String idPuntoInteresse =getIdIncrementazione();
     private Orario orarioApertura;
     private Orario orarioChiusura;
     private TipoStruttura tipo;
     private float valutazione;
-    private PosizioneSatellitare posizione;
     private List <Contenuto> contenuti= new ArrayList<>();
+    //Variabile per calcolare la media delle valutazioni
+    private int counterValutazione = 0;
 
     public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
-        super(nome,descrizione);
+        super(nome,descrizione,posizione);
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
         this.tipo = tipo;
         this.valutazione = valutazione;
-        this.posizione = posizione;
     }
+
     public void aggiungiValutazione(float valutazione) {
-        this.valutazione = (this.valutazione + valutazione) / 2;
+        this.valutazione = (valutazione + this.valutazione*(counterValutazione++)) / counterValutazione;
     }
 
     public void caricaContenuto(ContenutoMultimediale file, String commento) {
@@ -71,11 +69,6 @@ public class PuntoInteresse extends InformazioneTerritoriale  {
     public float getValutazione () {
         return valutazione;
     }
-
-    public PosizioneSatellitare getPosizione () {
-        return posizione;
-    }
-
 
     public List<Contenuto> getContenuti() {
         return contenuti;

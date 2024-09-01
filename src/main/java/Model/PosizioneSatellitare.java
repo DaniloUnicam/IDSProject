@@ -9,6 +9,8 @@ public class PosizioneSatellitare {
         this.longitudine = longitudine;
     }
 
+
+
     public float getLatitudine() {
         return latitudine;
     }

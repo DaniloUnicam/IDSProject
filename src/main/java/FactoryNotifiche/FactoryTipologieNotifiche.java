@@ -3,15 +3,15 @@ package FactoryNotifiche;
 public class FactoryTipologieNotifiche {
 
     public Notifica creaNotifica(TipoNotifica tipoNotifica) {
-        return getNotificaByTipo(tipoNotifica);
+        return creaNotificaByTipo(tipoNotifica);
     }
 
     public Notifica creaNotifica(Notifica notifica) {
-        return getNotificaByTipo(notifica.getTipoNotifica());
+        return creaNotificaByTipo(notifica.getTipoNotifica());
     }
 
 
-    private Notifica getNotificaByTipo(TipoNotifica tipoNotifica) {
+    private Notifica creaNotificaByTipo(TipoNotifica tipoNotifica) {
         Notifica notificaEnumerata = null;
         switch (tipoNotifica) {
             case NOTIFICA_EVENTO:

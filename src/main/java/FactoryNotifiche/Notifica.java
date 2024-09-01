@@ -3,7 +3,7 @@ package FactoryNotifiche;
 
 import Abstract.Identificabile;
 
-public class Notifica extends Identificabile {
+public abstract class Notifica extends Identificabile {
 
     private String testo;
 
@@ -66,6 +66,10 @@ public class Notifica extends Identificabile {
 
     public TipoNotifica getTipoNotifica() {
         return tipoNotifica;
+    }
+
+    public void setTipoNotifica(TipoNotifica tipoNotifica) {
+        this.tipoNotifica = tipoNotifica;
     }
 
     public void setPriorita(float priorita) {

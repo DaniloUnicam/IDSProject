@@ -1,5 +1,8 @@
 package InformazioneTerritoriale;
 
+import Model.Posizionabile;
+import Model.PosizioneSatellitare;
+
 import java.util.List;
 
 public class Itinerario extends InformazioneTerritoriale {

@@ -18,8 +18,8 @@ public class BachecaNotifiche {
         sortNotifiche(this.notifiche);
     }
 
-    public void rimuoviNotifica(String idNotifica) {
-        this.notifiche.remove(idNotifica);
+    public void rimuoviNotifica(Notifica notifica) {
+        this.notifiche.remove(notifica.getID(), notifica);
         sortNotifiche(this.notifiche);
     }
 
@@ -50,6 +50,7 @@ public class BachecaNotifiche {
     public Notifica getNotifica(String idNotifica) {
         return this.notifiche.get(idNotifica);
     }
+
 
     public LinkedHashMap<String, Notifica> sortNotifiche(HashMap<String, Notifica> notifiche) {
         return notifiche.entrySet().stream()
