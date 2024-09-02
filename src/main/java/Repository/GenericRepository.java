@@ -11,7 +11,7 @@ public class GenericRepository <T extends Identificabile> {
 
     private static GenericRepository genericRepository;
 
-    private HashMap<String,T> entities;
+    private HashMap<String,T> entities ;
 
     protected GenericRepository(HashMap<String,T> entities) {
         this.entities = entities;
@@ -57,7 +57,7 @@ public class GenericRepository <T extends Identificabile> {
         return this.entities.get(id);
     }
 
-
+//prende tutte le entità presenti nel repository e le mette in una lista
     public List<T> getAll() {
         return new ArrayList<>(this.entities.values());
     }

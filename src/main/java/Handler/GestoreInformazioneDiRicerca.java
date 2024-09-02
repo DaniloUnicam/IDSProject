@@ -5,7 +5,6 @@ import InformazioneTerritoriale.PuntoInteresse;
 
 public class GestoreInformazioneDiRicerca {
 
-    //TODO
     public PuntoInteresse contenutoPuntoInteresse(String testo){}
 
     public Evento contenutoEmergenze(String testo){}
