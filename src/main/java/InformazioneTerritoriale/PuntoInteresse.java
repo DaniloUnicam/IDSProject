@@ -16,6 +16,8 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     //Variabile per calcolare la media delle valutazioni
     private int counterValutazione = 0;
 
+
+
     public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
         super(nome,descrizione,posizione);
         this.orarioApertura = orarioApertura;

@@ -14,10 +14,15 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     private Orario orarioChiusura;
     private float valutazione;
 
+    protected PosizioneSatellitare posizione;
     private TipoStruttura tipoStruttura;
 
     public BuilderPuntoInteresse() {
         super();
+    }
+
+    public void buildPosizioneSatellitare(PosizioneSatellitare posizione){
+        this.posizione=posizione;
     }
 
 

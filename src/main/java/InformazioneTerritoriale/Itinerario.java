@@ -7,7 +7,11 @@ import java.util.List;
 
 public class Itinerario extends InformazioneTerritoriale {
 
+    protected String nome;
+    protected String descrizione;
     private List<PuntoInteresse> listaPuntiInteresse;
+
+
 
     private static final String idItinerario = getIdIncrementazione();
 

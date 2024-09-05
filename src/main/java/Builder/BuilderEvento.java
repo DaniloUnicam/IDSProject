@@ -8,10 +8,15 @@ public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
 
     private TipoEvento tipoEvento;
+    protected PosizioneSatellitare posizione;
 
 
     public BuilderEvento() {
         super();
+    }
+
+    public void buildPosizioneSatellitare(PosizioneSatellitare posizione){
+        this.posizione=posizione;
     }
 
     @Override
