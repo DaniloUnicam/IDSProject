@@ -9,7 +9,7 @@ public class ControllerRicercaInformazioneTerritoriale {
     private HandlerInformazione handlerInformazione;
 
     public ControllerRicercaInformazioneTerritoriale () {
-        this.handlerInformazione = new HandlerInformazione.getInstance();
+        this.handlerInformazione = HandlerInformazione.getInstance();
     }
    public void ricercaInvio(){}
 

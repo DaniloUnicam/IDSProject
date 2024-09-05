@@ -15,9 +15,7 @@ public class RepositoryInformazioni {
     private RepositoryItinerario itinerari;
     private static RepositoryInformazioni repositoryInformazioni;
 
-    private RepositoryInformazioni() {
-
-    }
+    private RepositoryInformazioni() {    }
 
     public static RepositoryInformazioni getInstance() {
         if (repositoryInformazioni == null) {

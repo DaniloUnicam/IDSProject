@@ -18,6 +18,4 @@ public class RepositoryUtente extends GenericRepository<Utente> {
         }
         return repositoryUtente;
     }
-
-
 }
