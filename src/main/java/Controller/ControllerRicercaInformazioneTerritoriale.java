@@ -1,6 +1,7 @@
 package Controller;
 
 import Handler.HandlerInformazione;
+import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
 public class ControllerRicercaInformazioneTerritoriale {
 
@@ -11,9 +12,13 @@ public class ControllerRicercaInformazioneTerritoriale {
     public ControllerRicercaInformazioneTerritoriale () {
         this.handlerInformazione = HandlerInformazione.getInstance();
     }
+
+    public void heandlerInformazione(){}
+
    public void ricercaInvio(){}
 
-   public void richiestaRicerca(String ricerca){}
+   public void richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia){
+         handlerInformazione.richiestaRicerca(ricerca,tipologia);
+   }
 
-   public void heandlerInformazione(){}
 }
