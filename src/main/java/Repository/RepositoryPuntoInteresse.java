@@ -1,7 +1,10 @@
 package Repository;
 
+import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.PuntoInteresse;
+import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 import java.util.HashMap;
+import java.util.List;
 
 public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> {
 
@@ -16,6 +19,15 @@ public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> 
             repositoryPuntoInteresse = new RepositoryPuntoInteresse();
         }
         return repositoryPuntoInteresse;
+    }
+
+    public List<InformazioneTerritoriale> richiesta(TipoInformazioneTerritoriale tipologia){
+        
+
+    }
+
+    public InformazioneTerritoriale ottieniInformazione(String idInfo){
+
     }
 
 }

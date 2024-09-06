@@ -24,29 +24,31 @@ public class RepositoryInformazioni {
         return repositoryInformazioni;
     }
 
-    public List< InformazioneTerritoriale> richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia) {
+    public List<? extends InformazioneTerritoriale> getAll (TipoInformazioneTerritoriale tipologia){
         switch (tipologia) {
             case EVENTO:
-                return ricercaStringa(ricerca, eventi);
+                return eventi.getAll();
             case POI:
-                return ricercaStringa(ricerca, poi);
+                return poi.getAll();
             case ITINERARIO:
-                return ricercaStringa(ricerca, itinerari);
+                return itinerari.getAll();
             default:
                 return null;
         }
     }
 
-    public List< InformazioneTerritoriale> ricercaStringa (String ricerca, GenericRepository<? extends InformazioneTerritoriale> repository) {
-        List  <InformazioneTerritoriale> informazioni= new  ArrayList<InformazioneTerritoriale>();
-          for(InformazioneTerritoriale informazione : repository.getAll()) {
-              if(informazione.getNome().contains(ricerca)) {//oppure nella descrizione
-                    informazioni.add(informazione);
-              }
-          }
-          return  informazioni;
+    public InformazioneTerritoriale ottieneInformazione (String idInfo){
+        if(eventi.get(idInfo) != null){
+            return eventi.get(idInfo);
+        }
+        if(poi.get(idInfo) != null){
+            return poi.get(idInfo);
+        }
+        if(itinerari.get(idInfo) != null){
+            return itinerari.get(idInfo);
+        }
+           return null;
     }
-
 
 
 }
