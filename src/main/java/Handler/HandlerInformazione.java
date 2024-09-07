@@ -32,4 +32,6 @@ public class HandlerInformazione {
         }
         return  informazioni;
     }
+
+
 }

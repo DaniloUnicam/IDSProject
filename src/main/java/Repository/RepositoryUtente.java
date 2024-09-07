@@ -18,4 +18,9 @@ public class RepositoryUtente extends GenericRepository<Utente> {
         }
         return repositoryUtente;
     }
+
+    public Utente ottieniUtente(String idUtente){
+        return super.get(idUtente.toString());
+    }
+
 }

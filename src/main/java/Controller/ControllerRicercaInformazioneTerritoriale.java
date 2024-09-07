@@ -4,6 +4,8 @@ import Handler.HandlerInformazione;
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
+import java.util.List;
+
 public class ControllerRicercaInformazioneTerritoriale {
 
     //CONTROLLARE
@@ -11,13 +13,13 @@ public class ControllerRicercaInformazioneTerritoriale {
     //Il gestore della informazione ricerca deve essere usata dal controller
     private HandlerInformazione handlerInformazione;
 
+    public void handlerInformazione(){}
+
     public ControllerRicercaInformazioneTerritoriale () {
         this.handlerInformazione = HandlerInformazione.getInstance();
     }
 
-    public void handlerInformazione(){}
-
-   public  richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia){
+   public List<InformazioneTerritoriale> richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia){
          return handlerInformazione.richiestaRicerca(ricerca,tipologia);
    }
 

@@ -3,6 +3,7 @@ package Repository;
 import Model.Contest;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class RepositoryContest extends GenericRepository<Contest> {
 
@@ -18,4 +19,16 @@ public class RepositoryContest extends GenericRepository<Contest> {
         }
         return repositoryContest;
     }
+    //CONTROLLO
+    public Contest ottieniContest(String idContest){
+    for(Contest contest : super.getAll()) {
+        if(contest.getID().equals(idContest)) {
+            return contest;
+        }
+    }
+
+    public void contestCreato(){
+        //inserisci un contest dentro alla repository
+    }
+
 }
