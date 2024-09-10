@@ -1,8 +1,10 @@
 package Handler;
 
+import Model.Contest;
+
 public class HandlerAutorizzazioni {
 
-    public Boolean chiedeCreazioneContest(){
-        return true;//non lo so
+    public boolean chiedeCreazioneContest(Contest contest){
+        return contest.getIdCreatore().equals("Animatore_Autorizzato");
     }
 }

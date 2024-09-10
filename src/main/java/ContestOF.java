@@ -8,16 +8,16 @@
  * @param idContenutoMultimediale
  **/
 
-public class ContestOF (
+public class ContestOF (){
 
     @JsonView(View.Synthesized.class)
-    private string titolo;
+    private String titolo;
     @JsonView(View.Synthesized.class)
-    private string descrizione;
+    private String descrizione;
     @JsonView(View.Synthesized.class)
-    private string url;
+    private String url;
     @JsonView(View.Detailed.class)
-    private string idCreatore;
+    private String idCreatore;
     @JsonView(View.Detailed.class)
-    private string idContenutoMultimediale;
-    )
+    private String idContenutoMultimediale;
+    }

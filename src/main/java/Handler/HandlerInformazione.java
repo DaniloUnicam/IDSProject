@@ -2,13 +2,11 @@ package Handler;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
-import Repository.GenericRepository;
 import Repository.RepositoryInformazioni;
 
 import java.util.ArrayList;
 import java.util.List;
 
-// DA CONTROLLARE
 public class HandlerInformazione {
 
     public static HandlerInformazione handlerInformazione;

@@ -9,12 +9,21 @@ public class Utente extends Identificabile {
         private String cognome;
         private String email;
         private String password;
+        private Ruolo ruolo;
 
         public Utente(String nome, String cognome, String email, String password) {
             this.nome = nome;
             this.cognome = cognome;
             this.email = email;
             this.password = password;
+        }
+
+        public Utente(String nome, String cognome, String email, String password, Ruolo ruolo) {
+            this.nome = nome;
+            this.cognome = cognome;
+            this.email = email;
+            this.password = password;
+            this.ruolo = ruolo;
         }
 
         public String getNome() {
@@ -35,5 +44,13 @@ public class Utente extends Identificabile {
 
         public String getID() {
             return idUtente;
+        }
+
+        public Ruolo getRuolo() {
+            return ruolo;
+        }
+
+        public void setRuolo(Ruolo ruolo) {
+            this.ruolo = ruolo;
         }
 }

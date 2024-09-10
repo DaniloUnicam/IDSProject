@@ -1,7 +1,6 @@
 package OSM;
 
 import InformazioneTerritoriale.Evento;
-import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.Itinerario;
 import InformazioneTerritoriale.PuntoInteresse;
 import Model.Posizionabile;

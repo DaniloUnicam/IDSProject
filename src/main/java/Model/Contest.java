@@ -11,7 +11,8 @@ public class Contest extends Identificabile {
         private String idCreatore;
         private String idContenutoMultimediale;
 
-        public Contest (String titolo, String descrizione, String url, String idCreatore, String idContenutoMultimediale) {
+        public Contest (String titolo, String descrizione, String url,
+                        String idCreatore, String idContenutoMultimediale){
             this.titolo = titolo;
             this.descrizione = descrizione;
             this.url = url;
@@ -43,7 +44,8 @@ public class Contest extends Identificabile {
             return idContenutoMultimediale;
         }
 
-        public Boolean aggiuntaIscrizione(Utente utente){
-            return true;
+        public boolean aggiuntaIscrizione(Utente utente) {
+            return !utente.getRuolo().equals("Turista_Non_Autenticato");
         }
+
 }

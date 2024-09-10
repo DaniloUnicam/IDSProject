@@ -19,16 +19,16 @@ public class RepositoryContest extends GenericRepository<Contest> {
         }
         return repositoryContest;
     }
-    //CONTROLLO
+
+
     public Contest ottieniContest(String idContest){
-    for(Contest contest : super.getAll()) {
-        if(contest.getID().equals(idContest)) {
-            return contest;
+        for(Contest contest : super.getAll()) {
+            if(contest.getID().equals(idContest)) {
+                return contest;
+            }
         }
+        return null;
     }
 
-    public void contestCreato(){
-        //inserisci un contest dentro alla repository
-    }
 
 }

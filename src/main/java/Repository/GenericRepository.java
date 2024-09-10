@@ -25,15 +25,23 @@ public class GenericRepository <T extends Identificabile> {
     }
 
     public void add(T entity) {
+        this.entityIsNullCheck(entity);
+        if(this.entities.containsKey(entity.getID())) {
+            throw new IllegalArgumentException("L'entità è già presente nel repository");
+        }
         this.entities.put(entity.getID(),entity);
     }
 
     public void remove(T entity) {
+        this.entityIsNullCheck(entity);
+        if(!this.entities.containsKey(entity.getID())) {
+            throw new IllegalArgumentException("L'entità non è presente nel repository");
+        }
         this.entities.remove(entity.getID(),entity);
     }
 
-
     public boolean contains(T entity) {
+        this.entityIsNullCheck(entity);
         return this.entities.containsKey(entity.getID());
     }
 
@@ -42,24 +50,38 @@ public class GenericRepository <T extends Identificabile> {
     }
 
     public void clear() {
-        this.entities.clear();
+        this.entities = new HashMap<String,T>();
     }
 
     public boolean isEmpty() {
         return this.entities.size() == 0;
     }
 
-    public boolean equals(Object o) {
-        return this.entities.containsKey(o);
-    }
-
     public T get(String id) {
+        this.entityIsNullCheck(this.entities.get(id));
         return this.entities.get(id);
     }
 
-//prende tutte le entità presenti nel repository e le mette in una lista
+    public void update(T entity) {
+        this.entityIsNullCheck(entity);
+        this.entities.put(entity.getID(),entity);
+    }
+    public String getID(T entity) {
+        this.entityIsNullCheck(entity);
+        return entity.getID();
+    }
+
+    //prende tutte le entità presenti nel repository e le mette in una lista
     public List<T> getAll() {
         return new ArrayList<>(this.entities.values());
     }
 
+    private void entityIsNullCheck(T entity) {
+        if(entity == null) {
+            throw new IllegalArgumentException("L'entità è nulla");
+        }
+        if(entity.getID() == null) {
+            throw new IllegalArgumentException("L'entità non ha un ID");
+        }
+    }
 }
