@@ -1,5 +1,7 @@
 package Autorizzazioni;
-
+/**
+ * Classe che rappresenta un' autorizzazione
+ */
 public class Autorizzazione {
 
     private Ruolo ruolo;
@@ -9,22 +11,16 @@ public class Autorizzazione {
     }
 
     public boolean isRuolo(Ruolo ruolo){
-        switch(ruolo) {
-            case Gestore_Della_Piattaforma:
-                return this.ruolo == Ruolo.Gestore_Della_Piattaforma;
-            case Responsabile_Territorio_Comunale:
-                return this.ruolo == Ruolo.Responsabile_Territorio_Comunale;
-            case Curatore:
-                return this.ruolo == Ruolo.Curatore;
-            case Contributor_Autorizzato:
-                return this.ruolo == Ruolo.Contributor_Autorizzato;
-            case Animatore_Autorizzato:
-                return this.ruolo == Ruolo.Animatore_Autorizzato;
-            case Turista:
-                return this.ruolo == Ruolo.Turista;
-            default:
-                return false;
-        }
+        return this.ruolo.equals(ruolo);
+    }
+
+    /**
+     * Verifica se l'utente ha il permesso di eseguire un'operazione
+     * @param ruolo ruolo minimo richiesto per eseguire l'operazione (partendo dal più basso)
+     * @return true se l'utente ha il permesso, false altrimenti
+     */
+    public boolean haPermesso(Ruolo ruolo){
+        return this.ruolo.ordinal() >= ruolo.ordinal();
     }
 
     public Ruolo getRuolo() {

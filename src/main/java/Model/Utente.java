@@ -2,14 +2,18 @@ package Model;
 
 import Abstract.Identificabile;
 import Autorizzazioni.Ruolo;
-
+/**
+ * Classe che rappresenta un utente
+ */
 public class Utente extends Identificabile {
 
+        //id univoco dell'utente
         private final String idUtente =getIdIncrementazione();
         private String nome;
         private String cognome;
         private String email;
         private String password;
+        //ruolo dell'utente
         private Ruolo ruolo;
 
         public Utente(String nome, String cognome, String email, String password) {
