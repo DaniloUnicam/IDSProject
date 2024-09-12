@@ -1,7 +1,6 @@
-package Handler;
+package HandlerInformazioneTerritoriale;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
-import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 import Repository.RepositoryInformazioni;
 
 import java.util.ArrayList;

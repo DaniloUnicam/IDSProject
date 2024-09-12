@@ -1,4 +1,4 @@
-package Model;
+package Autorizzazioni;
 
 public enum Ruolo {
     Gestore_Della_Piattaforma,

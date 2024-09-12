@@ -1,6 +1,7 @@
 package Model;
 
 import Abstract.Identificabile;
+import Autorizzazioni.Ruolo;
 
 public class Utente extends Identificabile {
 

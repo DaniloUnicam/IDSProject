@@ -1,6 +1,6 @@
 package Controller;
 
-import Handler.HandlerInformazione;
+import HandlerInformazioneTerritoriale.HandlerInformazione;
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
