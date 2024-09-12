@@ -6,6 +6,5 @@ public enum Ruolo {
     Curatore,
     Contributor_Autorizzato,
     Animatore_Autorizzato,
-    Turista_Autenticato,
-    Turista_Non_Autenticato,
+    Turista
 }

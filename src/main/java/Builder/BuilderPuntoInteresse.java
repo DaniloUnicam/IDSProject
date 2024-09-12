@@ -44,6 +44,12 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
         return puntoInteresse;
     }
 
+    public PuntoInteresse getResult(PuntoInteresse poi) {
+        PuntoInteresse puntoInteresse = poi;
+        this.reset();
+        return puntoInteresse;
+    }
+
     public void buildOrarioApertura(Orario orarioApertura) {
         this.orarioApertura = orarioApertura;
     }
