@@ -5,6 +5,7 @@ import Abstract.Identificabile;
 public class Contenuto extends Identificabile {
     private ContenutoMultimediale file;
     private String commento;
+    //id univoco per ogni contenuto
     private final String idContenuto =getIdIncrementazione();
 
     public Contenuto (ContenutoMultimediale file, String commento) {

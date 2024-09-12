@@ -2,6 +2,7 @@ package HandlerInformazioneTerritoriale;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import Repository.RepositoryInformazioni;
+import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +20,10 @@ public class HandlerInformazione {
         return handlerInformazione;
     }
 
-
-    public List<InformazioneTerritoriale> richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia) {
-        List  <InformazioneTerritoriale> informazioni= new ArrayList<InformazioneTerritoriale>();
+    public List<InformazioneTerritoriale> richiestaRicerca(String informazioneDaRicercare, TipoInformazioneTerritoriale tipologia) {
+        List  <InformazioneTerritoriale> informazioni= new ArrayList<>();
         for(InformazioneTerritoriale informazione : repositoryInformazioni.getAll(tipologia)) {
-            if(informazione.getNome().contains(ricerca)) {
+            if(informazione.getNome().contains(informazioneDaRicercare)) {
                 informazioni.add(informazione);
             }
         }

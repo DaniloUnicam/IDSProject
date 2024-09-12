@@ -2,15 +2,22 @@ package FactoryNotifiche;
 
 public class FactoryTipologieNotifiche {
 
+    //@use private Notifica creaNotificaByTipo(TipoNotifica tipoNotifica);
     public Notifica creaNotifica(TipoNotifica tipoNotifica) {
         return creaNotificaByTipo(tipoNotifica);
     }
 
+    //@use private Notifica creaNotificaByTipo(TipoNotifica tipoNotifica);
     public Notifica creaNotifica(Notifica notifica) {
         return creaNotificaByTipo(notifica.getTipoNotifica());
     }
 
-
+    /**
+     * Metodo che crea una notifica in base al tipo di notifica passato come parametro.
+     *
+     * @param tipoNotifica tipo di notifica da creare (enumerazione)
+     * @return notifica creata in base al tipo di notifica
+     */
     private Notifica creaNotificaByTipo(TipoNotifica tipoNotifica) {
         Notifica notificaEnumerata = null;
         switch (tipoNotifica) {

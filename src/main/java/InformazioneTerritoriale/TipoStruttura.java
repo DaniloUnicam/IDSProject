@@ -1,5 +1,7 @@
 package InformazioneTerritoriale;
-
+/**
+ * Enumerazione che rappresenta i tipi di struttura
+ */
 public enum TipoStruttura {
     AEROPORTO, ALBERGO, ALTRO, ATTRAZIONE_TURISTICA, AUTOVELOX, CAMPO_BASEBALL,
     CAMPO_BASKET, CAMPO_BOCCE, CAMPO_BOCCETTE, CAMPO_BOWLING, CAMPO_CALCIO,

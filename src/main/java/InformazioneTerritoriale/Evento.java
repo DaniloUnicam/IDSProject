@@ -8,6 +8,7 @@ public class Evento extends InformazioneTerritoriale {
     private String nome;
     private PosizioneSatellitare luogo;
     private String descrizione;
+    //id univoco per ogni evento
     private String idEvento = getIdIncrementazione();
     private TipoEvento tipo;
 

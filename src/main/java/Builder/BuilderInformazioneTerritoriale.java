@@ -1,6 +1,9 @@
 package Builder;
 
-import Model.PosizioneSatellitare;
+/**
+ * Builder per la creazione di un'informazione territoriale
+ * @see InformazioneTerritoriale
+ */
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
 

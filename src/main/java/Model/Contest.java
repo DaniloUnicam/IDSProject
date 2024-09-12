@@ -2,8 +2,11 @@ package Model;
 
 import Abstract.Identificabile;
 
+import java.util.UUID;
+
 public class Contest extends Identificabile {
 
+        //id univoco per ogni contest
         private final String idContest =getIdIncrementazione();
         private String titolo;
         private String descrizione;

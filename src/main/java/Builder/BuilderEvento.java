@@ -3,7 +3,9 @@ package Builder;
 import Model.PosizioneSatellitare;
 import InformazioneTerritoriale.Evento;
 import InformazioneTerritoriale.TipoEvento;
-
+/**
+ * Builder per la creazione di un evento
+ */
 public class BuilderEvento extends BuilderInformazioneTerritoriale{
 
 

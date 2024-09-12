@@ -7,11 +7,13 @@ public abstract class Notifica extends Identificabile {
 
     private String testo;
 
+    //Indica se la notifica è stata letta o meno, di default è false (non letta)
     private boolean letta = false;
 
     //Le notifiche saranno ordinate in base alla priorità (da 1 a 5, dove 1 è la priorità più alta)
     private float priorita;
 
+    //id univoco per ogni notifica
     private final String idNotifica = getIdIncrementazione();
 
     private TipoNotifica tipoNotifica;
@@ -19,7 +21,6 @@ public abstract class Notifica extends Identificabile {
     public Notifica() {
         super();
     }
-
 
     public Notifica(String testo, float priorita) {
         this.testo = testo;
