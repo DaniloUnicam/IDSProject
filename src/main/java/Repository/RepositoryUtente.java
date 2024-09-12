@@ -3,6 +3,7 @@ package Repository;
 import Model.Utente;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class RepositoryUtente extends GenericRepository<Utente> {
 
@@ -21,6 +22,10 @@ public class RepositoryUtente extends GenericRepository<Utente> {
 
     public Utente ottieniUtente(String idUtente){
         return super.get(idUtente.toString());
+    }
+
+    public List<Utente> ottieniUtenti(){
+        return super.getAll();
     }
 
 }

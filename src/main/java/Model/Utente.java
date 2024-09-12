@@ -86,4 +86,20 @@ public class Utente extends Identificabile {
         public void setRuolo(Ruolo ruolo) {
             this.ruolo = ruolo;
         }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public void setCognome(String cognome) {
+            this.cognome = cognome;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
 }

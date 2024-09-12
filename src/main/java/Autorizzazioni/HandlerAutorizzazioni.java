@@ -5,31 +5,31 @@ package Autorizzazioni;
 public class HandlerAutorizzazioni {
 
     public boolean chiedeCreazioneContest(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Animatore_Autorizzato);
+        return autorizzazione.haPermesso(Ruolo.Animatore_Autorizzato) ;
     }
 
     public boolean chiedeCreazioneEvento(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Animatore_Autorizzato);
+        return autorizzazione.haPermesso(Ruolo.Animatore_Autorizzato);
     }
 
     public boolean chiedeRimozioneContest(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Animatore_Autorizzato);
+        return autorizzazione.haPermesso(Ruolo.Animatore_Autorizzato);
     }
 
     public boolean chiedeRimozioneEvento(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Animatore_Autorizzato);
+        return autorizzazione.haPermesso(Ruolo.Animatore_Autorizzato);
     }
 
     public boolean chiedeCreazionePuntoInteresse(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Contributor_Autorizzato);
+        return autorizzazione.haPermesso(Ruolo.Contributor_Autorizzato);
     }
 
     public boolean chiedeRimozionePuntoInteresse(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Responsabile_Territorio_Comunale);
+        return autorizzazione.haPermesso(Ruolo.Responsabile_Territorio_Comunale);
     }
 
     public boolean chiedeCreazioneSegnalazione(Autorizzazione autorizzazione){
-        return autorizzazione.isRuolo(Ruolo.Turista_Autenticato);
+        return autorizzazione.haPermesso(Ruolo.Turista_Autenticato);
     }
 
 }
