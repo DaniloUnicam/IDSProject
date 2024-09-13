@@ -5,7 +5,6 @@ package Repository;
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RepositoryInformazioni {
@@ -38,14 +37,14 @@ public class RepositoryInformazioni {
     }
 
     public InformazioneTerritoriale ottieneInformazione (String idInfo){
-        if(eventi.get(idInfo) != null){
-            return eventi.get(idInfo);
+        if(eventi.ottieni(idInfo) != null){
+            return eventi.ottieni(idInfo);
         }
-        if(poi.get(idInfo) != null){
-            return poi.get(idInfo);
+        if(poi.ottieni(idInfo) != null){
+            return poi.ottieni(idInfo);
         }
-        if(itinerari.get(idInfo) != null){
-            return itinerari.get(idInfo);
+        if(itinerari.ottieni(idInfo) != null){
+            return itinerari.ottieni(idInfo);
         }
            return null;
     }

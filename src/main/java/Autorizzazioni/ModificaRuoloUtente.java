@@ -38,6 +38,7 @@ public class ModificaRuoloUtente {
         }
     }
 
+    //controllo parametri non nulli
     public void verificaRuolo(Utente idUtente, Ruolo ruolo){
         if(idUtente == null || ruolo == null){
             throw new IllegalArgumentException("Parametri non validi");

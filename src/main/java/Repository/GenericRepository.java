@@ -57,7 +57,7 @@ public class GenericRepository <T extends Identificabile> {
         return this.entities.size() == 0;
     }
 
-    public T get(String id) {
+    public T ottieni(String id) {
         this.entityIsNullCheck(this.entities.get(id));
         return this.entities.get(id);
     }
@@ -66,16 +66,18 @@ public class GenericRepository <T extends Identificabile> {
         this.entityIsNullCheck(entity);
         this.entities.put(entity.getID(),entity);
     }
+
     public String getID(T entity) {
         this.entityIsNullCheck(entity);
         return entity.getID();
     }
 
-    //prende tutte le entità presenti nel repository e le mette in una lista
+    //Prende tutte le entità presenti nel repository e le mette in una lista
     public List<T> getAll() {
         return new ArrayList<>(this.entities.values());
     }
 
+    //Controlla se l'entità è nulla o se non ha un ID
     private void entityIsNullCheck(T entity) {
         if(entity == null) {
             throw new IllegalArgumentException("L'entità è nulla");

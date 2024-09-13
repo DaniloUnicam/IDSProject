@@ -2,7 +2,7 @@ package HandlerInformazioneTerritoriale;
 
 import Builder.BuilderPuntoInteresse;
 import InformazioneTerritoriale.PuntoInteresse;
-//TODO
+
 public class HandlerPuntoInteresse {
 
     public String creaPOI(PuntoInteresse poi){

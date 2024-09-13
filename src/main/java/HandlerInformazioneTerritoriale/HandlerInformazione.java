@@ -20,6 +20,7 @@ public class HandlerInformazione {
         return handlerInformazione;
     }
 
+    //effettua la ricerca di un'informazione territoriale
     public List<InformazioneTerritoriale> richiestaRicerca(String informazioneDaRicercare, TipoInformazioneTerritoriale tipologia) {
         List  <InformazioneTerritoriale> informazioni= new ArrayList<>();
         for(InformazioneTerritoriale informazione : repositoryInformazioni.getAll(tipologia)) {

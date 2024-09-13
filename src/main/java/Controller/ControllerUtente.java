@@ -1,20 +1,19 @@
 package Controller;
 
-import Autorizzazioni.Autorizzazione;
 import Autorizzazioni.ModificaRuoloUtente;
 import Autorizzazioni.Ruolo;
 import Model.Utente;
+import Repository.RepositoryUtente;
 
-import static Repository.RepositoryUtente.repositoryUtente;
-
-//TODO
+/**
+ * Classe che gestisce le operazioni sugli utenti
+ */
 public class ControllerUtente {
 
     public boolean modificaInformazioneUtente(Utente idUtente, String campo, String testo){
         ModificaRuoloUtente modificaRuoloUtente = new ModificaRuoloUtente();
         modificaRuoloUtente.verificaRuolo(idUtente, idUtente.getRuolo());
-        modificaRuoloUtente.modificaInformazioneUtente(idUtente, campo, testo);
-        return true;
+        return modificaRuoloUtente.modificaInformazioneUtente(idUtente, campo, testo);
     }
 
     public void aggiungiPrivilegio(Utente idUtente, Ruolo ruolo){
@@ -28,12 +27,12 @@ public class ControllerUtente {
         rimuoviRuolo.verificaRuolo(idUtente, idUtente.getRuolo());
         rimuoviRuolo.rimuoviPrivilegio(idUtente, ruolo);
     }
-    //TODO
-    public Utente ottieniUtente(Utente idUtente){
-        return repositoryUtente.ottieniUtente(idUtente.getIdUtente());
+
+
+    public Utente ottieniUtente(String idUtente){
+        RepositoryUtente repositoryUtente = RepositoryUtente.getInstance();
+        return repositoryUtente.ottieni(idUtente);
     }
-
-
 
 
 }
