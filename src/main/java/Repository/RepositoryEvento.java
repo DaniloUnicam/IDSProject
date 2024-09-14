@@ -3,7 +3,7 @@ package Repository;
 import InformazioneTerritoriale.Evento;
 
 import java.util.HashMap;
-
+//TODO
 public class RepositoryEvento extends GenericRepository<Evento> {
 
     private static RepositoryEvento repositoryEvento;
@@ -21,6 +21,5 @@ public class RepositoryEvento extends GenericRepository<Evento> {
 
     public Evento[] richiesta(){
         return null;
-        //TODO
     }
 }

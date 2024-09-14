@@ -5,7 +5,7 @@ import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
 import java.util.List;
-
+//TODO
 public class ControllerRicercaInformazioneTerritoriale {
 
     //CONTROLLARE
@@ -13,6 +13,7 @@ public class ControllerRicercaInformazioneTerritoriale {
     //Il gestore della informazione ricerca deve essere usata dal controller
     private HandlerInformazione handlerInformazione;
 
+    //?
     public void handlerInformazione(){}
 
     public ControllerRicercaInformazioneTerritoriale () {

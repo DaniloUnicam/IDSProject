@@ -3,7 +3,9 @@ package Controller;
 import FactoryNotifiche.FactoryTipologieNotifiche;
 import FactoryNotifiche.Notifica;
 import FactoryNotifiche.TipoNotifica;
-
+/**
+ * ControllerNotifiche si occupa di creare le notifiche.
+ */
 public class ControllerNotifiche {
 
     private FactoryTipologieNotifiche factoryTipologieNotifiche;

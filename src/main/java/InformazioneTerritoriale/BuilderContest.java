@@ -1,7 +1,7 @@
 package InformazioneTerritoriale;
 
 import Model.Contest;
-
+//TODO
 public class BuilderContest {
 
         public BuilderContest(){

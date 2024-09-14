@@ -3,7 +3,7 @@ package Repository;
 import InformazioneTerritoriale.Itinerario;
 
 import java.util.HashMap;
-
+//TODO
 public class RepositoryItinerario extends GenericRepository<Itinerario> {
 
     private static RepositoryItinerario repositoryItinerario;

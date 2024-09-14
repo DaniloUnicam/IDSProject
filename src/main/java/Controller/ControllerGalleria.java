@@ -1,9 +1,9 @@
 package Controller;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
-
+//TODO
 public class ControllerGalleria {
-    //TODO
+
     public boolean salvaInformazione(idInfo, idUtente){}
     public InformazioneTerritoriale[] ottieniInformazione(idUtente){
         return new InformazioneTerritoriale[0];

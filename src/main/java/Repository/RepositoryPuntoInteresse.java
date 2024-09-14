@@ -5,7 +5,7 @@ import InformazioneTerritoriale.PuntoInteresse;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 import java.util.HashMap;
 import java.util.List;
-
+//TODO
 public class RepositoryPuntoInteresse extends GenericRepository<PuntoInteresse> {
 
     private static RepositoryPuntoInteresse repositoryPuntoInteresse;
