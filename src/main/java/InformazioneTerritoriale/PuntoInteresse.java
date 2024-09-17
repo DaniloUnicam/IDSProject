@@ -62,9 +62,9 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     }
 
     //Metodo per rimuovere un contenuto da un punto di interesse
-    public void rimuoviContenuto(String id) {
+    public void rimuoviContenuto(String idContenuto) {
         for (Contenuto contenuto : contenuti) {
-            if (contenuto.getID().equals(id)) {
+            if (contenuto.getID().equals(idContenuto)) {
                 contenuti.remove(contenuto);
                 return;
             }
@@ -72,9 +72,9 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     }
 
     //Metodo per visualizzare il contenuto di un punto di interesse
-    public PuntoInteresse visualizzareContenuto(String id) {
+    public PuntoInteresse visualizzareContenuto(String idContenuto) {
         for (Contenuto contenuto : contenuti) {
-            if (contenuto.getID().equals(id)) {
+            if (contenuto.getID().equals(idContenuto)) {
                 return this;
             }
         }

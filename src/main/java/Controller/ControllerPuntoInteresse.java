@@ -1,4 +1,4 @@
-package HandlerInformazioneTerritoriale;
+package Controller;
 
 import Builder.BuilderPuntoInteresse;
 import InformazioneTerritoriale.PuntoInteresse;
