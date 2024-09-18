@@ -1,21 +1,15 @@
 package InformazioneTerritoriale;
 
 import Model.Contest;
-//TODO
+
 public class BuilderContest {
-
-        public BuilderContest(){
-            this.contest = new Contest();
-        }
+    public void inserisciNome(contest.nome){}
 
 
-        public inserisciNome(contest.nome){}
+        public void inserisciDescrizione(contest.testo){}
 
 
-        public inserisciDescrizione(contest.testo){}
-
-
-        public inserisciTipologia(contest.tipo){
+        public void inserisciTipologia(contest.tipo){
 
         }
 
