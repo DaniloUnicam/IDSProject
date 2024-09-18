@@ -4,8 +4,6 @@ import InformazioneTerritoriale.PuntoInteresse;
 import Model.ContenutoMultimediale;
 import Repository.RepositoryPuntoInteresse;
 
-import java.io.File;
-
 //TODO
 public class ControllerCaricaContenutiMultimediali {
 
@@ -35,5 +33,5 @@ public class ControllerCaricaContenutiMultimediali {
     }
 
 
-    }
+}
 

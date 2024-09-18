@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Contest;
 import Repository.RepositoryContest;
 
 import java.util.Optional;
@@ -10,8 +11,8 @@ public class ControllerContest {
     private RepositoryContest repositoryContest;
 
 //collegamento con repository contest  e repository utente
-public <ContestOutputFormat> ContestOutputFormat ottieniUnContest(String idContest) {
-        return repositoryContest.ottieniContest(idContest);
+public ContestOf ottieniUnContest(String idContest) {
+        return repositoryContest.ottieniContest(idContest).getOutputFormat();
 }
 
 
