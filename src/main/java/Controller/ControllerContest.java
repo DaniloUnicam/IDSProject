@@ -11,9 +11,8 @@ public class ControllerContest {
     private RepositoryContest repositoryContest;
 
 //collegamento con repository contest  e repository utente
-public ContestOf ottieniUnContest(String idContest) {
-        return repositoryContest.ottieniContest(idContest).getOutputFormat();
-}
+    public ContestOf ottieniUnContest(String idContest) {
+    }
 
 
     //COME FACCIO AD AGGIUNGERE UN CONTEST E DARE TRUE?
@@ -34,7 +33,7 @@ public ContestOf ottieniUnContest(String idContest) {
 
 
     //restituiamo ID
-    public String creaContest(contest){ //questo non sono sicura che restituisce String CON bUILDER CONTEST E REPOSITORY CONTEST
-
+    public String creaContest(Contest contest){ //questo non sono sicura che restituisce String CON bUILDER CONTEST E REPOSITORY CONTEST
+        return repositoryContest.aggiungiContest(contest).getId();
     }
 }
