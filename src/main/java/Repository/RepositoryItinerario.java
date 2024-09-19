@@ -19,7 +19,9 @@ public class RepositoryItinerario extends GenericRepository<Itinerario> {
         return repositoryItinerario;
     }
 
-    public void aggiungi(Itinerario itinerariocreato ) {
-
+    public void aggiungi(Itinerario itinerarioCreato) {
+        if (!this.contains(itinerarioCreato)) {
+            add(itinerarioCreato);
+        }
     }
 }
