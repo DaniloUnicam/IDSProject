@@ -72,10 +72,10 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     }
 
     //Metodo per visualizzare il contenuto di un punto di interesse
-    public PuntoInteresse visualizzareContenuto(String idContenuto) {
+    public Contenuto visualizzareContenuto(String idContenuto) {
         for (Contenuto contenuto : contenuti) {
             if (contenuto.getID().equals(idContenuto)) {
-                return this;
+                return contenuto;
             }
         }
         return null;

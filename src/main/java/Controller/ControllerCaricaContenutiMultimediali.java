@@ -1,37 +1,32 @@
 package Controller;
 
 import InformazioneTerritoriale.PuntoInteresse;
+import Model.Contenuto;
 import Model.ContenutoMultimediale;
 import Repository.RepositoryPuntoInteresse;
 
 //TODO
 public class ControllerCaricaContenutiMultimediali {
 
-    private static RepositoryPuntoInteresse repositoryPuntiInteresse
-            = RepositoryPuntoInteresse.getInstance();
+    public ControllerCaricaContenutiMultimediali() {
 
-    public boolean selezionaPuntoInteresseID(String idPuntoInteresse) {
-        if (repositoryPuntiInteresse.contains(repositoryPuntiInteresse.ottieni(idPuntoInteresse))) {
-            repositoryPuntiInteresse.ottieni(idPuntoInteresse);
-            return true;
-        }
-        return false;
+    }
+
+    public boolean riercaPuntoInteresseID(String idPuntoInteresse) {
+        return ottieniPuntoInteresseDaRepository(idPuntoInteresse) != null;
     }
 
     public void caricaContenuto (String idPunto, ContenutoMultimediale file){
-        if(repositoryPuntiInteresse.contains(repositoryPuntiInteresse.ottieni(idPunto))){
-            PuntoInteresse punto = repositoryPuntiInteresse.ottieni(idPunto);
-            punto.caricaContenuto(file);
-        }
+        ottieniPuntoInteresseDaRepository(idPunto).caricaContenuto(file);
     }
 
-    public PuntoInteresse visualizzareContenuti (String idPuntoInteresse, String idContenuto){
-        if(repositoryPuntiInteresse.contains(repositoryPuntiInteresse.ottieni(idContenuto))){
-            return repositoryPuntiInteresse.ottieni(idPuntoInteresse).visualizzareContenuto(idContenuto);
-        }
-        return null;
+    public Contenuto visualizzareContenuti (String idPuntoInteresse, String idContenuto){
+        return ottieniPuntoInteresseDaRepository(idPuntoInteresse).visualizzareContenuto(idContenuto);
     }
 
+    private PuntoInteresse ottieniPuntoInteresseDaRepository(String idPuntoInteresse){
+        return RepositoryPuntoInteresse.getInstance().ottieni(idPuntoInteresse);
+    }
 
 }
 

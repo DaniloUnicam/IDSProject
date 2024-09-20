@@ -11,10 +11,10 @@ public class GenericRepository <T extends Identificabile> {
 
     private static GenericRepository genericRepository;
 
-    private HashMap<String,T> entities ;
+    private HashMap<String,T> oggettiGenerici;
 
-    protected GenericRepository(HashMap<String,T> entities) {
-        this.entities = entities;
+    protected GenericRepository(HashMap<String,T> oggettiGenerici) {
+        this.oggettiGenerici = oggettiGenerici;
     }
 
     public static GenericRepository getInstance() {
@@ -26,45 +26,45 @@ public class GenericRepository <T extends Identificabile> {
 
     public void add(T entity) {
         this.entityIsNullCheck(entity);
-        if(this.entities.containsKey(entity.getID())) {
+        if(this.oggettiGenerici.containsKey(entity.getID())) {
             throw new IllegalArgumentException("L'entità è già presente nel repository");
         }
-        this.entities.put(entity.getID(),entity);
+        this.oggettiGenerici.put(entity.getID(),entity);
     }
 
     public void remove(T entity) {
         this.entityIsNullCheck(entity);
-        if(!this.entities.containsKey(entity.getID())) {
+        if(!this.oggettiGenerici.containsKey(entity.getID())) {
             throw new IllegalArgumentException("L'entità non è presente nel repository");
         }
-        this.entities.remove(entity.getID(),entity);
+        this.oggettiGenerici.remove(entity.getID(),entity);
     }
 
     public boolean contains(T entity) {
         this.entityIsNullCheck(entity);
-        return this.entities.containsKey(entity.getID());
+        return this.oggettiGenerici.containsKey(entity.getID());
     }
 
     public int size() {
-        return this.entities.size();
+        return this.oggettiGenerici.size();
     }
 
     public void clear() {
-        this.entities = new HashMap<String,T>();
+        this.oggettiGenerici = new HashMap<String,T>();
     }
 
     public boolean isEmpty() {
-        return this.entities.size() == 0;
+        return this.oggettiGenerici.size() == 0;
     }
 
     public T ottieni(String id) {
-        this.entityIsNullCheck(this.entities.get(id));
-        return this.entities.get(id);
+        this.entityIsNullCheck(this.oggettiGenerici.get(id));
+        return this.oggettiGenerici.get(id);
     }
 
     public void update(T entity) {
         this.entityIsNullCheck(entity);
-        this.entities.put(entity.getID(),entity);
+        this.oggettiGenerici.put(entity.getID(),entity);
     }
 
     public String getID(T entity) {
@@ -74,15 +74,18 @@ public class GenericRepository <T extends Identificabile> {
 
     //Prende tutte le entità presenti nel repository e le mette in una lista
     public List<T> getAll() {
-        return new ArrayList<>(this.entities.values());
+        return new ArrayList<>(this.oggettiGenerici.values());
     }
 
     //Controlla se l'entità è nulla o se non ha un ID
     private void entityIsNullCheck(T entity) {
         if(entity == null) {
-            throw new IllegalArgumentException("L'entità è nulla");
+            throw new IllegalArgumentException("Errore, non esiste una repository");
         }
         if(entity.getID() == null) {
+            throw new IllegalArgumentException("L'entità non ha un ID");
+        }
+        if(entity.getID().isEmpty()) {
             throw new IllegalArgumentException("L'entità non ha un ID");
         }
     }

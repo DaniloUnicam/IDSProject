@@ -1,8 +1,25 @@
 package Controller;
 
 import Model.Contenuto;
-//TODO
+import Repository.RepositoryContenuto;
+
 public class ControllerGeneraLink {
 
-   public void ottieniContenuto( Contenuto idContenuto){}
+    public ControllerGeneraLink() {
+
+    }
+
+   public Contenuto ottieniContenuto(String idContenuto){
+       return ottieniContenutoDaRepository(idContenuto);
+   }
+
+   public String ottieniLink(String idContenuto){
+      return ottieniContenuto(idContenuto).getUrl();
+   }
+
+   private Contenuto ottieniContenutoDaRepository(String idContenuto){
+       return RepositoryContenuto.getInstance().ottieni(idContenuto);
+   }
+
 }
+
