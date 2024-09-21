@@ -1,25 +1,28 @@
 package Controller;
 
 import Model.Contest;
+import Model.ContestOutputFormat;
 import Repository.RepositoryContest;
+import Repository.RepositoryUtente;
 
 import java.util.Optional;
 //TODO
 public class ControllerContest {
 
-
     private RepositoryContest repositoryContest;
+    private RepositoryUtente repositoryUtente;
 
 //collegamento con repository contest  e repository utente
-public ContestOf ottieniUnContest(String idContest) {
-        return repositoryContest.ottieniContest(idContest).getOutputFormat();
+public ContestOutputFormat ottieniUnContest(String idContest) {
+       // return repositoryContest.ottieniContest(idContest).getOutputFormat();
+    return null;
 }
 
 
     //COME FACCIO AD AGGIUNGERE UN CONTEST E DARE TRUE?
 
     public boolean aggiuntaIscrizione(String idUtente, String idContest){ //repository contest e repository utente
-        if(repositoryContest.ottieniContest(idContest).aggiungiIscrizione(idUtente)){
+        if(repositoryContest.ottieniContest(idContest).aggiuntaIscrizione(repositoryUtente.ottieni(idUtente))){
             return true;
         }else{
             return false;
@@ -34,7 +37,10 @@ public ContestOf ottieniUnContest(String idContest) {
 
 
     //restituiamo ID
-    public String creaContest(contest){ //questo non sono sicura che restituisce String CON bUILDER CONTEST E REPOSITORY CONTEST
 
+
+    public String creaContest(){ //questo non sono sicura che restituisce String CON bUILDER CONTEST E REPOSITORY CONTEST
+    //TODO parametro contest
+        return null;
     }
 }

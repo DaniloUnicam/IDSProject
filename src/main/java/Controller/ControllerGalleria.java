@@ -4,11 +4,12 @@ import InformazioneTerritoriale.InformazioneTerritoriale;
 //TODO
 public class ControllerGalleria {
 
-    public boolean salvaInformazione(idInfo, idUtente){}
-    public InformazioneTerritoriale[] ottieniInformazione(idUtente){
+    //idInfo, idUtente
+   // public boolean salvaInformazione(){return null}//idInfo, idUtente
+    public InformazioneTerritoriale[] ottieniInformazione(){
         return new InformazioneTerritoriale[0];
-    }
-    public informazioniOutputDetailedFormat ricercaInformazione(idInfo) {}
+    }//idUtente
+   // public informazioniOutputDetailedFormat ricercaInformazione() {return null;} //idInfo
     public InformazioneTerritoriale[] ottieniInformazioni(){
         return new InformazioneTerritoriale[0];
     }
