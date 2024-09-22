@@ -1,22 +1,43 @@
 package InformazioneTerritoriale;
 
 import Model.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@NoArgsConstructor(force = true)
+@DiscriminatorValue("POI")
+
 public class PuntoInteresse extends InformazioneTerritoriale {
+
+    @Id
     //id univoco per ogni punto di interesse
     private final String idPuntoInteresse =getIdIncrementazione();
+
+    @Embedded
     private Orario orarioApertura;
+
+    @Embedded
     private Orario orarioChiusura;
     //Tipo di struttura del punto di interesse
+
+    @Enumerated(EnumType.STRING)
     private TipoStruttura tipo;
     //Valutazione media del punto di interesse @range 0-5
+
+
     private float valutazione;
+
+
+    @OneToMany(fetch = FetchType.EAGER)
     private List <Contenuto> contenuti= new ArrayList<>();
     //Variabile per calcolare la media delle valutazioni
+
     private int counterValutazione = 0;
+
 
     //Costruttore per un punto di interesse senza valutazione
     public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, PosizioneSatellitare posizione) {

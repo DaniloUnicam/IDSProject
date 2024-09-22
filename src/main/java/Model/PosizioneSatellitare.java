@@ -1,5 +1,11 @@
 package Model;
 
+
+import jakarta.persistence.Embeddable;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@NoArgsConstructor(force = true)
 public class PosizioneSatellitare {
     private final float latitudine;
     private final float longitudine;

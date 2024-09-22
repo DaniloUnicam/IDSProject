@@ -1,11 +1,26 @@
 package Model;
 
 import Abstract.Identificabile;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+
+@Entity
+@NoArgsConstructor(force = true)
 public class Contenuto extends Identificabile {
+
+    @Getter
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "contenutoMultimediale_id")
     private ContenutoMultimediale file;
+
+
     private String commento;
+
+
     //id univoco per ogni contenuto
+    @Id
     private final String idContenuto =getIdIncrementazione();
 
     public Contenuto (ContenutoMultimediale file, String commento) {

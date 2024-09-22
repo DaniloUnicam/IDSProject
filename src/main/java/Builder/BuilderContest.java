@@ -1,4 +1,4 @@
-package InformazioneTerritoriale;
+package Builder;
 
 import Model.Contest;
 //TODO

@@ -10,4 +10,3 @@ public class IDSProgettoApplication{
         SpringApplication.run(IDSProgettoApplication.class, args);
     }
 }
-//usare annotazioni che sono forniti da JPA è sono annotazioni che servono per creare un data base;

@@ -2,7 +2,14 @@ package InformazioneTerritoriale;
 
 import Model.Posizionabile;
 import Model.PosizioneSatellitare;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.NoArgsConstructor;
 
+
+@Entity
+@NoArgsConstructor(force = true)
+@DiscriminatorValue("EVENTO")
 public class Evento extends InformazioneTerritoriale {
 
     private String nome;
