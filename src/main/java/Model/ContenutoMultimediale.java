@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.io.File;
@@ -13,7 +12,7 @@ import java.io.File;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor // Crea un costruttore vuoto
+@NoArgsConstructor (force = true)
 
 public class ContenutoMultimediale extends Identificabile {
 

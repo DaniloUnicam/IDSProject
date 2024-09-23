@@ -1,23 +1,30 @@
 package InformazioneTerritoriale;
 
-import Model.Posizionabile;
-import Model.PosizioneSatellitare;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @NoArgsConstructor(force = true)
 @DiscriminatorValue("ITINERARIO ")
+@Getter
+@Setter
 public class Itinerario extends InformazioneTerritoriale {
 
-    protected String nome;
-    protected String descrizione;
-    private List<PuntoInteresse> listaPuntiInteresse;
     //id univoco per ogni itinerario
+    @Id
     private static final String idItinerario = getIdIncrementazione();
+
+    protected String nome;
+
+    protected String descrizione;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<PuntoInteresse> listaPuntiInteresse;
+
 
     public Itinerario(String nome, String descrizione, List<PuntoInteresse> listaPuntiInteresse) {
         super(nome, descrizione);

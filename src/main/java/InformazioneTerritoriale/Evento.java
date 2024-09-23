@@ -1,22 +1,30 @@
 package InformazioneTerritoriale;
 
-import Model.Posizionabile;
 import Model.PosizioneSatellitare;
 import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @Entity
 @NoArgsConstructor(force = true)
 @DiscriminatorValue("EVENTO")
+@Getter
+@Setter
 public class Evento extends InformazioneTerritoriale {
 
     private String nome;
+    @Embedded
     private PosizioneSatellitare luogo;
     private String descrizione;
     //id univoco per ogni evento
-    private String idEvento = getIdIncrementazione();
+    @Id
+    private final String idEvento = getIdIncrementazione();
+    @Embedded
     private TipoEvento tipo;
 
     public Evento(String nome, PosizioneSatellitare luogo, String descrizione, TipoEvento tipo) {

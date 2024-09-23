@@ -2,29 +2,42 @@ package Model;
 
 import Abstract.Identificabile;
 import InformazioneTerritoriale.TipoContest;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.DiscriminatorValue;
 
+import java.util.List;
+
+
+@Entity
+@NoArgsConstructor(force = true)
+@DiscriminatorValue("CONTEST")
 public class Contest extends Identificabile {
 
+        @Id
         //id univoco per ogni contest
         private final String idContest =getIdIncrementazione();
         private String titolo;
         private String descrizione;
         private String url;
         private String idCreatore;
-        private String idContenutoMultimediale;
+        @OneToMany
+        private List<ContenutoMultimediale> contenutiContest;
+        private TipoContest tipo;
 
         public Contest (String titolo, String descrizione, String url,
-                        String idCreatore, String idContenutoMultimediale){
+                        String idCreatore, List<ContenutoMultimediale> contenutiContest, TipoContest tipo) {
             this.titolo = titolo;
             this.descrizione = descrizione;
             this.url = url;
             this.idCreatore = idCreatore;
-            this.idContenutoMultimediale = idContenutoMultimediale;
+            this.contenutiContest = contenutiContest;
+            this.tipo = tipo;
         }
 
-    public Contest(String nome, String descrizione, TipoContest tipo) {
-        super();
-    }
+
 
     public String getTitolo() {
             return titolo;
@@ -46,8 +59,8 @@ public class Contest extends Identificabile {
             return idCreatore;
         }
 
-        public String getIdContenutoMultimediale() {
-            return idContenutoMultimediale;
+        public List<ContenutoMultimediale> getContenutiContest() {
+            return contenutiContest;
         }
 
         public boolean aggiuntaIscrizione(Utente utente) {
