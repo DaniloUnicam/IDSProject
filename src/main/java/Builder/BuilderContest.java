@@ -1,17 +1,40 @@
 package Builder;
 
+
+import InformazioneTerritoriale.TipoContest;
 import Model.Contest;
-//TODO
+
 public class BuilderContest {
-   // public void inserisciNome(contest.nome){}
 
+    public String nome;
+    public String descrizione;
+    public TipoContest tipo;
 
-    //public void inserisciDescrizione(contest.testo){}
+    public BuilderContest(){
 
+    }
 
-   // public void inserisciTipologia(contest.tipo){}
+    public void reset(){
+        this.nome = "Nome non specificato";
+        this.descrizione = "Descrizione non speciificata";
+        this.tipo = TipoContest.ALTRO;
+    }
 
-   // public Contest ottieniRisultato(){
-        //ci va la creazione completare di contest
-  //  }
+    public void buildNome(String nome){
+        this.nome = nome;
+    }
+
+    public void buildDescrizione(String testo){
+        this.descrizione = testo;
+    }
+
+    public void buildTipologia(TipoContest tipo){
+        this.tipo = tipo;
+    }
+
+    public Contest getResult() {
+        Contest contest = new Contest(nome, descrizione, tipo);
+        this.reset();
+        return contest;
+    }
 }
