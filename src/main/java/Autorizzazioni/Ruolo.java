@@ -1,4 +1,6 @@
 package Autorizzazioni;
+
+
 /**
  * Enumerazione dei ruoli
  */

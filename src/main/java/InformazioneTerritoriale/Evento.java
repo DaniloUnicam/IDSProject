@@ -1,10 +1,7 @@
 package InformazioneTerritoriale;
 
 import Model.PosizioneSatellitare;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,7 +21,8 @@ public class Evento extends InformazioneTerritoriale {
     //id univoco per ogni evento
     @Id
     private final String idEvento = getIdIncrementazione();
-    @Embedded
+
+    @Enumerated(EnumType.STRING)
     private TipoEvento tipo;
 
     public Evento(String nome, PosizioneSatellitare luogo, String descrizione, TipoEvento tipo) {

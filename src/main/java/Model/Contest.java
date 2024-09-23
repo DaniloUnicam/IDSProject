@@ -1,70 +1,72 @@
 package Model;
 
 import Abstract.Identificabile;
-import InformazioneTerritoriale.TipoContest;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.DiscriminatorValue;
+import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
-
+import java.util.UUID;
 
 @Entity
-@NoArgsConstructor(force = true)
-@DiscriminatorValue("CONTEST")
+@Getter
+@Setter
+@NoArgsConstructor // Crea un costruttore vuoto
 public class Contest extends Identificabile {
 
         @Id
         //id univoco per ogni contest
         private final String idContest =getIdIncrementazione();
+
         private String titolo;
         private String descrizione;
         private String url;
-        private String idCreatore;
-        @OneToMany
-        private List<ContenutoMultimediale> contenutiContest;
-        private TipoContest tipo;
+
+        @ManyToOne (fetch = FetchType.EAGER)
+        private Utente creatore;
+
+        /**
+         * Lista dei contenuti nel contest
+         */
+        @ManyToMany(fetch = FetchType.EAGER)
+        @JoinTable(
+                name = "Contest_Contenuto",
+                joinColumns = @JoinColumn(name = "contest_id", referencedColumnName = "idContest"),
+                inverseJoinColumns = @JoinColumn(name = "POI_id", referencedColumnName = "idPuntoInteresse"))
+        private List<Contenuto> contenuti = new ArrayList<>();
+
+        /**
+         * Lista degli utenti iscritti al contest
+         */
+        @ManyToMany(fetch = FetchType.EAGER)
+        @JoinTable(
+                name = "Contest_Utente",
+                joinColumns = @JoinColumn(name = "contest_id", referencedColumnName = "idContest"),
+                inverseJoinColumns = @JoinColumn(name = "utente_id", referencedColumnName = "idUtente"))
+        private List<Utente> iscritti = new ArrayList<>();
+
 
         public Contest (String titolo, String descrizione, String url,
-                        String idCreatore, List<ContenutoMultimediale> contenutiContest, TipoContest tipo) {
+                        Utente creatore){
             this.titolo = titolo;
             this.descrizione = descrizione;
             this.url = url;
-            this.idCreatore = idCreatore;
-            this.contenutiContest = contenutiContest;
-            this.tipo = tipo;
-        }
-
-
-
-    public String getTitolo() {
-            return titolo;
-        }
-
-        public String getDescrizione() {
-            return descrizione;
-        }
-
-        public String getUrl() {
-            return url;
+            this.creatore = creatore;
         }
 
         public String getID() {
             return idContest;
         }
 
-        public String getIdCreatore() {
-            return idCreatore;
-        }
-
-        public List<ContenutoMultimediale> getContenutiContest() {
-            return contenutiContest;
-        }
-
         public boolean aggiuntaIscrizione(Utente utente) {
             return !utente.getRuolo().equals("Turista_Non_Autenticato");
+        }
+
+        public void iscriviUtente(Utente utente) {
+            if(aggiuntaIscrizione(utente))
+                this.iscritti.add(utente);
         }
 
 }

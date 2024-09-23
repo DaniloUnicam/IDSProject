@@ -1,6 +1,7 @@
 package Model;
 
 import Abstract.Identificabile;
+import jakarta.persistence.Id;
 
 /**
  * This class represents a Contest Detailed Output Format object.

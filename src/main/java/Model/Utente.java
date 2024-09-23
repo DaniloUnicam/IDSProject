@@ -2,16 +2,26 @@ package Model;
 
 import Abstract.Identificabile;
 import Autorizzazioni.Ruolo;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
 /**
  * Classe che rappresenta un utente del sistema
  * con le sue informazioni personali e il ruolo che ricopre.
  */
 public class Utente extends Identificabile {
 
+    @Id
         //id univoco dell'utente
         private final String idUtente =getIdIncrementazione();
 
@@ -27,8 +37,9 @@ public class Utente extends Identificabile {
         //password dell'utente
         private String password;
 
-        //ruolo dell'utente (enumerazione)
-        private Ruolo ruolo;
+
+    @Enumerated(EnumType.STRING) // Memorizza i valori dell'enum come stringhe nel DB
+         private Ruolo ruolo;
 
         public Utente(String nome, String cognome, String email, String password, Ruolo ruolo) {
             if(ruolo == null) {
@@ -59,47 +70,11 @@ public class Utente extends Identificabile {
             return mat.matches();
         }
 
-        public String getNome() {
-            return nome;
-        }
-
-        public String getCognome() {
-            return cognome;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
         public String getID() {
             return idUtente;
         }
 
-        public Ruolo getRuolo() {
-            return ruolo;
-        }
 
-        public void setRuolo(Ruolo ruolo) {
-            this.ruolo = ruolo;
-        }
 
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
 
-        public void setCognome(String cognome) {
-            this.cognome = cognome;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
 }
