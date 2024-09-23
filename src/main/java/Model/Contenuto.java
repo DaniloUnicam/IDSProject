@@ -4,10 +4,13 @@ import Abstract.Identificabile;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @Entity
 @NoArgsConstructor(force = true)
+@Getter
+@Setter
 public class Contenuto extends Identificabile {
 
     @Getter
@@ -38,14 +41,4 @@ public class Contenuto extends Identificabile {
     public String getID() {
         return idContenuto;
     }
-
-    public String getUrl(){
-        return file.getUrl();
-    }
-
-    public String getCommento(){
-        return commento;
-    }
-
-
 }

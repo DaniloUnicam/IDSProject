@@ -10,19 +10,16 @@ import lombok.Setter;
 import java.io.File;
 
 @Entity
+@NoArgsConstructor (force = true)
 @Getter
 @Setter
-@NoArgsConstructor (force = true)
 
 public class ContenutoMultimediale extends Identificabile {
 
-    @Getter
     private String titolo;
 
-    @Getter
     private String descrizione;
 
-    @Getter
     private String url;
 
     private File file;

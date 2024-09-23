@@ -4,7 +4,9 @@ import Abstract.Identificabile;
 import Model.Posizionabile;
 import Model.PosizioneSatellitare;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Classe astratta che rappresenta un'informazione territoriale
@@ -16,7 +18,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(force = true)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_informazione_territoriale", discriminatorType = DiscriminatorType.STRING)
-
+@Getter
+@Setter
 public abstract class InformazioneTerritoriale extends Identificabile implements Posizionabile {
 
         private String nome;
@@ -38,30 +41,6 @@ public abstract class InformazioneTerritoriale extends Identificabile implements
             this.nome = nome;
             this.descrizione = descrizione;
             this.posizioneSatellitare = posizioneSatellitare;
-        }
-
-        public String getNome() {
-            return nome;
-        }
-
-        public String getDescrizione() {
-            return descrizione;
-        }
-
-        public String getID() {
-            return idInformazioneTerritoriale;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public void setDescrizione(String descrizione) {
-            this.descrizione = descrizione;
-        }
-
-        public PosizioneSatellitare getPosizione() {
-            return posizioneSatellitare;
         }
 
 }

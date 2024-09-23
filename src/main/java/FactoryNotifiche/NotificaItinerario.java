@@ -1,5 +1,13 @@
 package FactoryNotifiche;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor(force = true)
+@DiscriminatorValue("NOTIFICA_ITINERARIO")
+
 public class NotificaItinerario extends Notifica {
 
     public NotificaItinerario() {

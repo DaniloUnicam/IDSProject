@@ -2,7 +2,9 @@ package InformazioneTerritoriale;
 
 import Model.*;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor(force = true)
 @DiscriminatorValue("POI")
-
+@Getter
+@Setter
 public class PuntoInteresse extends InformazioneTerritoriale {
 
     @Id
@@ -102,28 +105,13 @@ public class PuntoInteresse extends InformazioneTerritoriale {
         return null;
     }
 
-    public String getID () {
+    @Override
+    public String getID() {
         return idPuntoInteresse;
     }
 
-    public Orario getOrarioApertura () {
-        return orarioApertura;
+    @Override
+    public PosizioneSatellitare getPosizione() {
+        return null;
     }
-
-    public Orario getOrarioChiusura () {
-        return orarioChiusura;
-    }
-
-    public TipoStruttura getTipo () {
-        return tipo;
-    }
-
-    public float getValutazione () {
-        return valutazione;
-    }
-
-    public List<Contenuto> getContenuti() {
-        return contenuti;
-    }
-
 }

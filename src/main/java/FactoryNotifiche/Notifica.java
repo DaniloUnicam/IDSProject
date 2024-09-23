@@ -2,7 +2,17 @@ package FactoryNotifiche;
 
 
 import Abstract.Identificabile;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@NoArgsConstructor(force = true)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_notifica", discriminatorType = DiscriminatorType.STRING)
+@Getter
+@Setter
 public abstract class Notifica extends Identificabile {
 
     private String testo;
@@ -13,9 +23,11 @@ public abstract class Notifica extends Identificabile {
     //Le notifiche saranno ordinate in base alla priorità (da 1 a 5, dove 1 è la priorità più alta)
     private float priorita;
 
+    @Id
     //id univoco per ogni notifica
     private final String idNotifica = getIdIncrementazione();
 
+    @Enumerated(EnumType.STRING)
     private TipoNotifica tipoNotifica;
 
     public Notifica() {
@@ -44,50 +56,5 @@ public abstract class Notifica extends Identificabile {
     public String getID() {
         return idNotifica;
     }
-
-    public String getTesto() {
-        return testo;
-    }
-
-    public void setTesto(String testo) {
-        this.testo = testo;
-    }
-
-    public boolean isLetta() {
-        return letta;
-    }
-
-    public void setLetta(boolean letta) {
-        this.letta = letta;
-    }
-
-    public float getPriorita() {
-        return priorita;
-    }
-
-    public TipoNotifica getTipoNotifica() {
-        return tipoNotifica;
-    }
-
-    public void setTipoNotifica(TipoNotifica tipoNotifica) {
-        this.tipoNotifica = tipoNotifica;
-    }
-
-    public void setPriorita(float priorita) {
-        this.priorita = priorita;
-    }
-
-    public void setPriorita(String idNotifica, float priorita) {
-        this.priorita = priorita;
-    }
-
-    public void setLetta(String idNotifica, boolean letta) {
-        this.letta = letta;
-    }
-
-    public void setTesto(String idNotifica, String testo) {
-        this.testo = testo;
-    }
-
 
 }
