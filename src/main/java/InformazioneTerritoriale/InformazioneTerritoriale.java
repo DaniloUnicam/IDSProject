@@ -26,7 +26,7 @@ public abstract class InformazioneTerritoriale extends Identificabile implements
         private final String idInformazioneTerritoriale = getIdIncrementazione();
         //posizione satellitare dell'informazione territoriale
 
-    @Embedded
+        @Embedded
         private PosizioneSatellitare posizioneSatellitare;
 
         public InformazioneTerritoriale(String nome, String descrizione) {

@@ -1,8 +1,7 @@
 package Model;
 
 import Abstract.Identificabile;
-
-import java.util.UUID;
+import InformazioneTerritoriale.TipoContest;
 
 public class Contest extends Identificabile {
 
@@ -23,7 +22,11 @@ public class Contest extends Identificabile {
             this.idContenutoMultimediale = idContenutoMultimediale;
         }
 
-        public String getTitolo() {
+    public Contest(String nome, String descrizione, TipoContest tipo) {
+        super();
+    }
+
+    public String getTitolo() {
             return titolo;
         }
 

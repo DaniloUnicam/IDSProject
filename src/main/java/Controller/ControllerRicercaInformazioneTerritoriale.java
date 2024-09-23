@@ -8,12 +8,9 @@ import java.util.List;
 //TODO
 public class ControllerRicercaInformazioneTerritoriale {
 
-    //CONTROLLARE
-    //RICERCA INVIO NON LO FACCIAMO PIù?
     //Il gestore della informazione ricerca deve essere usata dal controller
     private HandlerInformazione handlerInformazione;
 
-    //?
     public void handlerInformazione(){}
 
     public ControllerRicercaInformazioneTerritoriale () {
