@@ -13,7 +13,6 @@ import lombok.Setter;
 @Setter
 public class Contenuto extends Identificabile {
 
-    @Getter
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinTable(
             name = "contenuto_contenutoMultimediale",
@@ -43,5 +42,9 @@ public class Contenuto extends Identificabile {
     @Override
     public String getID() {
         return idContenuto;
+    }
+
+    public String getUrl() {
+        return file.getUrl();
     }
 }

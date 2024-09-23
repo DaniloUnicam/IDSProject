@@ -21,5 +21,6 @@ public class ControllerGeneraLink {
        return RepositoryContenuto.getInstance().ottieni(idContenuto);
    }
 
+
 }
 

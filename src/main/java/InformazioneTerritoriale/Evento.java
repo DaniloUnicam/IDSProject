@@ -53,4 +53,8 @@ public class Evento extends InformazioneTerritoriale {
         return tipo;
     }
 
+    @Override
+    public PosizioneSatellitare getPosizione() {
+       return luogo;
+    }
 }

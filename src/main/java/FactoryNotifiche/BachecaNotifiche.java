@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Entity
-@NoArgsConstructor(force = true)
 @Getter
 @Setter
 public class BachecaNotifiche extends Identificabile {

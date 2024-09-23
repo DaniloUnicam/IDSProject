@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor(force = true)
 @DiscriminatorValue("NOTIFICA_EVENTO")
 
 public class NotificaEvento extends Notifica {

@@ -43,4 +43,8 @@ public abstract class InformazioneTerritoriale extends Identificabile implements
             this.posizioneSatellitare = posizioneSatellitare;
         }
 
+        public PosizioneSatellitare getPosizione() {
+            return posizioneSatellitare;
+        }
+
 }

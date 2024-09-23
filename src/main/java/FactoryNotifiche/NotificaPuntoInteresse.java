@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor(force = true)
 @DiscriminatorValue("NOTIFICA_PUNTO_INTERESSE")
 
 public class NotificaPuntoInteresse extends Notifica {

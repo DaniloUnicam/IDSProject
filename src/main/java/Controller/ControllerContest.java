@@ -19,14 +19,8 @@ public ContestOutputFormat ottieniUnContest(String idContest) {
 }
 
 
-    //COME FACCIO AD AGGIUNGERE UN CONTEST E DARE TRUE?
-
-    public boolean aggiuntaIscrizione(String idUtente, String idContest){ //repository contest e repository utente
-        if(repositoryContest.ottieniContest(idContest).aggiuntaIscrizione(repositoryUtente.ottieni(idUtente))){
-            return true;
-        }else{
-            return false;
-        }
+    public boolean aggiuntaIscrizione(String idUtente, String idContest) { //repository contest e repository utente
+        return repositoryContest.ottieniContest(idContest).aggiuntaIscrizione(repositoryUtente.ottieni(idUtente));
     }
 
 

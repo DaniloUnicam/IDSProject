@@ -35,4 +35,9 @@ public class Itinerario extends InformazioneTerritoriale {
         return listaPuntiInteresse;
     }
 
+    @Override
+    public String getID() {
+        return idItinerario;
+    }
+
 }
