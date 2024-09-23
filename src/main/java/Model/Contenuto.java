@@ -15,7 +15,10 @@ public class Contenuto extends Identificabile {
 
     @Getter
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "contenutoMultimediale_id")
+    @JoinTable(
+            name = "contenuto_contenutoMultimediale",
+            joinColumns = @JoinColumn(name = "contenuto_id", referencedColumnName = "idContenuto"),
+            inverseJoinColumns = @JoinColumn(name = "contenutoMultimediale_id", referencedColumnName = "id"))
     private ContenutoMultimediale file;
 
 
