@@ -33,6 +33,7 @@ public class Evento extends InformazioneTerritoriale {
         this.tipo = tipo;
     }
 
+  //hhhhhhh
     public String getNome() {
         return nome;
     }
