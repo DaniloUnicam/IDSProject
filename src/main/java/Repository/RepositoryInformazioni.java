@@ -5,16 +5,20 @@ package Repository;
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class RepositoryInformazioni {
+public class RepositoryInformazioni extends GenericRepository<InformazioneTerritoriale> {
 
     private RepositoryEvento eventi;
     private RepositoryPuntoInteresse poi;
     private RepositoryItinerario itinerari;
     private static RepositoryInformazioni repositoryInformazioni;
 
-    private RepositoryInformazioni() {    }
+    private RepositoryInformazioni() {
+        super(new HashMap<String, InformazioneTerritoriale>());
+    }
 
     public static RepositoryInformazioni getInstance() {
         if (repositoryInformazioni == null) {
@@ -22,6 +26,7 @@ public class RepositoryInformazioni {
         }
         return repositoryInformazioni;
     }
+
 
     public List<? extends InformazioneTerritoriale> getAll (TipoInformazioneTerritoriale tipologia){
         switch (tipologia) {
@@ -32,7 +37,7 @@ public class RepositoryInformazioni {
             case ITINERARIO:
                 return itinerari.getAll();
             default:
-                return null;
+                return new ArrayList<>();
         }
     }
 
@@ -48,4 +53,5 @@ public class RepositoryInformazioni {
         }
            return null;
     }
+
 }
