@@ -20,9 +20,10 @@ public class ContenutoMultimediale extends Identificabile {
 
     private String descrizione;
 
-    private String url;
+    private String url;//percorso da prendere
 
-    private File file;
+    private File file;//file da prendere
+
 
     @Id
     private final String id = getIdIncrementazione(); // Rimosso il getter manuale
@@ -31,6 +32,12 @@ public class ContenutoMultimediale extends Identificabile {
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.url = url;
+    }
+    public ContenutoMultimediale(String titolo, String descrizione, String url,File file) {
+        this.titolo = titolo;
+        this.descrizione = descrizione;
+        this.url = url;
+        this.file= file;
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor(force = true)
 @Getter
 @Setter
-//TODO: galleria = repository personale utente? se sì, verificare Controller Galleria
+
 public class Galleria extends Identificabile {
 
     //lista di contenuti presenti nella galleria

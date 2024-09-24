@@ -89,4 +89,5 @@ public class GenericRepository <T extends Identificabile> {
             throw new IllegalArgumentException("L'entità non ha un ID");
         }
     }
+
 }

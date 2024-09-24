@@ -33,7 +33,7 @@ public class RepositoryInformazioni extends GenericRepository<InformazioneTerrit
             case EVENTO:
                 return eventi.getAll();
             case POI:
-                return poi.getAll();
+                return poi.findAll();
             case ITINERARIO:
                 return itinerari.getAll();
             default:
@@ -45,8 +45,8 @@ public class RepositoryInformazioni extends GenericRepository<InformazioneTerrit
         if(eventi.ottieni(idInfo) != null){
             return eventi.ottieni(idInfo);
         }
-        if(poi.ottieni(idInfo) != null){
-            return poi.ottieni(idInfo);
+        if(poi.findById(idInfo).isPresent()){
+            return poi.findById(idInfo).get();
         }
         if(itinerari.ottieni(idInfo) != null){
             return itinerari.ottieni(idInfo);

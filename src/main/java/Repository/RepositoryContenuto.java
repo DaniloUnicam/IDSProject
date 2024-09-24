@@ -1,22 +1,10 @@
 package Repository;
 
 import Model.Contenuto;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
-public class RepositoryContenuto extends GenericRepository<Contenuto> {
-
-    private static RepositoryContenuto repositoryContenuto;
-
-    private RepositoryContenuto() {
-        super(new HashMap<String, Contenuto>());
-    }
-
-    public static RepositoryContenuto getInstance() {
-        if (repositoryContenuto == null) {
-            repositoryContenuto = new RepositoryContenuto();
-        }
-        return repositoryContenuto;
-    }
-
-}
+@Repository
+public interface RepositoryContenuto extends JpaRepository<Contenuto, String> {}

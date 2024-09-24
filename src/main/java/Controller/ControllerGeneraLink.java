@@ -2,8 +2,16 @@ package Controller;
 
 import Model.Contenuto;
 import Repository.RepositoryContenuto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("generaLink")
 public class ControllerGeneraLink {
+
+    @Autowired
+    RepositoryContenuto RepositoryContenuto;
 
     public ControllerGeneraLink() {
 
@@ -18,8 +26,10 @@ public class ControllerGeneraLink {
    }
 
    private Contenuto ottieniContenutoDaRepository(String idContenuto){
-       return RepositoryContenuto.getInstance().ottieni(idContenuto);
+       return RepositoryContenuto.findById(idContenuto).get();
    }
+
+
 
 
 }

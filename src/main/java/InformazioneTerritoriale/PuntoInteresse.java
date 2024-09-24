@@ -39,16 +39,7 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     private List <Contenuto> contenuti= new ArrayList<>();
     //Variabile per calcolare la media delle valutazioni
 
-    private int counterValutazione = 0;
-
-
-    //Costruttore per un punto di interesse senza valutazione
-    public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, PosizioneSatellitare posizione) {
-        super(nome,descrizione,posizione);
-        this.orarioApertura = orarioApertura;
-        this.orarioChiusura = orarioChiusura;
-        this.tipo = tipo;
-    }
+    private int counterValutazione;
 
     //Costruttore per un punto di interesse con valutazione
     public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura, TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
@@ -57,6 +48,7 @@ public class PuntoInteresse extends InformazioneTerritoriale {
         this.orarioChiusura = orarioChiusura;
         this.tipo = tipo;
         this.valutazione = valutazione;
+        counterValutazione = 0;
     }
 
     /**
