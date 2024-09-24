@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor(force = true)
 @Getter
 @Setter
-
 public class Galleria extends Identificabile {
 
     //lista di contenuti presenti nella galleria
@@ -43,7 +42,6 @@ public class Galleria extends Identificabile {
     public Utente getUtente() {
         return utente;
     }
-
 
     public List<InformazioneTerritoriale> getContenuti(){
         return contenuti;

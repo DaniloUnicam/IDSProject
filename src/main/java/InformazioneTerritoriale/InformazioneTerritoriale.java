@@ -47,4 +47,16 @@ public abstract class InformazioneTerritoriale extends Identificabile implements
             return posizioneSatellitare;
         }
 
+        public String getTipoInformazioneTerritoriale(TipoInformazioneTerritoriale tipologia) {
+        switch (tipologia) {
+            case PUNTO_INTERESSE:
+                return "Punto Interesse";
+            case EVENTO:
+                return "Evento";
+            case ITINERARIO:
+                return "Itinerario";
+            default:
+                return "Informazione Territoriale";
+        }
+    }
 }

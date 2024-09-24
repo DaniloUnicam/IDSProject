@@ -23,10 +23,11 @@ public class ControllerCaricaContenutiMultimediali {
 
     }
 
-    public boolean riercaPuntoInteresseID(String idPuntoInteresse) {
+    public boolean ricercaPuntoInteresseID(String idPuntoInteresse) {
         return ottieniPuntoInteresseDaRepository(idPuntoInteresse) != null;
     }
 
+    @GetMapping("caricaContenuto/{idPunto}/{file}")
     public void caricaContenuto (String idPunto, ContenutoMultimediale file){
         ottieniPuntoInteresseDaRepository(idPunto).caricaContenuto(file);
     }

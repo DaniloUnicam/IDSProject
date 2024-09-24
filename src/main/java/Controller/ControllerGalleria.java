@@ -1,30 +1,28 @@
 package Controller;
 
-import InformazioneTerritoriale.InformazioneTerritoriale;
-import InformazioneTerritoriale.TipoInformazioneTerritoriale;
-import Repository.RepositoryInformazioni;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-//TODO
+@RestController
+@RequestMapping("galleria")
 public class ControllerGalleria {
 
+    //idInfo, idUtente
+    //public boolean salvaInformazione(String idInformazioneTerritoriale, String idUtente){
+    //    return galleria.addContenuto(idInformazioneTerritoriale, idUtente);
+    //}
+
 
     //idInfo, idUtente
-    public boolean salvaInformazione(String idInformazioneTerritoriale, String idUtente){
-        return false;
-    }
+    //@GetMapping("/informazioni/{idInformazioneTerritoriale}/{idUtente}")
+    // public List<? extends InformazioneTerritoriale> ottieniInformazione(String idInformazioneTerritoriale,
+    //                                                                   String idUtente){
+    //}
 
-    /*
-    //idInfo, idUtente
-    public List<? extends InformazioneTerritoriale> ottieniInformazione(String idInformazioneTerritoriale,
-                                                                        String idUtente){
 
-    }
-
-     */
 
     //idUtente
+    //@GetMapping("/informazioni/{idUtente}")
     //public InformazioniOutputDetailedFormat ricercaInformazione(String idUtente) {
     //    return null;
     //}

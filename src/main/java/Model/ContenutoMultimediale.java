@@ -33,6 +33,7 @@ public class ContenutoMultimediale extends Identificabile {
         this.descrizione = descrizione;
         this.url = url;
     }
+
     public ContenutoMultimediale(String titolo, String descrizione, String url,File file) {
         this.titolo = titolo;
         this.descrizione = descrizione;

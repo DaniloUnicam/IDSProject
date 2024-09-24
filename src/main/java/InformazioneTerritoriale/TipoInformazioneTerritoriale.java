@@ -3,7 +3,7 @@ package InformazioneTerritoriale;
  * Enumerazione che rappresenta i tipi di informazione territoriale
  */
 public enum TipoInformazioneTerritoriale {
-    POI,
+    PUNTO_INTERESSE,
     EVENTO,
     ITINERARIO
 }
