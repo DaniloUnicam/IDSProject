@@ -28,9 +28,5 @@ public class ControllerGeneraLink {
    private Contenuto ottieniContenutoDaRepository(String idContenuto){
        return RepositoryContenuto.findById(idContenuto).get();
    }
-
-
-
-
 }
 
