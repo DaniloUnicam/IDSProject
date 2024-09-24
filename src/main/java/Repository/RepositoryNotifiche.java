@@ -1,31 +1,10 @@
 package Repository;
 
 import FactoryNotifiche.Notifica;
+import InformazioneTerritoriale.PuntoInteresse;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class RepositoryNotifiche extends GenericRepository<Notifica> {
-
-    private static RepositoryNotifiche repositoryNotifiche;
-    private List<Notifica> notifiche;
-
-    protected RepositoryNotifiche() {
-        super(new HashMap<String, Notifica>());
-    }
-
-    public static RepositoryNotifiche getInstance() {
-        if (repositoryNotifiche == null) {
-            repositoryNotifiche = new RepositoryNotifiche();
-        }
-        return repositoryNotifiche;
-    }
-
-    public void salvaCopiaNotifica(Notifica notifica){
-        if(notifica != null){
-            this.add(notifica);
-        }
-    }
-
-
-}
+public interface RepositoryNotifiche extends JpaRepository<Notifica,String> { }

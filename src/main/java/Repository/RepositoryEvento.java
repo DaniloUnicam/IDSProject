@@ -1,25 +1,13 @@
 package Repository;
 
 import InformazioneTerritoriale.Evento;
+import InformazioneTerritoriale.PuntoInteresse;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
-//TODO
-public class RepositoryEvento extends GenericRepository<Evento> {
+@Repository
+public interface RepositoryEvento extends JpaRepository<Evento,String> {
 
-    private static RepositoryEvento repositoryEvento;
 
-    private RepositoryEvento() {
-        super(new HashMap<String, Evento>());
-    }
-
-    public static RepositoryEvento getInstance() {
-        if (repositoryEvento == null) {
-            repositoryEvento = new RepositoryEvento();
-        }
-        return repositoryEvento;
-    }
-
-    public Evento[] richiesta(){
-        return null;
-    }
 }

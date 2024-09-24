@@ -55,12 +55,26 @@ public class Galleria extends Identificabile {
 
     //aggiunge un contenuto alla galleria
     public void addContenuto(InformazioneTerritoriale informazioneTerritoriali){
-        contenuti.add(informazioneTerritoriali);
+        notNull(informazioneTerritoriali);
+        if(!this.contiene(informazioneTerritoriali))
+            contenuti.add(informazioneTerritoriali);
     }
 
     //rimuove un contenuto dalla galleria
     public void removeContenuto(InformazioneTerritoriale informazioneTerritoriali){
-        contenuti.remove(informazioneTerritoriali);
+        notNull(informazioneTerritoriali);
+        if(this.contiene(informazioneTerritoriali))
+            contenuti.remove(informazioneTerritoriali);
+    }
+
+    private boolean contiene(InformazioneTerritoriale informazioneTerritoriale){
+        return contenuti.contains(informazioneTerritoriale);
+    }
+
+    private void notNull(Object o){
+        if(o == null){
+            throw new IllegalArgumentException("Elemento nullo");
+        }
     }
 
     @Override

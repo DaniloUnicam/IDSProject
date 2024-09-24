@@ -4,54 +4,53 @@ package Repository;
 
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+@Repository
+public interface RepositoryInformazioni extends JpaRepository<InformazioneTerritoriale, String> {
+/*
+    @Autowired
+    RepositoryEvento eventi;
 
-public class RepositoryInformazioni extends GenericRepository<InformazioneTerritoriale> {
+    @Autowired
+    RepositoryPuntoInteresse poi;
 
-    private RepositoryEvento eventi;
-    private RepositoryPuntoInteresse poi;
-    private RepositoryItinerario itinerari;
-    private static RepositoryInformazioni repositoryInformazioni;
+    @Autowired
+    RepositoryItinerario itinerari;
 
-    private RepositoryInformazioni() {
-        super(new HashMap<String, InformazioneTerritoriale>());
-    }
+    @Autowired
+    RepositoryInformazioni repositoryInformazioni;
 
-    public static RepositoryInformazioni getInstance() {
-        if (repositoryInformazioni == null) {
-            repositoryInformazioni = new RepositoryInformazioni();
-        }
-        return repositoryInformazioni;
-    }
+    default List<? extends InformazioneTerritoriale> getAll (TipoInformazioneTerritoriale tipologia){
 
-
-    public List<? extends InformazioneTerritoriale> getAll (TipoInformazioneTerritoriale tipologia){
         switch (tipologia) {
             case EVENTO:
-                return eventi.getAll();
+                return eventi.findAll();
             case POI:
                 return poi.findAll();
             case ITINERARIO:
-                return itinerari.getAll();
+                return itinerari.findAll();
             default:
                 return new ArrayList<>();
         }
     }
 
-    public InformazioneTerritoriale ottieneInformazione (String idInfo){
-        if(eventi.ottieni(idInfo) != null){
-            return eventi.ottieni(idInfo);
+    default InformazioneTerritoriale ottieneInformazione (String idInfo){
+        if(eventi.findById(idInfo) != null){
+            return eventi.findById(idInfo).get();
         }
         if(poi.findById(idInfo).isPresent()){
             return poi.findById(idInfo).get();
         }
-        if(itinerari.ottieni(idInfo) != null){
-            return itinerari.ottieni(idInfo);
+        if(itinerari.findById(idInfo) != null){
+            return itinerari.findById(idInfo).get();
         }
            return null;
     }
-
+*/
 }

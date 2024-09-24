@@ -19,9 +19,9 @@ public ContestOutputFormat ottieniUnContest(String idContest) {
 }
 
 
-    public boolean aggiuntaIscrizione(String idUtente, String idContest) { //repository contest e repository utente
-        return repositoryContest.ottieniContest(idContest).aggiuntaIscrizione(repositoryUtente.ottieni(idUtente));
-    }
+    //public boolean aggiuntaIscrizione(String idUtente, String idContest) { //repository contest e repository utente
+    //    return repositoryContest.findById(idContest).get();
+    //}
 
 
     public boolean chiedeCreazioneContest(){ //permesso di creare un contest CON HANDLER AUTORIZZAZIONE

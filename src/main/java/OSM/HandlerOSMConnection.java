@@ -1,6 +1,7 @@
 package OSM;
 
 import Model.PosizioneSatellitare;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +13,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@Service
 public class HandlerOSMConnection {
 
     public static final String OSM_API_URL = "https://api.openstreetmap.org/api/0.6/map";

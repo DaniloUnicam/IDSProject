@@ -1,34 +1,13 @@
 package Repository;
 
+import InformazioneTerritoriale.PuntoInteresse;
 import Model.Contest;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Optional;
-
-public class RepositoryContest extends GenericRepository<Contest> {
-
-    private static RepositoryContest repositoryContest;
-
-    private RepositoryContest() {
-        super(new HashMap<String, Contest>());
-    }
-
-    public static RepositoryContest getInstance() {
-        if (repositoryContest == null) {
-            repositoryContest = new RepositoryContest();
-        }
-        return repositoryContest;
-    }
-
-
-    public Contest ottieniContest(String idContest){
-        for(Contest contest : super.getAll()) {
-            if(contest.getID().equals(idContest)) {
-                return contest;
-            }
-        }
-        return null;
-    }
-
+@Repository
+public interface RepositoryContest extends JpaRepository<Contest,String> {
 
 }

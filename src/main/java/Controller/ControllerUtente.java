@@ -4,10 +4,14 @@ import Autorizzazioni.ModificaRuoloUtente;
 import Autorizzazioni.Ruolo;
 import Model.Utente;
 import Repository.RepositoryUtente;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Classe che gestisce le operazioni sugli utenti
  */
+@RestController
+@RequestMapping("utente")
 public class ControllerUtente {
 
     public boolean modificaInformazioneUtente(Utente idUtente, String campo, String testo){
@@ -28,11 +32,11 @@ public class ControllerUtente {
         rimuoviRuolo.rimuoviPrivilegio(idUtente, ruolo);
     }
 
-
+/*
     public Utente ottieniUtente(String idUtente){
-        RepositoryUtente repositoryUtente = RepositoryUtente.getInstance();
+        RepositoryUtente repositoryUtente = new RepositoryUtente();
         return repositoryUtente.ottieni(idUtente);
     }
 
-
+*/
 }

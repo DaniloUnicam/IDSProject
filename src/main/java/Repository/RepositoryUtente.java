@@ -1,28 +1,13 @@
 package Repository;
 
+import InformazioneTerritoriale.PuntoInteresse;
 import Model.Utente;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class RepositoryUtente extends GenericRepository<Utente> {
+public interface RepositoryUtente extends JpaRepository<PuntoInteresse,String> {
 
-    private static RepositoryUtente repositoryUtente;
-
-    private RepositoryUtente() {
-        super(new HashMap<String, Utente>());
-    }
-
-    public static RepositoryUtente getInstance() {
-        if (repositoryUtente == null) {
-            repositoryUtente = new RepositoryUtente();
-        }
-        return repositoryUtente;
-    }
-
-
-    public List<Utente> ottieniUtenti(){
-        return super.getAll();
-    }
 
 }

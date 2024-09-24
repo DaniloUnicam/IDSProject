@@ -1,27 +1,12 @@
 package Repository;
 
 import InformazioneTerritoriale.Itinerario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
-//TODO
-public class RepositoryItinerario extends GenericRepository<Itinerario> {
+@Repository
+public interface RepositoryItinerario extends JpaRepository<Itinerario,String> {
 
-    private static RepositoryItinerario repositoryItinerario;
 
-    private RepositoryItinerario() {
-        super(new HashMap<String, Itinerario>());
-    }
-
-    public static RepositoryItinerario getInstance() {
-        if (repositoryItinerario == null) {
-            repositoryItinerario = new RepositoryItinerario();
-        }
-        return repositoryItinerario;
-    }
-
-    public void aggiungi(Itinerario itinerarioCreato) {
-        if (!this.contains(itinerarioCreato)) {
-            add(itinerarioCreato);
-        }
-    }
 }

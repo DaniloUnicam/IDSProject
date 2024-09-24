@@ -8,6 +8,8 @@ import Model.PosizioneSatellitare;
 import Repository.RepositoryEvento;
 import Repository.RepositoryItinerario;
 import Repository.RepositoryPuntoInteresse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -16,8 +18,20 @@ import java.util.List;
  * Classe che gestisce la richiesta di una mappa con i punti di interesse,
  * eventi e itinerari presenti in un'area definita.
  */
+@Service
 public class HandlerMappa {
+
+    @Autowired
     HandlerOSMConnection handlerOSMConnection = new HandlerOSMConnection();
+
+    @Autowired
+    RepositoryPuntoInteresse repositoryPuntoInteresse;
+
+    @Autowired
+    RepositoryEvento repositoryEvento;
+
+    @Autowired
+    RepositoryItinerario repositoryItinerario;
 
     public HandlerMappa() throws MalformedURLException {
     }
@@ -30,13 +44,10 @@ public class HandlerMappa {
      * @throws IOException se si verifica un errore durante la richiesta della mappa
      */
     public MapItems richiediMappa(PosizioneSatellitare posizionex, PosizioneSatellitare posizioney) throws IOException {
-        RepositoryPuntoInteresse repositoryPuntoInteresse = RepositoryPuntoInteresse.getInstance();
-        RepositoryEvento repositoryEvento = RepositoryEvento.getInstance();
-        RepositoryItinerario repositoryItinerario = RepositoryItinerario.getInstance();
-        List<PuntoInteresse> puntiInteresse = repositoryPuntoInteresse.getAll();
-        List<Evento> eventi = repositoryEvento.getAll();
-        List<Itinerario> itinerari = repositoryItinerario.getAll();
-        return new MapItems(filtra(puntiInteresse,posizionex,posizioney),
+        List<PuntoInteresse> puntoInteresse = repositoryPuntoInteresse.findAll();
+        List<Evento> eventi = repositoryEvento.findAll();
+        List<Itinerario> itinerari = repositoryItinerario.findAll();
+        return new MapItems(filtra(puntoInteresse,posizionex,posizioney),
                 filtra(eventi,posizionex,posizioney),
                 filtra(itinerari,posizionex,posizioney),
                 handlerOSMConnection.retrieveOSMData(posizionex,posizioney));

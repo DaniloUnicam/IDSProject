@@ -3,22 +3,25 @@ package Controller;
 import HandlerInformazioneTerritoriale.HandlerInformazione;
 import InformazioneTerritoriale.InformazioneTerritoriale;
 import InformazioneTerritoriale.TipoInformazioneTerritoriale;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-//TODO
+@RestController
+@RequestMapping("ricercaInformazioneTerritoriale")
 public class ControllerRicercaInformazioneTerritoriale {
 
-    //Il gestore della informazione ricerca deve essere usata dal controller
-    private HandlerInformazione handlerInformazione;
+    @Autowired
+    HandlerInformazione handlerInformazione;
 
     public void handlerInformazione(){}
 
     public ControllerRicercaInformazioneTerritoriale () {
-        this.handlerInformazione = HandlerInformazione.getInstance();
     }
-
+/*
    public List<InformazioneTerritoriale> richiestaRicerca(String ricerca, TipoInformazioneTerritoriale tipologia){
          return handlerInformazione.richiestaRicerca(ricerca,tipologia);
    }
-
+*/
 }
