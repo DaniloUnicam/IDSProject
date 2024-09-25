@@ -6,11 +6,13 @@ package it.cs.unicam.app_Comune.Builder;
  */
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.InformazioneTerritoriale;
+import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoItinerario;
 
 public abstract class BuilderInformazioneTerritoriale {
 
     protected String nome;
     protected String descrizione;
+    TipoItinerario tipologiaItinerario;
 
 
     public abstract void reset();

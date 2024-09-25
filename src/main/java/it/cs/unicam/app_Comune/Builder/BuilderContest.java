@@ -16,7 +16,7 @@ public class BuilderContest {
     public String url;
     public Utente creatore;
     public List<Contenuto> contenutiContest;
-    public TipoContest tipo;
+    public TipoContest tipologiaContest;
     public List<Utente> iscritti;
 
     public BuilderContest(){
@@ -30,7 +30,7 @@ public class BuilderContest {
         this.creatore = new Utente();
         this.iscritti = new ArrayList<>();
         this.contenutiContest = new ArrayList<>();
-        this.tipo = TipoContest.ALTRO;
+        this.tipologiaContest = TipoContest.ALTRO;
     }
 
     public void buildNome(String nome){
@@ -42,7 +42,7 @@ public class BuilderContest {
     }
 
     public void buildTipologia(TipoContest tipo){
-        this.tipo = tipo;
+        this.tipologiaContest = tipo;
     }
 
     public void buildUrl(String url){

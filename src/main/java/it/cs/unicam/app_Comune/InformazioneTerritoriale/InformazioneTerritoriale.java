@@ -29,35 +29,31 @@ public abstract class InformazioneTerritoriale  implements Posizionabile,Identif
         //id univoco dell'informazione territoriale
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private long idInformazioneTerritoriale;
+        private long ID;
 
         //posizione satellitare dell'informazione territoriale
         @Embedded
         private PosizioneSatellitare posizioneSatellitare;
 
         @Enumerated(EnumType.STRING)
-        TipoInformazioneTerritoriale tipologia;
-
-        @Enumerated(EnumType.STRING)
-        TipoStruttura tipoStruttura;
+        private TipoInformazioneTerritoriale tipologia;
 
         public InformazioneTerritoriale(String nome, String descrizione) {
             this.nome = nome;
             this.descrizione = descrizione;
         }
 
-        public InformazioneTerritoriale(String nome, String descrizione, PosizioneSatellitare posizioneSatellitare, TipoStruttura tipo) {
-            this.nome = nome;
-            this.descrizione = descrizione;
-            this.posizioneSatellitare = posizioneSatellitare;
-            this.tipoStruttura = tipo;
-        }
+    public InformazioneTerritoriale(String nome, String descrizione, PosizioneSatellitare luogo) {
+        this.nome = nome;
+        this.descrizione = descrizione;
+        this.posizioneSatellitare = luogo;
+    }
 
-        public PosizioneSatellitare getPosizione() {
+    public PosizioneSatellitare getPosizione() {
             return posizioneSatellitare;
         }
 
-        public String getTipoInformazioneTerritoriale(TipoInformazioneTerritoriale tipologia) {
+    public String getTipoInformazioneTerritoriale(TipoInformazioneTerritoriale tipologia) {
         switch (tipologia) {
             case PUNTO_INTERESSE:
                 return "Punto Interesse";
@@ -70,8 +66,10 @@ public abstract class InformazioneTerritoriale  implements Posizionabile,Identif
         }
     }
 
+
+
     @Override
     public long getID() {
-        return idInformazioneTerritoriale;
+        return ID;
     }
 }

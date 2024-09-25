@@ -16,9 +16,6 @@ import java.util.List;
 @Setter
 public class PuntoInteresse extends InformazioneTerritoriale {
 
-    //id univoco per ogni punto di interesse
-    private long idPuntoInteresse;
-
     @Embedded
     private Orario orarioApertura;
 
@@ -27,17 +24,15 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     //Tipo di struttura del punto di interesse
 
     @Enumerated(EnumType.STRING)
-    private TipoStruttura tipo;
+    private TipoPuntoInteresse tipoPuntoInteresse;
+
     //Valutazione media del punto di interesse @range 0-5
-
-
     private float valutazione;
-
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "PuntoInteresse_Contenuto",
-            joinColumns = @JoinColumn(name = "POI_ID", referencedColumnName = "idPuntoInteresse"),
+            joinColumns = @JoinColumn(name = "POI_ID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "contenuto_ID", referencedColumnName = "idContenuto"))
     private List <Contenuto> contenuti= new ArrayList<>();
     //Variabile per calcolare la media delle valutazioni
@@ -45,9 +40,10 @@ public class PuntoInteresse extends InformazioneTerritoriale {
     private int counterValutazione;
 
     //Costruttore per un punto di interesse con valutazione
-    public PuntoInteresse (String nome,String descrizione, Orario orarioApertura, Orario orarioChiusura,
-                           TipoStruttura tipo, float valutazione, PosizioneSatellitare posizione) {
-        super(nome,descrizione,posizione,tipo);
+    public PuntoInteresse (String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura,
+                           TipoPuntoInteresse tipo, float valutazione, PosizioneSatellitare posizione) {
+        super(nome,descrizione,posizione);
+        this.tipoPuntoInteresse = tipo;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
         this.valutazione = valutazione;
@@ -102,7 +98,7 @@ public class PuntoInteresse extends InformazioneTerritoriale {
 
     @Override
     public long getID() {
-        return idPuntoInteresse;
+        return super.getID();
     }
 
     @Override

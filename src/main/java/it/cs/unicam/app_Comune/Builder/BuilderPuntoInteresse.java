@@ -4,9 +4,9 @@ import it.cs.unicam.app_Comune.Model.Orario;
 import it.cs.unicam.app_Comune.Model.PosizioneSatellitare;
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
-import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoStruttura;
+import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse;
 
-import static it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoStruttura.ALTRO;
+import static it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse.ALTRO;
 
 public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
@@ -15,7 +15,7 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     private float valutazione;
 
     protected PosizioneSatellitare posizione;
-    private TipoStruttura tipoStruttura;
+    private TipoPuntoInteresse tipoPuntoInteresse;
 
     public BuilderPuntoInteresse() {
         super();
@@ -39,7 +39,7 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
     @Override
     public PuntoInteresse getResult() {
-        PuntoInteresse puntoInteresse = new PuntoInteresse(nome, descrizione, orarioApertura, orarioChiusura, tipoStruttura, valutazione, posizione);
+        PuntoInteresse puntoInteresse = new PuntoInteresse(nome, descrizione, orarioApertura, orarioChiusura, tipoPuntoInteresse, valutazione, posizione);
         this.reset();
         return puntoInteresse;
     }
@@ -62,8 +62,8 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
         this.valutazione = valutazione;
     }
 
-    public void buildTipoStruttura(TipoStruttura tipoStruttura) {
-        this.tipoStruttura = tipoStruttura;
+    public void buildTipoStruttura(TipoPuntoInteresse tipoPuntoInteresse) {
+        this.tipoPuntoInteresse = tipoPuntoInteresse;
     }
 
 }

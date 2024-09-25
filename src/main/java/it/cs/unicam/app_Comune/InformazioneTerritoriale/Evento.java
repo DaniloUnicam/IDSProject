@@ -15,46 +15,30 @@ import lombok.Setter;
 public class Evento extends InformazioneTerritoriale {
 
     private String nome;
-    @Embedded
-    private PosizioneSatellitare luogo;
-    private String descrizione;
-    //id univoco per ogni evento
 
-    private long idEvento;
+    private String descrizione;
 
     @Enumerated(EnumType.STRING)
-    private TipoEvento tipo;
+    private TipoEvento tipoEvento;
 
     public Evento(String nome, PosizioneSatellitare luogo, String descrizione, TipoEvento tipo) {
-        super(nome, descrizione);
+        super(nome, descrizione, luogo);
         this.nome = nome;
-        this.luogo = luogo;
         this.descrizione = descrizione;
-        this.tipo = tipo;
+        this.tipoEvento = tipo;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public PosizioneSatellitare getLuogo() {
-        return luogo;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
 
-    public long getID() {
-        return idEvento;
-    }
-
-    public TipoEvento getTipo() {
-        return tipo;
-    }
-
     @Override
-    public PosizioneSatellitare getPosizione() {
-       return luogo;
+    public long getID() {
+        return super.getID();
     }
+
 }

@@ -1,7 +1,7 @@
 package it.cs.unicam.app_Comune;
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
-import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoStruttura;
+import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse;
 import it.cs.unicam.app_Comune.Model.Contenuto;
 import it.cs.unicam.app_Comune.Model.ContenutoMultimediale;
 import it.cs.unicam.app_Comune.Model.Orario;
@@ -83,13 +83,13 @@ public class DataBaseEsempio {
       List<PuntoInteresse> puntiInteresse = new ArrayList<>();
       puntiInteresse.addAll(Arrays.asList(new PuntoInteresse("Rocca Borgesca", "La Rocca Borgesca, o Rocca dei Borgia, è un imponente fortificazione di Camerino, nelle Marche",
                     new Orario(00,00),new Orario(00,00),
-                    TipoStruttura.PARCO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
+                    TipoPuntoInteresse.PARCO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
                     new PuntoInteresse("Duomo di Camerino", "Il duomo di Camerino è la cattedrale di Camerino, in provincia di Macerata, e sede vescovile della diocesi di Camerino-San Severino Marche",
-                            new Orario(00,00),new Orario(00,00),
-                            TipoStruttura.ALTRO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
+                            new Orario(00,00),new Orario(23,59),
+                            TipoPuntoInteresse.ALTRO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
                     new PuntoInteresse("Museo Archeologico di Camerino", "Il Museo archeologico statale di Camerino è un museo archeologico situato a Camerino, nelle Marche",
-                            new Orario(00,00),new Orario(00,00),
-                            TipoStruttura.MUSEO,0, new PosizioneSatellitare(43.130841f,13.0624863f))));
+                            new Orario(00,00),new Orario(23,59),
+                            TipoPuntoInteresse.MUSEO,0, new PosizioneSatellitare(43.130841f,13.0624863f))));
         repositoryPuntoInteresse.saveAll(puntiInteresse);
         repositoryPuntoInteresse.flush();
     }

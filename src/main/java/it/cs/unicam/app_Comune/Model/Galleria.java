@@ -19,7 +19,7 @@ public class Galleria implements Identificabile {
     @OneToMany
     @JoinTable(name = "galleria_contenuto",
             joinColumns = @JoinColumn(name = "Galleria_idGalleria", referencedColumnName = "idGalleria"),
-            inverseJoinColumns = @JoinColumn(name = "informazione_idInformazioneTerritoriale", referencedColumnName = "idInformazioneTerritoriale"))
+            inverseJoinColumns = @JoinColumn(name = "informazione_idInformazioneTerritoriale", referencedColumnName = "ID"))
     private List<InformazioneTerritoriale> contenuti;
 
     //id univoco per ogni galleria

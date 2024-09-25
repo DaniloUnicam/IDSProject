@@ -20,9 +20,7 @@ public class Contenuto implements Identificabile {
             inverseJoinColumns = @JoinColumn(name = "contenutoMultimediale_id", referencedColumnName = "idContenutoMultimediale"))
     private ContenutoMultimediale file;
 
-
     private String commento;
-
 
     //id univoco per ogni contenuto
     @Id

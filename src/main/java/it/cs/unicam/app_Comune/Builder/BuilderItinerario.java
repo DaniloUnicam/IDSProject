@@ -9,7 +9,7 @@ import java.util.List;
 public class BuilderItinerario extends BuilderInformazioneTerritoriale {
 
     private List<PuntoInteresse> listaPuntiInteresse;
-
+    
     public BuilderItinerario() {
             super();
     }
@@ -21,7 +21,7 @@ public class BuilderItinerario extends BuilderInformazioneTerritoriale {
     }
 
     public Itinerario getResult() {
-        Itinerario itinerario = new Itinerario(nome, descrizione, listaPuntiInteresse);
+        Itinerario itinerario = new Itinerario(nome, descrizione, tipologiaItinerario, listaPuntiInteresse);
         this.reset();
         return itinerario;
     }

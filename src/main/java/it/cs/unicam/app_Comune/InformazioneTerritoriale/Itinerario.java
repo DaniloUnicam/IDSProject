@@ -12,34 +12,31 @@ import java.util.List;
 @DiscriminatorValue("ITINERARIO")
 @Getter
 @Setter
-
 public class Itinerario extends InformazioneTerritoriale {
 
     protected String nome;
+
     protected String descrizione;
+
+    @Enumerated(EnumType.STRING)
+    private TipoItinerario tipoItinerario;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "Itinerario_PuntoInteresse",
-            joinColumns = @JoinColumn(name = "itinerario_ID", referencedColumnName = "idItinerario"),
-            inverseJoinColumns = @JoinColumn(name = "ID_punto_interesse", referencedColumnName = "idPuntoInteresse"))
+            joinColumns = @JoinColumn(name = "itinerario_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "ID_punto_interesse", referencedColumnName = "ID"))
     private List<PuntoInteresse> listaPuntiInteresse;
 
-    //id univoco per ogni itinerario
-    private long idItinerario;
-
-    public Itinerario(String nome, String descrizione, List<PuntoInteresse> listaPuntiInteresse) {
+    public Itinerario(String nome, String descrizione, TipoItinerario tipoItinerario, List<PuntoInteresse> listaPuntiInteresse) {
         super(nome, descrizione);
+        this.tipoItinerario = tipoItinerario;
         this.listaPuntiInteresse = listaPuntiInteresse;
-    }
-
-    public List<PuntoInteresse> getListaPuntiInteresse() {
-        return listaPuntiInteresse;
     }
 
     @Override
     public long getID() {
-        return idItinerario;
+        return super.getID();
     }
 
 }
