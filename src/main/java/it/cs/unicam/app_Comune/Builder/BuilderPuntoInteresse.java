@@ -5,9 +5,10 @@ import it.cs.unicam.app_Comune.Model.PosizioneSatellitare;
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse;
+import org.springframework.stereotype.Component;
 
 import static it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse.ALTRO;
-
+@Component
 public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
     private Orario orarioApertura;
