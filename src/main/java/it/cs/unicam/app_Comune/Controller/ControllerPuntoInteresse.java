@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerPuntoInteresse {
 
     @PostMapping("/creaPuntoInteresse/{idPuntoInteresse}")
-    public String creaPuntoInteresse(PuntoInteresse idPuntoInteresse){
+    public long creaPuntoInteresse(PuntoInteresse idPuntoInteresse){
         BuilderPuntoInteresse builderPuntoInteresse = new BuilderPuntoInteresse();
         builderPuntoInteresse.getResult(idPuntoInteresse);
-        return idPuntoInteresse.getNome();
+        return idPuntoInteresse.getID();
     }
 
 }
