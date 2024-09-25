@@ -1,6 +1,6 @@
 package it.cs.unicam.app_Comune.Controller;
 
-import it.cs.unicam.app_Comune.Model.ContestOutputFormat;
+import it.cs.unicam.app_Comune.Dtos.outputFormat.ContestOutputFormat;
 import it.cs.unicam.app_Comune.Repository.RepositoryContest;
 import it.cs.unicam.app_Comune.Repository.RepositoryUtente;
 

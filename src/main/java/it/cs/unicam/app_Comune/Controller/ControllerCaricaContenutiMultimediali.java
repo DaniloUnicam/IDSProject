@@ -7,10 +7,7 @@ import it.cs.unicam.app_Comune.Repository.RepositoryPuntoInteresse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/contenutoMultimediale")
@@ -27,7 +24,7 @@ public class ControllerCaricaContenutiMultimediali {
         return ottieniPuntoInteresseDaRepository(idPuntoInteresse) != null;
     }
 
-    @GetMapping("/caricaContenuto/{idPunto}/{file}")
+    @PutMapping("/caricaContenuto/{idPunto}/{file}")
     public void caricaContenuto (Long idPunto, ContenutoMultimediale file){
         ottieniPuntoInteresseDaRepository(idPunto).caricaContenuto(file);
     }

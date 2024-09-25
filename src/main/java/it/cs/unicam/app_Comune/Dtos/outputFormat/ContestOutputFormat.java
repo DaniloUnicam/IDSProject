@@ -1,4 +1,4 @@
-package it.cs.unicam.app_Comune.Model;
+package it.cs.unicam.app_Comune.Dtos.outputFormat;
 
 /**
  * This class represents a Contest Detailed Output Format object.
