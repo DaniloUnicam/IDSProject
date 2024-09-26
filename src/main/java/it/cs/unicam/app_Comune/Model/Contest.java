@@ -25,7 +25,7 @@ public class Contest implements Identificabile, Valutazione {
     private String titolo;
     private String descrizione;
     private String url;
-    /*
+
         //Valutazione media del contest @range 0-5
         private float valutazione;
 
@@ -35,14 +35,13 @@ public class Contest implements Identificabile, Valutazione {
         @OneToOne
         private Contenuto contenuti;
 
-        Contenitore delle valutazioni effettuate associate agli id dei contenuti
         @ElementCollection
-        @JoinTable(
-                name = "Contest_Valutazione",
-                joinColumns = @JoinColumn(name = "contest_id", referencedColumnName = "idContest"),
-                inverseJoinColumns = @JoinColumn(name = "valutazione_id", referencedColumnName = "idValutazione"))
-        private HashMap<Float,> listaValutazioni = new HashMap<>();
-        */
+        private HashMap<Long,Float> listaValutazioni = new HashMap<>();
+
+        @ElementCollection
+        private HashMap<Long,Float> listaCounterValutazioni = new HashMap<>();
+
+
     @ManyToOne (fetch = FetchType.EAGER)
     private Utente creatore;
 
@@ -73,9 +72,8 @@ public class Contest implements Identificabile, Valutazione {
         this.descrizione = descrizione;
         this.url = url;
         this.creatore = creatore;
-        //this.valutazione = 0;
-        //this.counterValutazione = 0;
-        //this.listaValutazioni = new HashMap<>();
+        this.valutazione = 0;
+        this.counterValutazione = 0;
     }
 
     public long getID() {
@@ -91,12 +89,26 @@ public class Contest implements Identificabile, Valutazione {
             this.iscritti.add(utente);
     }
 
-    /*
-    public void aggiungiValutazione(float valutazione, Long idContenuto) {
-        if(valutazione < 1 || valutazione > 5) throw new IllegalArgumentException("Valutazione non valida");
-        this.listaValutazioni.put(valutazione, idContenuto);
-        this.valutazione = (valutazione + this.valutazione*(counterValutazione++)) / counterValutazione;
+    public void resetValutazione() {
+        this.valutazione = 0;
+        this.counterValutazione = 0;
     }
 
-     */
+    public void aggiungiValutazione(long idContenuto, float valutazione) {
+        if (valutazione < 1 || valutazione > 5) throw new IllegalArgumentException("Valutazione non valida");
+        // Recupera la valutazione corrente associata all'ID del contenuto
+        Float valutazioneCorrente = this.listaValutazioni.get(idContenuto);
+        if (valutazioneCorrente == null) {
+            valutazioneCorrente = 0.0f;
+        }
+        // Aggiorna la valutazione e il contatore
+        this.valutazione = (valutazione + valutazioneCorrente * (this.counterValutazione++)) / this.counterValutazione;
+
+        // Aggiorna la mappa listaValutazioni con la nuova valutazione
+        this.listaValutazioni.put(idContenuto, this.valutazione);
+
+        // Effettua il reset del contatore
+        this.resetValutazione();
+    }
+
 }

@@ -14,7 +14,6 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     private Orario orarioApertura;
     private Orario orarioChiusura;
     private Float valutazione;
-
     protected PosizioneSatellitare posizione;
     private TipoPuntoInteresse tipoPuntoInteresse;
 

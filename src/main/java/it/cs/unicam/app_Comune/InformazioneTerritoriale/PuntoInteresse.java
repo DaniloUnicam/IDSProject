@@ -28,7 +28,7 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
     private TipoPuntoInteresse tipoPuntoInteresse;
 
     //Valutazione media del punto di interesse @range 0-5
-    private float valutazione;
+    private Float valutazione;
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(

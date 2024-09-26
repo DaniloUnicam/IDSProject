@@ -1,12 +1,9 @@
 package it.cs.unicam.app_Comune.Controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import it.cs.unicam.app_Comune.Builder.BuilderPuntoInteresse;
 import it.cs.unicam.app_Comune.Dtos.inputFormat.PuntoInteresseInputFormat;
 import it.cs.unicam.app_Comune.Repository.RepositoryPuntoInteresse;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("puntoInteresse")
 public class ControllerPuntoInteresse {
+
 
     @Autowired
     private BuilderPuntoInteresse builderPuntoInteresse;
@@ -29,11 +27,11 @@ public class ControllerPuntoInteresse {
         PuntoInteresse puntoInteresse = builderPuntoInteresse.getResult();
         repositoryPuntoInteresse.save(puntoInteresse);
         repositoryPuntoInteresse.flush();
-        return new ResponseEntity(puntoInteresse, HttpStatus.OK);
+        return new ResponseEntity<>(puntoInteresse, HttpStatus.OK);
     }
 
 
-    //Il builder viene costruito con i dati passati dal client
+    //Il builder viene costruito con i dati passati dal body della richiesta
     private void buildPoiInputFormat(PuntoInteresseInputFormat puntoInteresseInputFormat) {
         this.builderPuntoInteresse.buildNome(puntoInteresseInputFormat.nome());
         this.builderPuntoInteresse.buildDescrizione(puntoInteresseInputFormat.descrizione());

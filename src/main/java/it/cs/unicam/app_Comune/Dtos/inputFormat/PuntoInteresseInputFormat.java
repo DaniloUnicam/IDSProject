@@ -4,9 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse;
 import it.cs.unicam.app_Comune.Model.Orario;
 import it.cs.unicam.app_Comune.Model.PosizioneSatellitare;
-
-import java.io.Serializable;
 import java.util.Objects;
+
 @Schema(description = "Punto di interesse")
 public class PuntoInteresseInputFormat {
     @Schema(description = "Nome del punto di interesse", example = "Ristorante San Fabiano")
