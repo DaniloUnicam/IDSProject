@@ -17,6 +17,7 @@ public class Orario {
     private int minuti;
 
     public Orario (int ora, int minuti) {
+        if(ora < 0 || ora > 23 || minuti < 0 || minuti > 59) throw new IllegalArgumentException("Orario non valido");
         this.ora = ora;
         this.minuti = minuti;
     }

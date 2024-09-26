@@ -82,14 +82,14 @@ public class DataBaseEsempio {
         clear(repositoryPuntoInteresse);
       List<PuntoInteresse> puntiInteresse = new ArrayList<>();
       puntiInteresse.addAll(Arrays.asList(new PuntoInteresse("Rocca Borgesca", "La Rocca Borgesca, o Rocca dei Borgia, è un imponente fortificazione di Camerino, nelle Marche",
-                    new Orario(00,00),new Orario(00,00),
-                    TipoPuntoInteresse.PARCO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
+                    new Orario(2,5),new Orario(7,8),
+                    TipoPuntoInteresse.PARCO,3, new PosizioneSatellitare(43.130841,13.0624863)),
                     new PuntoInteresse("Duomo di Camerino", "Il duomo di Camerino è la cattedrale di Camerino, in provincia di Macerata, e sede vescovile della diocesi di Camerino-San Severino Marche",
-                            new Orario(00,00),new Orario(23,59),
-                            TipoPuntoInteresse.ALTRO,0, new PosizioneSatellitare(43.130841f,13.0624863f)),
+                            new Orario(5,6),new Orario(14,4),
+                            TipoPuntoInteresse.ALTRO,3, new PosizioneSatellitare(43.130841,13.0624863)),
                     new PuntoInteresse("Museo Archeologico di Camerino", "Il Museo archeologico statale di Camerino è un museo archeologico situato a Camerino, nelle Marche",
-                            new Orario(00,00),new Orario(23,59),
-                            TipoPuntoInteresse.MUSEO,0, new PosizioneSatellitare(43.130841f,13.0624863f))));
+                            new Orario(9,1),new Orario(23,59),
+                            TipoPuntoInteresse.MUSEO,4, new PosizioneSatellitare(43.130841,13.0624863))));
         repositoryPuntoInteresse.saveAll(puntiInteresse);
         repositoryPuntoInteresse.flush();
     }

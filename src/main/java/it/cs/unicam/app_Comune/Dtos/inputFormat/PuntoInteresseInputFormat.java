@@ -13,7 +13,7 @@ import java.util.Objects;
 public class PuntoInteresseInputFormat {
     @Schema(description = "Nome del punto di interesse", example = "Ristorante San Fabiano")
     private String nome;
-    @Schema(description = "Descrizione del punto di interesse", example = "Museo di storia naturale")
+    @Schema(description = "Descrizione del punto di interesse", example = "Ristorante")
     private String descrizione;
     @Schema(description = "Orario di apertura del punto di interesse")
     private Orario orarioApertura;
@@ -22,13 +22,13 @@ public class PuntoInteresseInputFormat {
     @Schema(description = "Tipo di punto di interesse", example = "MUSEO")
     private TipoPuntoInteresse tipo;
     @Schema(description = "Valutazione del punto di interesse", example = "4.5")
-    private Float valutazione;
+    private double valutazione;
     @Schema(description = "Posizione satellitare del punto di interesse")
     private PosizioneSatellitare posizione;
 
 
     public PuntoInteresseInputFormat(String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura,
-                                     TipoPuntoInteresse tipo, Float valutazione, PosizioneSatellitare posizione) {
+                                     TipoPuntoInteresse tipo, double valutazione, PosizioneSatellitare posizione) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.orarioApertura = orarioApertura;
@@ -90,7 +90,7 @@ public class PuntoInteresseInputFormat {
         return tipo;
     }
 
-    public Float getValutazione() {
+    public double getValutazione() {
         return valutazione;
     }
 

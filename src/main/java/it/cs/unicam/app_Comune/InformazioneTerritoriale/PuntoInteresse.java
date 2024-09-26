@@ -28,7 +28,7 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
     private TipoPuntoInteresse tipoPuntoInteresse;
 
     //Valutazione media del punto di interesse @range 0-5
-    private Float valutazione;
+    private double valutazione;
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -42,7 +42,7 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
 
     //Costruttore per un punto di interesse con valutazione
     public PuntoInteresse (String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura,
-                           TipoPuntoInteresse tipo, float valutazione, PosizioneSatellitare posizione) {
+                           TipoPuntoInteresse tipo, double valutazione, PosizioneSatellitare posizione) {
         super(nome,descrizione,posizione);
         this.tipoPuntoInteresse = tipo;
         this.orarioApertura = orarioApertura;

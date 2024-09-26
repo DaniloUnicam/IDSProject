@@ -7,6 +7,6 @@ public interface Valutazione {
 
 
     //Valutazione media del punto di interesse @range 1-5
-    float valutazione = 0;
+    double valutazione = 0;
 
 }

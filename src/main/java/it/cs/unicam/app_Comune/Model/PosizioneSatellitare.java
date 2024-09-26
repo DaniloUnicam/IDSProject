@@ -10,21 +10,21 @@ import lombok.NoArgsConstructor;
 public class PosizioneSatellitare {
 
     @Column(insertable = false, updatable = false)
-    private final float latitudine;
+    private final double latitudine;
 
     @Column(insertable = false, updatable = false)
-    private final float longitudine;
+    private final double longitudine;
 
-    public PosizioneSatellitare(float latitudine, float longitudine) {
+    public PosizioneSatellitare(double latitudine, double longitudine) {
         this.latitudine = latitudine;
         this.longitudine = longitudine;
     }
 
-    public float getLatitudine() {
+    public double getLatitudine() {
         return latitudine;
     }
 
-    public float getLongitudine() {
+    public double getLongitudine() {
         return longitudine;
     }
 }

@@ -15,7 +15,7 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
     private Orario orarioApertura;
     private Orario orarioChiusura;
-    private Float valutazione;
+    private double valutazione;
     protected PosizioneSatellitare posizione;
     private TipoPuntoInteresse tipoPuntoInteresse;
 
@@ -54,7 +54,7 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
         this.orarioChiusura = orarioChiusura;
     }
 
-    public void buildValutazione(Float valutazione) {
+    public void buildValutazione(double valutazione) {
         this.valutazione = valutazione;
     }
 
