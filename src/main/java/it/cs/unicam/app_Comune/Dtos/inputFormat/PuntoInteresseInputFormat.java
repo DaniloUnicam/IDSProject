@@ -23,7 +23,7 @@ public class PuntoInteresseInputFormat {
     private TipoPuntoInteresse tipo;
     @Schema(description = "Valutazione del punto di interesse", example = "4.5")
     private Float valutazione;
-    @Schema(description = "Posizione satellitare del punto di interesse", example = "43.717899, 10.396585")
+    @Schema(description = "Posizione satellitare del punto di interesse")
     private PosizioneSatellitare posizione;
 
 
