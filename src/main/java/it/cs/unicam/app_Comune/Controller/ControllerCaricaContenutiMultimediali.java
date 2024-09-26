@@ -3,6 +3,7 @@ package it.cs.unicam.app_Comune.Controller;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
 import it.cs.unicam.app_Comune.Model.Contenuto;
 import it.cs.unicam.app_Comune.Model.ContenutoMultimediale;
+import it.cs.unicam.app_Comune.Repository.RepositoryContenutoMultimediale;
 import it.cs.unicam.app_Comune.Repository.RepositoryPuntoInteresse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,9 @@ public class ControllerCaricaContenutiMultimediali {
     @Autowired
     RepositoryPuntoInteresse repositoryPuntoInteresse;
 
+    @Autowired
+    RepositoryContenutoMultimediale repositoryContenutoMultimediale;
+
     public ControllerCaricaContenutiMultimediali() {
 
     }
@@ -25,8 +29,11 @@ public class ControllerCaricaContenutiMultimediali {
     }
 
     @PutMapping("/caricaContenuto/{idPunto}/{file}")
-    public void caricaContenuto (Long idPunto, ContenutoMultimediale file){
+    public ResponseEntity<Object> caricaContenuto (Long idPunto, ContenutoMultimediale file){
         ottieniPuntoInteresseDaRepository(idPunto).caricaContenuto(file);
+        repositoryContenutoMultimediale.save(file);
+        repositoryContenutoMultimediale.flush();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/visualizzaContenuti/{idPuntoInteresse}/{idContenuto}")
