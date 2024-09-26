@@ -29,11 +29,10 @@ public class ControllerCaricaContenutiMultimediali {
     }
 
     @PutMapping("/caricaContenuto/{idPunto}/{file}")
-    public ResponseEntity<Object> caricaContenuto (Long idPunto, ContenutoMultimediale file){
+    public void caricaContenuto (Long idPunto, ContenutoMultimediale file){
         ottieniPuntoInteresseDaRepository(idPunto).caricaContenuto(file);
         repositoryContenutoMultimediale.save(file);
         repositoryContenutoMultimediale.flush();
-        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/visualizzaContenuti/{idPuntoInteresse}/{idContenuto}")
