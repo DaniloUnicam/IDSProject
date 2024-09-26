@@ -13,7 +13,7 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
     private Orario orarioApertura;
     private Orario orarioChiusura;
-    private float valutazione;
+    private Float valutazione;
 
     protected PosizioneSatellitare posizione;
     private TipoPuntoInteresse tipoPuntoInteresse;
@@ -31,25 +31,23 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     public void reset() {
         this.buildNome("Non identificato");
         this.buildDescrizione("Non dichiarato");
-        this.buildTipoStruttura(ALTRO);
+        this.buildTipoPuntoInteresse(ALTRO);
         this.buildPosizioneSatellitare(new PosizioneSatellitare(0, 0));
         this.buildOrarioApertura(new Orario(0, 0));
         this.buildOrarioChiusura(new Orario(0, 0));
-        this.buildValutazione(0);
+        this.buildValutazione(0.0f);
     }
 
     @Override
     public PuntoInteresse getResult() {
-        PuntoInteresse puntoInteresse = new PuntoInteresse(nome, descrizione, orarioApertura, orarioChiusura, tipoPuntoInteresse, valutazione, posizione);
+        PuntoInteresse puntoInteresse = new PuntoInteresse
+                (nome, descrizione, orarioApertura,
+                        orarioChiusura, tipoPuntoInteresse,
+                        valutazione, posizione);
         this.reset();
         return puntoInteresse;
     }
 
-    public PuntoInteresse getResult(PuntoInteresse poi) {
-        PuntoInteresse puntoInteresse = poi;
-        this.reset();
-        return puntoInteresse;
-    }
 
     public void buildOrarioApertura(Orario orarioApertura) {
         this.orarioApertura = orarioApertura;
@@ -59,11 +57,11 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
         this.orarioChiusura = orarioChiusura;
     }
 
-    public void buildValutazione(float valutazione) {
+    public void buildValutazione(Float valutazione) {
         this.valutazione = valutazione;
     }
 
-    public void buildTipoStruttura(TipoPuntoInteresse tipoPuntoInteresse) {
+    public void buildTipoPuntoInteresse(TipoPuntoInteresse tipoPuntoInteresse) {
         this.tipoPuntoInteresse = tipoPuntoInteresse;
     }
 

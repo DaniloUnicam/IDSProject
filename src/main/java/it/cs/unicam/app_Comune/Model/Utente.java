@@ -20,8 +20,8 @@ import java.util.regex.Pattern;
  */
 public class Utente implements Identificabile {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         //id univoco dell'utente
         private long idUtente;
 
@@ -70,11 +70,13 @@ public class Utente implements Identificabile {
             return mat.matches();
         }
 
-        public long getID() {
+        public long getIdUtente() {
             return idUtente;
         }
 
 
-
-
+    @Override
+    public long getID() {
+        return idUtente;
+    }
 }

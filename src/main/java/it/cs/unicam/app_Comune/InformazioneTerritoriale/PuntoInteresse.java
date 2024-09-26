@@ -1,5 +1,6 @@
 package it.cs.unicam.app_Comune.InformazioneTerritoriale;
 
+import it.cs.unicam.app_Comune.Abstract.Valutazione;
 import it.cs.unicam.app_Comune.Model.*;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import java.util.List;
 @DiscriminatorValue("PUNTOINTERESSE")
 @Getter
 @Setter
-public class PuntoInteresse extends InformazioneTerritoriale {
+public class PuntoInteresse extends InformazioneTerritoriale implements Valutazione {
 
     @Embedded
     private Orario orarioApertura;
@@ -55,6 +56,7 @@ public class PuntoInteresse extends InformazioneTerritoriale {
      * @param valutazione valutazione da aggiungere
      */
     public void aggiungiValutazione(float valutazione) {
+        if(valutazione < 1 || valutazione > 5) throw new IllegalArgumentException("Valutazione non valida");
         this.valutazione = (valutazione + this.valutazione*(counterValutazione++)) / counterValutazione;
     }
 
