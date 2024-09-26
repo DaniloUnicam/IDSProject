@@ -1,10 +1,12 @@
 package it.cs.unicam.app_Comune.Builder;
 
+import it.cs.unicam.app_Comune.Dtos.inputFormat.PuntoInteresseInputFormat;
 import it.cs.unicam.app_Comune.Model.Orario;
 import it.cs.unicam.app_Comune.Model.PosizioneSatellitare;
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import static it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteresse.ALTRO;
@@ -17,9 +19,6 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     protected PosizioneSatellitare posizione;
     private TipoPuntoInteresse tipoPuntoInteresse;
 
-    public BuilderPuntoInteresse() {
-        super();
-    }
 
     public void buildPosizioneSatellitare(PosizioneSatellitare posizione){
         this.posizione=posizione;
@@ -46,7 +45,6 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
         this.reset();
         return puntoInteresse;
     }
-
 
     public void buildOrarioApertura(Orario orarioApertura) {
         this.orarioApertura = orarioApertura;

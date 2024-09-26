@@ -12,7 +12,6 @@ public abstract class BuilderInformazioneTerritoriale {
 
     protected String nome;
     protected String descrizione;
-    TipoItinerario tipologiaItinerario;
 
 
     public abstract void reset();

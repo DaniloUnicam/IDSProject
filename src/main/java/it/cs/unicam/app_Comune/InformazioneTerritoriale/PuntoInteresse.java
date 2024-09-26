@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor(force = true)
+@NoArgsConstructor
 @DiscriminatorValue("PUNTOINTERESSE")
 @Getter
 @Setter

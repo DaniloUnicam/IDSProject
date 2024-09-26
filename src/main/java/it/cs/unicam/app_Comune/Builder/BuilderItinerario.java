@@ -2,6 +2,7 @@ package it.cs.unicam.app_Comune.Builder;
 
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.Itinerario;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
+import it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoItinerario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 public class BuilderItinerario extends BuilderInformazioneTerritoriale {
 
     private List<PuntoInteresse> listaPuntiInteresse;
+    private TipoItinerario tipologiaItinerario;
     
     public BuilderItinerario() {
             super();

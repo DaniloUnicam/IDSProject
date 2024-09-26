@@ -4,6 +4,7 @@ import it.cs.unicam.app_Comune.Builder.BuilderPuntoInteresse;
 import it.cs.unicam.app_Comune.Dtos.inputFormat.PuntoInteresseInputFormat;
 import it.cs.unicam.app_Comune.Repository.RepositoryPuntoInteresse;
 import it.cs.unicam.app_Comune.InformazioneTerritoriale.PuntoInteresse;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("puntoInteresse")
+@NoArgsConstructor
 public class ControllerPuntoInteresse {
 
 
@@ -33,13 +35,13 @@ public class ControllerPuntoInteresse {
 
     //Il builder viene costruito con i dati passati dal body della richiesta
     private void buildPoiInputFormat(PuntoInteresseInputFormat puntoInteresseInputFormat) {
-        this.builderPuntoInteresse.buildNome(puntoInteresseInputFormat.nome());
-        this.builderPuntoInteresse.buildDescrizione(puntoInteresseInputFormat.descrizione());
-        this.builderPuntoInteresse.buildTipoPuntoInteresse(puntoInteresseInputFormat.tipo());
-        this.builderPuntoInteresse.buildPosizioneSatellitare(puntoInteresseInputFormat.posizione());
-        this.builderPuntoInteresse.buildOrarioApertura(puntoInteresseInputFormat.orarioApertura());
-        this.builderPuntoInteresse.buildOrarioApertura(puntoInteresseInputFormat.orarioChiusura());
-        this.builderPuntoInteresse.buildValutazione(puntoInteresseInputFormat.valutazione());
+        this.builderPuntoInteresse.buildNome(puntoInteresseInputFormat.getNome());
+        this.builderPuntoInteresse.buildDescrizione(puntoInteresseInputFormat.getDescrizione());
+        this.builderPuntoInteresse.buildOrarioApertura(puntoInteresseInputFormat.getOrarioApertura());
+        this.builderPuntoInteresse.buildOrarioChiusura(puntoInteresseInputFormat.getOrarioChiusura());
+        this.builderPuntoInteresse.buildTipoPuntoInteresse(puntoInteresseInputFormat.getTipo());
+        this.builderPuntoInteresse.buildValutazione(puntoInteresseInputFormat.getValutazione());
+        this.builderPuntoInteresse.buildPosizioneSatellitare(puntoInteresseInputFormat.getPosizione());
     }
 
     @GetMapping("/getPuntoInteresse/{id}")
