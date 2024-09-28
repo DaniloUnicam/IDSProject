@@ -103,8 +103,8 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
         return super.getID();
     }
 
-    @Override
-    public PosizioneSatellitare getPosizione() {
-        return super.getPosizione();
-    }
+    //@Override
+    //public PosizioneSatellitare getPosizione() {
+    //    return super.getPosizione();
+    //}
 }

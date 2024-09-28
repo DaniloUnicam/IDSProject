@@ -26,18 +26,18 @@ public class PuntoInteresseInputFormat {
     @Schema(description = "Valutazione del punto di interesse", example = "5")
     private double valutazione;
     @Schema(description = "Posizione satellitare del punto di interesse", example = "43.1038732,13.2924709")
-    private PosizioneSatellitare posizione;
+    private PosizioneSatellitare posizioneSatellitareInputFormat;
 
 
-    public PuntoInteresseInputFormat(String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura,
-                                     TipoPuntoInteresse tipo, double valutazione, PosizioneSatellitare posizione) {
+    public PuntoInteresseInputFormat(String nome, String descrizione, PosizioneSatellitare posizioneSatellitareinputFormat, Orario orarioApertura, Orario orarioChiusura,
+                                     TipoPuntoInteresse tipo, double valutazione) {
         this.nome = nome;
         this.descrizione = descrizione;
+        this.posizioneSatellitareInputFormat = posizioneSatellitareinputFormat;
         this.orarioApertura = orarioApertura;
         this.orarioChiusura = orarioChiusura;
         this.tipo = tipo;
         this.valutazione = valutazione;
-        this.posizione = posizione;
     }
 
 
@@ -52,12 +52,12 @@ public class PuntoInteresseInputFormat {
                 Objects.equals(this.orarioChiusura, that.orarioChiusura) &&
                 Objects.equals(this.tipo, that.tipo) &&
                 Objects.equals(this.valutazione, that.valutazione) &&
-                Objects.equals(this.posizione, that.posizione);
+                Objects.equals(this.posizioneSatellitareInputFormat, that.posizioneSatellitareInputFormat);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, descrizione, orarioApertura, orarioChiusura, tipo, valutazione, posizione);
+        return Objects.hash(nome, descrizione, orarioApertura, orarioChiusura, tipo, valutazione, posizioneSatellitareInputFormat);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class PuntoInteresseInputFormat {
                 "orarioChiusura=" + orarioChiusura + ", " +
                 "tipo=" + tipo + ", " +
                 "valutazione=" + valutazione + ", " +
-                "posizione=" + posizione + ']';
+                "posizione=" + posizioneSatellitareInputFormat + ']';
     }
 
     public String getNome() {
@@ -96,8 +96,8 @@ public class PuntoInteresseInputFormat {
         return valutazione;
     }
 
-    public PosizioneSatellitare getPosizione() {
-        return posizione;
+    public PosizioneSatellitare getPosizioneSatellitareInputFormat() {
+        return posizioneSatellitareInputFormat;
     }
 }
 

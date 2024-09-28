@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/generaLink")
+//@RestController
+//@RequestMapping("/generaLink")
 public class ControllerGeneraLink {
-
+/*
     @Autowired
     RepositoryContenuto RepositoryContenuto;
 
@@ -31,5 +31,7 @@ public class ControllerGeneraLink {
    private Contenuto ottieniContenutoDaRepository(Long idContenuto){
        return RepositoryContenuto.findById(idContenuto).get();
    }
+
+ */
 }
 

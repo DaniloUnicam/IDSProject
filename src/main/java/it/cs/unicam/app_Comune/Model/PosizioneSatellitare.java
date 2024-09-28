@@ -30,4 +30,5 @@ public class PosizioneSatellitare {
     public double getLongitudine() {
         return longitudine;
     }
+
 }

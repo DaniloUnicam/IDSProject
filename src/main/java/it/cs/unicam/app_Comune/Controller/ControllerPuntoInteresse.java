@@ -41,7 +41,7 @@ public class ControllerPuntoInteresse {
         this.builderPuntoInteresse.buildOrarioChiusura(puntoInteresseInputFormat.getOrarioChiusura());
         this.builderPuntoInteresse.buildTipoPuntoInteresse(puntoInteresseInputFormat.getTipo());
         this.builderPuntoInteresse.buildValutazione(puntoInteresseInputFormat.getValutazione());
-        this.builderPuntoInteresse.buildPosizioneSatellitare(puntoInteresseInputFormat.getPosizione());
+        this.builderPuntoInteresse.buildPosizioneSatellitare(puntoInteresseInputFormat.getPosizioneSatellitareInputFormat());
     }
 
     @GetMapping("/getPuntoInteresse/{id}")
