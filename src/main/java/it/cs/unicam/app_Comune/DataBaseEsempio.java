@@ -47,12 +47,10 @@ public class DataBaseEsempio {
 
     private void setUpContenuto(RepositoryContenuto repositoryContenuto, RepositoryContenutoMultimediale repositoryContenutoMultimediale) {
         clear(repositoryContenuto);
-
-        // Salva prima i contenuti multimediali
         ContenutoMultimediale cm1 = new ContenutoMultimediale(
                 "Foto Borgesca", "La foto dell'anno",
                 "http://www.google.it/",
-                new File("C:\\Users\\abiga\\OneDrive\\Desktop\\3AnnoInformaticaCD\\Progetto2024_IDS_GRUPPO\\src\\main\\resources\\Files\\RoccadeiBorgia.jpg"));
+                new File("src/main/resources/Files/Borgesca.jpg"));
 
         repositoryContenutoMultimediale.save(cm1);
         repositoryContenutoMultimediale.flush();
@@ -60,16 +58,15 @@ public class DataBaseEsempio {
         ContenutoMultimediale cm3 = new ContenutoMultimediale(
                 "Foto Museo", "La foto dell'anno",
                 "http://www.google.it/",
-                new File("C:\\Users\\abiga\\OneDrive\\Desktop\\3AnnoInformaticaCD\\Progetto2024_IDS_GRUPPO\\src\\main\\resources\\Files\\MuseoArcheologicoStataleCamerino.jpg"));
+                new File("src/main/resources/Files/Museo.jpg"));
 
         repositoryContenutoMultimediale.save(cm3);
         repositoryContenutoMultimediale.flush();
 
-        // Ora crea i contenuti e associa i contenuti multimediali salvati
         List<Contenuto> contenuti = new ArrayList<>();
-        Contenuto contenuto1 = new Contenuto(cm1);  // Usa l'oggetto persistito
+        Contenuto contenuto1 = new Contenuto(cm1);
         Contenuto contenuto2 = new Contenuto("Foto del Duomo di Camerino");
-        Contenuto contenuto3 = new Contenuto(cm3);  // Usa l'oggetto persistito
+        Contenuto contenuto3 = new Contenuto(cm3);
 
         contenuti.addAll(Arrays.asList(contenuto1, contenuto2, contenuto3));
         repositoryContenuto.saveAll(contenuti);
@@ -81,15 +78,17 @@ public class DataBaseEsempio {
     private void setUpPuntoInteresse(RepositoryPuntoInteresse repositoryPuntoInteresse) {
         clear(repositoryPuntoInteresse);
       List<PuntoInteresse> puntiInteresse = new ArrayList<>();
-      puntiInteresse.addAll(Arrays.asList(new PuntoInteresse("Rocca Borgesca", "La Rocca Borgesca, o Rocca dei Borgia, è un imponente fortificazione di Camerino, nelle Marche",
-                    new Orario(2,5),new Orario(7,8),
-                    TipoPuntoInteresse.PARCO,3, new PosizioneSatellitare(43.130841,13.0624863)),
-                    new PuntoInteresse("Duomo di Camerino", "Il duomo di Camerino è la cattedrale di Camerino, in provincia di Macerata, e sede vescovile della diocesi di Camerino-San Severino Marche",
-                            new Orario(5,6),new Orario(14,4),
-                            TipoPuntoInteresse.ALTRO,3, new PosizioneSatellitare(43.130841,13.0624863)),
+      puntiInteresse.addAll(Arrays.asList(new PuntoInteresse("Rocca Borgesca",
+                      "La Rocca Borgesca, o Rocca dei Borgia, è un imponente fortificazione di Camerino, nelle Marche",
+              new PosizioneSatellitare(43.130841,13.0624863), new Orario(2,5),new Orario(7,8),
+                    TipoPuntoInteresse.PARCO,3),
+                    new PuntoInteresse("Duomo di Camerino",
+                            "Il duomo di Camerino è la cattedrale di Camerino, in provincia di Macerata, e sede vescovile della diocesi di Camerino-San Severino Marche",
+                            new PosizioneSatellitare(43.130841,13.0624863),new Orario(5,6),new Orario(14,4),
+                            TipoPuntoInteresse.ALTRO,3),
                     new PuntoInteresse("Museo Archeologico di Camerino", "Il Museo archeologico statale di Camerino è un museo archeologico situato a Camerino, nelle Marche",
-                            new Orario(9,1),new Orario(23,59),
-                            TipoPuntoInteresse.MUSEO,4, new PosizioneSatellitare(43.130841,13.0624863))));
+                            new PosizioneSatellitare(43.130841,13.0624863), new Orario(9,1),new Orario(23,59),
+                            TipoPuntoInteresse.MUSEO,4)));
         repositoryPuntoInteresse.saveAll(puntiInteresse);
         repositoryPuntoInteresse.flush();
     }

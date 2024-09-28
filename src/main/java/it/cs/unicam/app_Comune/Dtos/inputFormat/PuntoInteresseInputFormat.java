@@ -13,17 +13,19 @@ import java.util.Objects;
 public class PuntoInteresseInputFormat {
     @Schema(description = "Nome del punto di interesse", example = "Ristorante San Fabiano")
     private String nome;
-    @Schema(description = "Descrizione del punto di interesse", example = "Ristorante")
+    @Schema(description = "Descrizione del punto di interesse", example = "Ristorante situato nelle campagne di San Ginesio")
     private String descrizione;
+    //scrivere l'ora come 0:0, non 00:00
     @Schema(description = "Orario di apertura del punto di interesse")
     private Orario orarioApertura;
+    //scrivere l'ora come 0:0, non 00:00
     @Schema(description = "Orario di chiusura del punto di interesse")
     private Orario orarioChiusura;
-    @Schema(description = "Tipo di punto di interesse", example = "MUSEO")
+    @Schema(description = "Tipo di punto di interesse", example = "RISTORANTE")
     private TipoPuntoInteresse tipo;
-    @Schema(description = "Valutazione del punto di interesse", example = "4.5")
+    @Schema(description = "Valutazione del punto di interesse", example = "5")
     private double valutazione;
-    @Schema(description = "Posizione satellitare del punto di interesse")
+    @Schema(description = "Posizione satellitare del punto di interesse", example = "43.1038732,13.2924709")
     private PosizioneSatellitare posizione;
 
 

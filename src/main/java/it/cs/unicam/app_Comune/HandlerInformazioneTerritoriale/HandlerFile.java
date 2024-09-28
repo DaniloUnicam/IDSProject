@@ -1,3 +1,4 @@
+// src/main/java/it/cs/unicam/app_Comune/HandlerInformazioneTerritoriale/HandlerFile.java
 package it.cs.unicam.app_Comune.HandlerInformazioneTerritoriale;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -13,12 +14,12 @@ public class HandlerFile {
     @Value("${fileResources.path}")
     private String filePath;
 
-    public void saveFile(MultipartFile file) throws Exception {
-        File fileToSave = new File(filePath + file.getName());
+    public File saveFile(MultipartFile file) throws Exception {
+        File fileToSave = new File(filePath + file.getOriginalFilename());
         fileToSave.createNewFile();
-        FileOutputStream fileOutputStream = new FileOutputStream(fileToSave);
-        fileOutputStream.write(file.getBytes());
-        fileOutputStream.close();
+        try (FileOutputStream fileOutputStream = new FileOutputStream(fileToSave)) {
+            fileOutputStream.write(file.getBytes());
+        }
+        return fileToSave;
     }
-
 }

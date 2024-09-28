@@ -39,10 +39,10 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
     //Variabile per calcolare la media delle valutazioni
 
     private int counterValutazione;
-
+    
     //Costruttore per un punto di interesse con valutazione
-    public PuntoInteresse (String nome, String descrizione, Orario orarioApertura, Orario orarioChiusura,
-                           TipoPuntoInteresse tipo, double valutazione, PosizioneSatellitare posizione) {
+    public PuntoInteresse (String nome, String descrizione, PosizioneSatellitare posizione, Orario orarioApertura, Orario orarioChiusura,
+                           TipoPuntoInteresse tipo, double valutazione) {
         super(nome,descrizione,posizione);
         this.tipoPuntoInteresse = tipo;
         this.orarioApertura = orarioApertura;

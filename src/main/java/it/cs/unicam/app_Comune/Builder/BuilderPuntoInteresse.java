@@ -13,10 +13,10 @@ import static it.cs.unicam.app_Comune.InformazioneTerritoriale.TipoPuntoInteress
 @Component
 public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
 
+    protected PosizioneSatellitare posizione;
     private Orario orarioApertura;
     private Orario orarioChiusura;
     private double valutazione;
-    protected PosizioneSatellitare posizione;
     private TipoPuntoInteresse tipoPuntoInteresse;
 
 
@@ -29,19 +29,17 @@ public class BuilderPuntoInteresse extends BuilderInformazioneTerritoriale {
     public void reset() {
         this.buildNome("Non identificato");
         this.buildDescrizione("Non dichiarato");
-        this.buildTipoPuntoInteresse(ALTRO);
         this.buildPosizioneSatellitare(new PosizioneSatellitare(0, 0));
         this.buildOrarioApertura(new Orario(0, 0));
         this.buildOrarioChiusura(new Orario(0, 0));
+        this.buildTipoPuntoInteresse(ALTRO);
         this.buildValutazione(0.0f);
     }
 
     @Override
     public PuntoInteresse getResult() {
-        PuntoInteresse puntoInteresse = new PuntoInteresse
-                (nome, descrizione, orarioApertura,
-                        orarioChiusura, tipoPuntoInteresse,
-                        valutazione, posizione);
+        PuntoInteresse puntoInteresse =
+                new PuntoInteresse(nome, descrizione, posizione, orarioApertura, orarioChiusura, tipoPuntoInteresse, valutazione);
         this.reset();
         return puntoInteresse;
     }

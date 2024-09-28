@@ -1,5 +1,6 @@
 package it.cs.unicam.app_Comune.Controller;
 import it.cs.unicam.app_Comune.HandlerInformazioneTerritoriale.HandlerFile;
+import it.cs.unicam.app_Comune.Repository.RepositoryContenuto;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -14,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("contenutoMultimediale")
@@ -36,22 +39,37 @@ public class ControllerCaricaContenutiMultimediali  {
         return ottieniPuntoInteresseDaRepository(idPuntoInteresse) != null;
     }
 
-    @PostMapping(value = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<Object> caricaContenuto (@RequestParam("file") MultipartFile file,
-    @PathParam("nome") String nome
-            , @PathParam("descrizione") String descrizione){
+    @PostMapping(value = "caricaContenuto/{idPunto}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Object> caricaContenutoMultimedialeSuPuntoInteresse(@PathVariable("idPunto") String idPunto,
+                                             @RequestParam("file") MultipartFile file,
+                                             @RequestParam("nome") String nome,
+                                             @RequestParam("descrizione") String descrizione) throws IOException {
         try {
-            repositoryContenutoMultimediale.save(new ContenutoMultimediale(nome, descrizione, file.getOriginalFilename()));
+            ContenutoMultimediale contenutoMultimediale = new ContenutoMultimediale(nome, descrizione, file.getOriginalFilename());
             handlerFile.saveFile(file);
-            repositoryContenutoMultimediale.flush();
-            return new ResponseEntity<>("File caricato", HttpStatus.OK);
+            repositoryContenutoMultimediale.save(contenutoMultimediale);
+            return new ResponseEntity<>("File caricato con successo", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping("/visualizzaContenuti/{idPuntoInteresse}/{idContenuto}")
-    public ResponseEntity<Object> visualizzareContenuto (@PathVariable("idPuntoInteresse") Long idPuntoInteresse, @PathVariable ("idContenuto")Long idContenuto){
+    @PostMapping(value = "/caricaContenutoMultimediale", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Object> caricaContenutoMultimediale(@RequestParam("file") MultipartFile file,
+                                                  @RequestParam("nome") String nome,
+                                                  @RequestParam("descrizione") String descrizione) throws IOException {
+        try {
+            ContenutoMultimediale contenutoMultimediale = new ContenutoMultimediale(nome, descrizione, file.getOriginalFilename());
+            handlerFile.saveFile(file);
+            repositoryContenutoMultimediale.save(contenutoMultimediale);
+            return new ResponseEntity<>("File caricato con successo", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/ottieniContenutoPuntoInteresse/{idPuntoInteresse}/{idContenuto}")
+    public ResponseEntity<Object> ottieniContenutoPuntoInteresse(@PathVariable("idPuntoInteresse") Long idPuntoInteresse, @PathVariable ("idContenuto")Long idContenuto){
         try {
             Contenuto contenuto = ottieniPuntoInteresseDaRepository(idPuntoInteresse).visualizzareContenuto(idContenuto);
             return new ResponseEntity<>(contenuto, HttpStatus.OK);
@@ -61,6 +79,7 @@ public class ControllerCaricaContenutiMultimediali  {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
     private PuntoInteresse ottieniPuntoInteresseDaRepository(long idPuntoInteresse){
         return repositoryPuntoInteresse.getReferenceById(idPuntoInteresse);

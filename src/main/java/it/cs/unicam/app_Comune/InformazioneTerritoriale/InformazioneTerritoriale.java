@@ -35,9 +35,6 @@ public abstract class InformazioneTerritoriale  implements Posizionabile,Identif
         @Embedded
         private PosizioneSatellitare posizioneSatellitare;
 
-        @Enumerated(EnumType.STRING)
-        private TipoInformazioneTerritoriale tipologia;
-
         public InformazioneTerritoriale(String nome, String descrizione) {
             this.nome = nome;
             this.descrizione = descrizione;
@@ -53,7 +50,7 @@ public abstract class InformazioneTerritoriale  implements Posizionabile,Identif
             return posizioneSatellitare;
         }
 
-    public String getTipoInformazioneTerritoriale(TipoInformazioneTerritoriale tipologia) {
+    public Object getTipoInformazioneTerritoriale(TipoInformazioneTerritoriale tipologia) {
         switch (tipologia) {
             case PUNTO_INTERESSE:
                 return "Punto Interesse";
