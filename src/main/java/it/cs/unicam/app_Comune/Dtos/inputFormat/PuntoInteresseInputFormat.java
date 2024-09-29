@@ -40,38 +40,6 @@ public class PuntoInteresseInputFormat {
         this.valutazione = valutazione;
     }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (PuntoInteresseInputFormat) obj;
-        return Objects.equals(this.nome, that.nome) &&
-                Objects.equals(this.descrizione, that.descrizione) &&
-                Objects.equals(this.orarioApertura, that.orarioApertura) &&
-                Objects.equals(this.orarioChiusura, that.orarioChiusura) &&
-                Objects.equals(this.tipo, that.tipo) &&
-                Objects.equals(this.valutazione, that.valutazione) &&
-                Objects.equals(this.posizioneSatellitareInputFormat, that.posizioneSatellitareInputFormat);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, descrizione, orarioApertura, orarioChiusura, tipo, valutazione, posizioneSatellitareInputFormat);
-    }
-
-    @Override
-    public String toString() {
-        return "PuntoInteresseInputFormat[" +
-                "nome=" + nome + ", " +
-                "descrizione=" + descrizione + ", " +
-                "orarioApertura=" + orarioApertura + ", " +
-                "orarioChiusura=" + orarioChiusura + ", " +
-                "tipo=" + tipo + ", " +
-                "valutazione=" + valutazione + ", " +
-                "posizione=" + posizioneSatellitareInputFormat + ']';
-    }
-
     public String getNome() {
         return nome;
     }

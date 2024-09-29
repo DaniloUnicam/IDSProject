@@ -17,8 +17,8 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor(force = true)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TIPOLOGIAINFORMAZIONETERRITORIALE")
-@DiscriminatorValue("INFORMAZIONETERRITORIALE")
+@DiscriminatorColumn(name = "TIPOLOGIA_INFORMAZIONE_TERRITORIALE")
+@DiscriminatorValue("INFORMAZIONE_TERRITORIALE")
 @Getter
 @Setter
 public abstract class InformazioneTerritoriale  implements Posizionabile,Identificabile {

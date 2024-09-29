@@ -22,14 +22,33 @@ public class ControllerPuntoInteresse {
     @Autowired
     private RepositoryPuntoInteresse repositoryPuntoInteresse;
 
+    /**
+     * Crea un punto di interesse utilizzando il builder, a partire dai dati passati nel body della richiesta.
+     * @param puntoInteresseInputFormat
+     * @return
+     */
     @PostMapping("/creaPuntoInteresse")
     public ResponseEntity<PuntoInteresse> creaPuntoInteresse(@RequestBody PuntoInteresseInputFormat puntoInteresseInputFormat) {
-        this.builderPuntoInteresse = new BuilderPuntoInteresse();
-        buildPoiInputFormat(puntoInteresseInputFormat);
-        PuntoInteresse puntoInteresse = builderPuntoInteresse.getResult();
-        repositoryPuntoInteresse.save(puntoInteresse);
+            this.builderPuntoInteresse = new BuilderPuntoInteresse();
+            buildPoiInputFormat(puntoInteresseInputFormat);
+            PuntoInteresse puntoInteresse = builderPuntoInteresse.getResult();
+            repositoryPuntoInteresse.save(puntoInteresse);
+            repositoryPuntoInteresse.flush();
+            return new ResponseEntity<>(puntoInteresse, HttpStatus.OK);
+    }
+
+    /**
+     * Effettua la valutazione di un punto di interesse.
+     * @param idPuntoInteresse
+     * @param valutazione
+     * @return ResponseEntity con l'id del punto di interesse valutato
+     */
+    @PutMapping("/effettuaValutazione/{idPuntoInteresse}/{valutazione}")
+    public ResponseEntity<Object> effettuaValutazione(@PathVariable("idPuntoInteresse") long idPuntoInteresse, @PathVariable("valutazione") double valutazione) {
+        PuntoInteresse puntoInteresse = repositoryPuntoInteresse.getReferenceById(idPuntoInteresse);
+        puntoInteresse.aggiungiValutazione(valutazione);
         repositoryPuntoInteresse.flush();
-        return new ResponseEntity<>(puntoInteresse, HttpStatus.OK);
+        return new ResponseEntity<>("Valutazione effettuata, nuova valutazione: "+ puntoInteresse.getValutazione(), HttpStatus.OK);
     }
 
 

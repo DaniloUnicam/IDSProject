@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@DiscriminatorValue("PUNTOINTERESSE")
+@DiscriminatorValue("PUNTO_INTERESSE")
 @Getter
 @Setter
 public class PuntoInteresse extends InformazioneTerritoriale implements Valutazione {
@@ -35,7 +35,7 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
             name = "PuntoInteresse_Contenuto",
             joinColumns = @JoinColumn(name = "POI_ID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "contenuto_ID", referencedColumnName = "idContenuto"))
-    private List <Contenuto> contenuti= new ArrayList<>();
+    private List <Contenuto> contenuti;
     //Variabile per calcolare la media delle valutazioni
 
     private int counterValutazione;
@@ -49,13 +49,14 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
         this.orarioChiusura = orarioChiusura;
         this.valutazione = valutazione;
         counterValutazione = 0;
+        contenuti = new ArrayList<>();
     }
 
     /**
      * Aggiunge una valutazione al punto di interesse
      * @param valutazione valutazione da aggiungere
      */
-    public void aggiungiValutazione(float valutazione) {
+    public void aggiungiValutazione(double valutazione) {
         if(valutazione < 1 || valutazione > 5) throw new IllegalArgumentException("Valutazione non valida");
         this.valutazione = (valutazione + this.valutazione*(counterValutazione++)) / counterValutazione;
     }
@@ -79,11 +80,10 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
     }
 
     //Metodo per rimuovere un contenuto da un punto di interesse
-    public void rimuoviContenuto(long idContenuto) {
+    public void rimuoviContenuto(Long idContenuto) {
         for (Contenuto contenuto : contenuti) {
             if (contenuto.getID()== (idContenuto)) {
                 contenuti.remove(contenuto);
-                return;
             }
         }
     }
@@ -95,7 +95,7 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
                 return contenuto;
             }
         }
-        return null;
+        return new Contenuto();
     }
 
     @Override
@@ -103,8 +103,4 @@ public class PuntoInteresse extends InformazioneTerritoriale implements Valutazi
         return super.getID();
     }
 
-    //@Override
-    //public PosizioneSatellitare getPosizione() {
-    //    return super.getPosizione();
-    //}
 }

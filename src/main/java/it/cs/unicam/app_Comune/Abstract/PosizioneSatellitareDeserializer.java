@@ -11,7 +11,7 @@ import java.io.IOException;
 public class PosizioneSatellitareDeserializer extends JsonDeserializer<PosizioneSatellitare> {
 
     @Override
-    public PosizioneSatellitare deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+    public PosizioneSatellitare deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         String[] parts = p.getText().split(",");
         double latitude = Double.parseDouble(parts[0]);
         double longitude = Double.parseDouble(parts[1]);
